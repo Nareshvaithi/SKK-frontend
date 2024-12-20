@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.swiper-button-next,.swiper-button-prev{
+    @apply absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity
+}
+
+.custom-bullet {
+    @apply w-2 h-2 bg-gray-200 rounded-full cursor-pointer transition-all;
+}
+.custom-bullet-active {
+    @apply bg-gray-400;
+}
+.custom-bullet:hover {
+    @apply bg-gray-400;
+}
+
+
+.headingText{
+    @apply font-mainFont1 text-2xl lg:text-4xl font-light
+}
+
+
+.contentText{
+    @apply font-mainFont2 text-sm lg:text-xl font-normal
+}
+
+
+@layer utilities {
+
+    .links {
+        @apply relative;
+    }
+
+    .links::after {
+        @apply content-[''] bg-themebrown w-[0%] h-[2px] rounded-2xl right-0 -bottom-[5px] absolute duration-300;
+    }
+
+    .links:hover::after {
+        @apply left-0 w-[100%];
+    }
+
+    .active::after {
+        @apply w-[100%];
+    }
+}
+
+
+@layer utilities {
+
+    .sublinks {
+        @apply relative inline-block;
+    }
+    .sublinks::after {
+        @apply content-[''] bg-themebrown w-[0%] h-[2px] rounded-2xl left-0 -bottom-[1px] absolute transition-all duration-300;
+    }
+    .group:hover .sublinks::after {
+        @apply w-[100%]; 
+    }
+    .active .sublinks::after {
+        @apply w-[100%];
+    }
+}
+
+
+@layer utilities {
+
+    .footerlinks {
+        @apply relative;
+    }
+
+    .footerlinks::after {
+        @apply content-[''] bg-themebrown w-[0%] h-[2px] rounded-2xl right-0 -bottom-[1px] absolute duration-500;
+    }
+
+    .footerlinks:hover::after {
+        @apply left-0 w-[100%];
+    }
+
+    .active::after {
+        @apply w-[100%];
+    }
+}
+
+
+
+
+
