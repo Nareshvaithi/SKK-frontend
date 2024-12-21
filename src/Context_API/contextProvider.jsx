@@ -16,6 +16,8 @@ export const Context = ({ children }) => {
     const [homefaq,setHomefaq] = useState([]);
     const [studioVideo,setStudioVideo] = useState();
     const [environment,setEnvironment] = useState([]);
+    const [gallery,setGallery] = useState([]);
+    const [testimonials,setTestimonials] = useState([]);
     
     return (
         <ContextProvide.Provider value={{
@@ -42,7 +44,11 @@ export const Context = ({ children }) => {
             studioVideo,
             setStudioVideo,
             environment,
-            setEnvironment
+            setEnvironment,
+            gallery,
+            setGallery,
+            testimonials,
+            setTestimonials
             }}>
             {children}
         </ContextProvide.Provider>

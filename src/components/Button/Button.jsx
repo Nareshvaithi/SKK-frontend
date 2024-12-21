@@ -1,0 +1,15 @@
+import { GoArrowUpRight } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
+
+const Button = ({text, link, bg, hoverbg, textcolor, hovertextcolor})=>{
+    const navigate = useNavigate();
+    return(
+        <div onClick={()=>{navigate(link)}} className={`overflow-hidden ${bg} group w-fit flex rounded-full gap-2 items-center justify-between px-5 py-2 border border-themebrown relative cursor-pointer`}>
+            <div className={`font-mainFont2 ${textcolor} z-20 ${hovertextcolor} transition-all duration-200`}>{text}</div>
+            <div className={`group-hover:rotate-45 transition-all z-20 duration-500 ${textcolor} ${hovertextcolor}`}><GoArrowUpRight size={20}/></div>
+            <div className={`absolute ${hoverbg} inset-0 w-full h-full rounded-full -translate-x-full group-hover:translate-x-0 z-10 transition-all duration-300`}></div>
+        </div>
+    )
+}
+
+export default Button;

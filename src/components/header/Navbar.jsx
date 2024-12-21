@@ -53,7 +53,7 @@ const Navbar = () => {
                                 >
                                     {title}
                                 </NavLink>
-
+                                
                                 {sublinks && (
                                     <div className="fixed top-20 left-0 w-screen h-screen transition-all duration-1000 translate-x-[100%] group-hover:translate-x-0 bg-white group-hover:flex flex-col items-center justify-center">
                                         <div className="w-full h-full container pt-20">
@@ -77,7 +77,6 @@ const Navbar = () => {
                                 )}
                             </li>
                         ))}
-
                         <div className="border-r border-black h-4"></div>
 
                         <div className="flex items-center gap-2">
