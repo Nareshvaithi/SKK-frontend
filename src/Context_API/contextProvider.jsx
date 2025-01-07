@@ -3,9 +3,11 @@ import React, { createContext, useState } from "react";
 export const ContextProvide = createContext();
 
 export const Context = ({ children }) => {
+    const APIurl = "https://skk-api.konceptsdandd.com"
     const [menu,setMenu] = useState(false);
     const [navbarData, setNavbarData] = useState([]);
     const [adminNavbarData,setAdminNavbarData] = useState([]);
+    const [courses, setCourses] = useState([]);
     const [speciality,setSpeciality] = useState([]);
     const [homegallery,setHomegallery] = useState([]);
     const [footerlinks,setFooterlinks] = useState([]);
@@ -27,6 +29,8 @@ export const Context = ({ children }) => {
             setMenu,
             speciality,
             setSpeciality,
+            courses,
+            setCourses,
             homegallery,
             setHomegallery,
             footerlinks,
@@ -48,7 +52,8 @@ export const Context = ({ children }) => {
             gallery,
             setGallery,
             testimonials,
-            setTestimonials
+            setTestimonials,
+            APIurl
             }}>
             {children}
         </ContextProvide.Provider>

@@ -11,6 +11,11 @@ const Hero = () => {
   const [shortslink, setShortslink] = useState([]);
   const [sliderData,setSliderData] = useState([]);
 
+  const getYouTubeVideoID = (url) => {
+    const match = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/ ]{11})/);
+    return match ? match[1] : null;
+  };
+  
   useEffect(() => {
     const fetchbannervideo = async () => {
       try {
@@ -43,12 +48,8 @@ const Hero = () => {
     fetchsliderlink();
   }, []);
 
-  sliderData.map(({_id,url})=>{
-    console.log(url)
-  })
-
   return (
-    <div className="w-full h-auto pt-32 lg:pt-36 pb-10 lg:pb-20 bg-gray-100">
+    <div className="w-full h-auto pt-28 pb-10 bg-gray-100">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full">
             <div className="w-full h-full">
@@ -86,14 +87,17 @@ const Hero = () => {
                   >
                     {videolink.map(({ _id, title, url }) => (
                       <SwiperSlide key={_id}>
-                        <iframe
-                          className="w-full h-full"
-                          title={title}
-                          src={url}
-                          frameBorder="0"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                        />
+                      <iframe
+                        className="w-full h-full"
+                        title={title}
+                        src={`https://www.youtube.com/embed/${url}`}
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin allow-presentation"
+                        allowFullScreen
+                      />
+
                       </SwiperSlide>
                     ))}
                   </Swiper>

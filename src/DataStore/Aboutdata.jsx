@@ -27,12 +27,10 @@ export const Founderdata = ()=>{
             {id:4,stdImg:<FaRegUserCircle/>,name:"Student Name",review:"Good Environment", skill:"Kalari"},
         ];
         setStudentRev(data);
-    },[])
+    },[setStudentRev])
 
     return null;
 }
-
-
 export const Studiodata = ()=>{
     const {setStudioVideo} = useContext(ContextProvide);
     useEffect(()=>{
@@ -40,7 +38,6 @@ export const Studiodata = ()=>{
     },[])
     return null;
 }
-
 export const Environmentdata = ()=>{
     const {setEnvironment} = useContext(ContextProvide);
     useEffect(()=>{

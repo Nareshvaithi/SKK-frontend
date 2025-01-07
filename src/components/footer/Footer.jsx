@@ -48,7 +48,7 @@ const Footer = ()=>{
                         <div>
                             {
                                 footerlinks.map(({id,title,to})=>(
-                                    <NavLink key={id} to={to} className={"font-mainFont2 block py-1"}>
+                                    <NavLink onClick={()=>{window.scrollTo(0,0)}} key={id} to={to} className={"font-mainFont2 block py-1"}>
                                         <div className="footerlinks w-fit">
                                         {title}
                                         </div>

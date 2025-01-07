@@ -93,10 +93,10 @@ const Guruscomp = () => {
                         </Swiper>
 
                      
-                        <button onClick={handleArrow} className={`custom-gurus-next absolute left-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
+                        <button onClick={handleArrow} className={`custom-gurus-prev absolute left-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
                             <RiArrowLeftWideFill size={20} />
                         </button>
-                        <button onClick={handleArrow} className={`custom-gurus-prev absolute right-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
+                        <button onClick={handleArrow} className={`custom-gurus-next absolute right-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
                             <RiArrowRightWideFill size={20} />
                         </button>
 

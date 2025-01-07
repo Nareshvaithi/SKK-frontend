@@ -52,7 +52,7 @@ const Gallery = () => {
               >
                 <img
                   loading="lazy"
-                  className="w-full h-auto rounded-lg object-contain"
+                  className="w-full h-auto rounded-lg object-contain hover:scale-110 transition-transform duration-700 ease-linear"
                   src={url}
                   alt={`Gallery ${id}`}
                 />

@@ -55,8 +55,8 @@ const Navbar = () => {
                                 </NavLink>
                                 
                                 {sublinks && (
-                                    <div className="fixed top-20 left-0 w-screen h-screen transition-all duration-1000 translate-x-[100%] group-hover:translate-x-0 bg-white group-hover:flex flex-col items-center justify-center">
-                                        <div className="w-full h-full container pt-20">
+                                    <div className="absolute transition-all duration-1000 bg-white hidden group-hover:block items-center justify-center">
+                                        <div className="w-full h-full container">
                                             {sublinks.map(({ id, label, label2, to ,icon }) => (
                                                     <NavLink 
                                                         key={id}

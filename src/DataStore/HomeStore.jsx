@@ -22,6 +22,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
+import baradhanatyam from "../assets/Images/home/baradhanatyam.jpg";
+import kalari from "../assets/Images/home/kalari.jpg";
+import mridangam from "../assets/Images/home/mridangam.jpg";
+import music from "../assets/Images/home/music.jpg";
+import veena from "../assets/Images/home/veena.jpg";
 export const Headerdata = () => {
     const {setNavbarData} = useContext(ContextProvide);
     useEffect(() => {
@@ -55,7 +60,7 @@ export const Headerdata = () => {
         { id: 8, title: "Contact", to: "/contact" },
         ];
         setNavbarData(data);
-    }, [setNavbarData]);
+    }, []);
 
     return null;
 };
@@ -75,7 +80,7 @@ export const Specialitydata = ()=>{
             ]
        setSpeciality(data)
         
-    },[setSpeciality])
+    },[])
     console.log(speciality,"data")
     return null;
 }
@@ -122,7 +127,7 @@ export const Footerdata = ()=>{
             {id:4,icon:<AiOutlineFacebook/>,name:"Facebook",link:""},
         ]
         setFootersocialmedia(data)
-    },[])
+    },[setFootersocialmedia])
     useEffect(()=>{
         const data = [
             {id:1,icon:<PiNotePencilThin/>,title:"Leave a Message",link:""},
@@ -206,3 +211,53 @@ export const Testimonialsdata = ()=>{
     },[])
 }
 
+export const Programsdata = ()=>{
+    const {setCourses} = useContext(ContextProvide);
+    useEffect(()=>{
+        const data = [
+            { 
+                id: 1,
+                img: baradhanatyam, 
+                program_name: "Baradhanatyam",
+                program_subname:"The Graceful Art of Storytelling",
+                intro:"Bharatanatyam is one of India's oldest and most revered classical dance forms. At Saraswathy Kala Kendra, we teach students the essence of Bharatanatyam, combining rhythmic footwork, expressive gestures, and storytelling through movement. This course is designed for students who wish to learn the art's technical aspects and connect with its spiritual roots.",
+                slider:[baradhanatyam,baradhanatyam,baradhanatyam]
+            },
+            { 
+                id: 2, 
+                img: kalari, 
+                program_name: "Kalari",
+                program_subname:"The Ancient Martial Art of Warriors",
+                intro:"Kalari, the mother of all martial arts, is a discipline that combines physical strength, flexibility, and mental focus. Our Kalari course emphasizes traditional techniques, self-defense, and meditation to help students achieve harmony between mind and body. Whether you're a beginner or looking to deepen your practice, this course offers a transformative journey into this ancient art form.",
+                slider:[kalari,kalari,kalari]
+            },
+            { 
+                id: 3, 
+                img: mridangam, 
+                program_name: "Mridangam",
+                program_subname:"The Rhythmic Heartbeat of Tradition",
+                intro:"Mridangam is the cornerstone of South Indian classical music, providing the rhythmic foundation for Carnatic compositions. In this course, students will learn to master rhythm patterns, enhance their timing, and develop skills that make the Mridangam an integral part of their musical journey.",
+                slider:[mridangam,mridangam,mridangam] 
+            },
+            { 
+                id: 4, 
+                img: music, 
+                program_name: "Carnatic Music",
+                program_subname:"The Soulful Sound of Tradition",
+                intro:"Dive into the melodic and rhythmic beauty of Carnatic music. Our course offers structured vocal training, helping students master ragas, talas, and compositions by legendary composers. Through practice and guidance, students will gain a profound appreciation for the intricacies of this classical South Indian music tradition.",
+                slider:[music,music,music]
+
+            },
+            { 
+                id: 5, 
+                img: veena, 
+                program_name: "Veena",
+                program_subname:"The Voice of the Divine Strings",
+                intro:"The Veena, a divine string instrument, is known for its rich and soulful melodies. At Saraswathy Kala Kendra, our Veena course is designed to guide students through the art of playing this classical instrument, from basic finger techniques to advanced ragas. Experience the joy of creating music that resonates with the soul.",
+                slider:[veena,veena,veena]
+            },
+        ];
+        setCourses(data)
+    },[])
+    return null;
+}

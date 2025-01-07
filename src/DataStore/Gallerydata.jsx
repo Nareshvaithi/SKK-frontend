@@ -3,11 +3,11 @@ import { ContextProvide } from "../Context_API/contextProvider";
 import axios from "axios";
 
 const Gallerydata = ()=>{
-    const {setGallery} = useContext(ContextProvide);
+    const {setGallery, APIurl} = useContext(ContextProvide);
     useEffect(()=>{
         const fetchGallery = async ()=>{
             try{
-                const galleryimages = await axios.get("https://skk-api.konceptsdandd.com/gallery");
+                const galleryimages = await axios.get(`${APIurl}/gallery`);
                 setGallery(galleryimages.data);
                 console.log("mark",galleryimages.data)
             }

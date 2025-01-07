@@ -11,7 +11,7 @@ const HomeGallery = ()=>{
                 <div className="text-center py-5">
                     <h1 className="headingText">Gallery</h1>
                 </div>
-                <div className="h-full w-full grid grid-cols-3 gap-5 rounded-xl">
+                <div className="h-full w-full grid grid-cols-1 lg:grid-cols-3 gap-5 rounded-xl">
                     {
                         homegallery.map(({id,img})=>(
                             <div key={id} className={`${id === 2 ? "row-span-2":""} w-full h-full relative group overflow-hidden rounded-xl`}>
