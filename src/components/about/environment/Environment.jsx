@@ -15,11 +15,11 @@ const Environment = ()=>{
                     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5">
                         {
                             environment.map(({id,environment,details,img})=>(
-                                <div key={id} className={`w-full group ${id%2 === 0 ? "mt-[30%]":""}`}>
-                                    <div className="w-full relative overflow-hidden rounded-xl">
-                                        <img className="rounded-xl w-full h-full group-hover:scale-110 transition-all duration-1000" src={img} alt="" />
+                                <div key={id} className={`w-full group ${id%2 === 0 ? "mt-[5%]":""}`}>
+                                    <div className="w-full relative overflow-hidden">
+                                        <img className="w-full h-full group-hover:scale-110 transition-all duration-1000" src={img} alt="" />
                                         <div 
-                                        className="rounded-xl absolute inset-0 w-2/3 h-1/2 group-hover:opacity-0 flex flex-col justify-center translate-y-full font-mainFont1 text-gray-700 px-2 bg-white transition-all duration-500">
+                                        className="absolute inset-0 w-2/3 h-1/2 group-hover:opacity-0 flex flex-col justify-center translate-y-full font-mainFont1 text-gray-700 px-2 bg-white transition-all duration-500">
                                             <h1 className="text-lg font-bold py-2">{environment}</h1>
                                             <p className="font-mainFont2">{details}</p>
                                         </div>

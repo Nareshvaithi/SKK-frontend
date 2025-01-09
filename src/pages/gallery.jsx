@@ -1,35 +1,159 @@
-import { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ContextProvide } from "../Context_API/contextProvider";
-import { HomegalleryData } from "../DataStore/HomeStore";
+import { motion, AnimatePresence } from "framer-motion";
+import Gallerydata from "../DataStore/Gallerydata";
 
-const Gallery = ()=>{
-    const {homegallery} = useContext(ContextProvide);
-    return(
-        <>
-        <div className="py-10 w-full bg-white">
-            <div className="container">
-                <div className="text-center py-5">
-                    <h1 className="headingText">Gallery</h1>
-                </div>
-                <div className="h-full w-full grid grid-cols-3 gap-5 rounded-xl">
-                    {
-                        homegallery.map(({id,img})=>(
-                            <div key={id} className={`${id === 2 ? "row-span-2":""} w-full h-full relative group overflow-hidden rounded-xl`}>
-                                <img src={img} alt="" className="w-full h-full rounded-xl group-hover:scale-110 transition-all duration-1000" />
-                                <div className="absolute rounded-xl w-full h-full bg-gradient-to-t from-themebrown to-transparent inset-0 overflow-hidden translate-y-full group-hover:translate-y-0 transition-all duration-1000 ease-in-out">
-                                    <div className="flex justify-center items-center w-full h-full">
-                                        <h1 className={`font-mainFont1 ${id === 2 ? "text-5xl": "text-2xl"} font-light text-white`}>View More</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+const IMAGES_PER_PAGE = 30;
+
+const Gallery = () => {
+  const { gallery } = useContext(ContextProvide);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (gallery.length > 0) {
+      setIsLoading(false);
+    }
+  }, [gallery]);
+
+  const totalPages = Math.ceil(gallery.length / IMAGES_PER_PAGE);
+
+  const currentGallery = gallery.slice(
+    (currentPage - 1) * IMAGES_PER_PAGE,
+    currentPage * IMAGES_PER_PAGE
+  );
+
+  const openLightbox = (index) => {
+    setCurrentImageIndex(index + (currentPage - 1) * IMAGES_PER_PAGE);
+  };
+
+  const closeLightbox = () => {
+    setCurrentImageIndex(null);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  return (
+    <>
+      <Gallerydata />
+      <div className="pt-24">
+        <div className="container">
+          {isLoading ? (
+            <div className="text-center py-5">Loading...</div>
+          ) : (
+            <>
+              <div className="text-center py-5">
+                <h1 className="headingText">Our Exclusive Gallery</h1>
+                <p className="contentText py-2">
+                  Welcome to the vibrant world of Saraswathy Kala Kendra, where
+                  every moment is a celebration of art, culture, and dedication.
+                  Our gallery captures the essence of our journey, showcasing:
+                </p>
+              </div>
+              <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+                {currentGallery.map(({ id, url }, index) => (
+                  <div
+                    key={id}
+                    className="w-full overflow-hidden rounded-lg cursor-pointer"
+                    onClick={() => openLightbox(index)}
+                  >
+                    <img
+                      loading="lazy"
+                      className="w-full h-auto rounded-lg object-contain hover:scale-110 transition-transform duration-700 ease-linear"
+                      src={url}
+                      alt={`Gallery ${id}`}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center space-x-4 mt-6">
+                <button
+                  className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                  onClick={prevPage}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </button>
+                <span className="px-4 py-2">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
+              </div>
+            </>
+          )}
         </div>
-        <HomegalleryData/>
-        </>
-    )
-}
+      </div>
+
+      {currentImageIndex !== null && (
+        <AnimatePresence>
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <button
+              className="absolute top-4 right-4 text-white text-3xl font-bold"
+              onClick={closeLightbox}
+            >
+              &times;
+            </button>
+            <motion.div
+              className="relative flex justify-center items-center"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                className="max-w-3xl max-h-[90vh] object-contain rounded-lg"
+                src={gallery[currentImageIndex].url}
+                alt="Selected"
+              />
+            </motion.div>
+            <button
+              className="absolute left-0 text-white active:text-white/80 text-4xl px-4"
+              onClick={prevImage}
+            >
+              &#8592;
+            </button>
+            <button
+              className="absolute right-0 text-white active:text-white/80 text-4xl px-4"
+              onClick={nextImage}
+            >
+              &#8594;
+            </button>
+          </motion.div>
+        </AnimatePresence>
+      )}
+      <Gallerydata/>
+    </>
+  );
+};
 
 export default Gallery;

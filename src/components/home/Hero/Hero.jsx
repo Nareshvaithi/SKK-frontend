@@ -1,54 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
-import axios from 'axios';
+import { ContextProvide } from "../../../Context_API/contextProvider";
+import { Herodata } from "../../../DataStore/HomeStore";
+
 
 const Hero = () => {
-  const [videolink, setVideolink] = useState([]);
-  const [shortslink, setShortslink] = useState([]);
-  const [sliderData,setSliderData] = useState([]);
-
-  useEffect(() => {
-    const fetchbannervideo = async () => {
-      try {
-        const getBannerVideoLink = await axios.get("https://skk-api.konceptsdandd.com/banner");
-        setVideolink(getBannerVideoLink.data);
-      } catch (error) {
-        console.error("Error fetching video links:", error);
-      }
-    };
-    const fetchshortslink = async () => {
-      try {
-        const getShortsLink = await axios.get("https://skk-api.konceptsdandd.com/bannershorts");
-        setShortslink(getShortsLink.data);
-      } catch (error) {
-        console.error("Error fetching video links:", error);
-      }
-    };
-    const fetchsliderlink = async ()=>{
-      try{
-        const getsliderdata = await axios.get("https://skk-api.konceptsdandd.com/bannerimages");
-        setSliderData(getsliderdata.data);
-      }
-      catch(error){
-        console.log(error)
-      }
-    }
-
-    fetchbannervideo();
-    fetchshortslink();
-    fetchsliderlink();
-  }, []);
-
-  sliderData.map(({_id,url})=>{
-    console.log(url)
-  })
-
+ 
+  const {bannerVideo,bannerSlider,shorts} = useContext(ContextProvide);
   return (
-    <div className="w-full h-auto pt-32 lg:pt-36 pb-10 lg:pb-20 bg-gray-100">
+    <div className="w-full h-auto pt-28 pb-10 bg-gray-100">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full">
             <div className="w-full h-full">
@@ -84,16 +48,19 @@ const Hero = () => {
                     }}
                     speed={1000}
                   >
-                    {videolink.map(({ _id, title, url }) => (
+                    {bannerVideo.map(({ _id, title, url }) => (
                       <SwiperSlide key={_id}>
-                        <iframe
-                          className="w-full h-full"
-                          title={title}
-                          src={url}
-                          frameBorder="0"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                        />
+                      <iframe
+                        className="w-full h-full"
+                        title={title}
+                        src={`https://www.youtube.com/embed/${url}`}
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin allow-presentation"
+                        allowFullScreen
+                      />
+
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -101,7 +68,7 @@ const Hero = () => {
                 {/* Shorts Links Grid */}
                 <div className="mt-5">
                   <div className="grid grid-cols-3 gap-5">
-                    {shortslink.map(({ _id, title, url }) => (
+                    {shorts.map(({ _id, title, url }) => (
                       <iframe
                         key={_id}
                         className="w-full h-[130px] rounded-none lg:rounded-xl"
@@ -133,7 +100,7 @@ const Hero = () => {
                 speed={1000}
                 >
                     {
-                      sliderData.map(({_id,url})=>(
+                      bannerSlider.map(({_id,url})=>(
                         <SwiperSlide
                         key={_id}
                         >
@@ -147,6 +114,7 @@ const Hero = () => {
               </div>
         </div>
       </div>
+      <Herodata/>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import founderimg from "../../../assets/Images/about/founder.jpg"
 import { RiDoubleQuotesR, RiDoubleQuotesL } from "react-icons/ri";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Founderdata } from "../../../DataStore/Aboutdata";
 import { Swiper } from "swiper/react";
@@ -14,7 +14,7 @@ import axios from "axios";
 const Founder = ()=>{
     const {founderSocialmedia,studentRev} = useContext(ContextProvide);
     const [latestEvent,setLatestEvent] = useState([]);
-
+    const swiperRef = useRef(null);
    useEffect(() => {
        const fetchbannervideo = async () => {
          try {
@@ -26,6 +26,11 @@ const Founder = ()=>{
        };
        fetchbannervideo();
      }, []);
+     useEffect(() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.update(); // Reinitialize Swiper after data load
+        }
+    }, [latestEvent]);
 
     return(
         <>
@@ -70,17 +75,18 @@ const Founder = ()=>{
                                     <h1 className="font-mainFont1 text-2xl py-3">Our Latest Events</h1>
                                 </div>
                                 <Swiper
-                                    className="flex justify-center w-full"
-                                    modules={[Autoplay,EffectFade]}
-                                    slidesPerView={1}
-                                    loop={true}
-                                    effect="fade"
-                                    speed={500}
-                                    autoplay={{
-                                        delay:2000,
-                                        disableOnInteraction:false,
-                                        pauseOnMouseEnter: true
-                                    }} 
+                                  ref={swiperRef}
+                                  className="flex justify-center w-full"
+                                  modules={[Autoplay, EffectFade]}
+                                  slidesPerView={1}
+                                  loop={true}
+                                  effect="fade"
+                                  speed={500}
+                                  autoplay={{
+                                      delay: 2000,
+                                      disableOnInteraction: false,
+                                      pauseOnMouseEnter: true,
+                                  }} 
                                  >
                                     {
                                         latestEvent.map(({id,url})=>(

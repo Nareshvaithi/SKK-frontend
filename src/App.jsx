@@ -14,6 +14,7 @@ import AdminContext from "./adminPanel/Context_API/ContextProvider";
 import EditBannerVideo from "./adminPanel/Adminpages/EditBannervideo";
 import EditShorts from "./adminPanel/Adminpages/EditShorts";
 import EditBannerSlider from "./adminPanel/Adminpages/EditSlider";
+import CoursesDetails from "./pages/ProgramsDetails";
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/aboutskk" element={<About />} />
-              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/gallery" element={<Gallery/>} />
               <Route path="/courses" element={<Courses />} />
+              <Route path="/courses/:title" element={<CoursesDetails />} />
               <Route path="/events" element={<Events />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/faq" element={<Faq />} />

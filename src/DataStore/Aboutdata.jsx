@@ -3,11 +3,11 @@ import { ContextProvide } from "../Context_API/contextProvider";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineFacebook } from "react-icons/ai";
 import OurStudioVideo from "../assets/Images/about/ourstudio.mp4";
-import Traditional_Ambiance from "../assets/Images/about/Traditional_Ambiance.jpg";
+import Traditional_Ambiance from "../assets/Images/about/Traditional_Ambiance.webp";
 import Positive_Learning_Atmosphere from "../assets/Images/about/Positive_Learning_Atmosphere.jpg";
 import State_of_the_Art from "../assets/Images/about/State_of_the_Art.jpg";
-import Cultural_Immersion from "../assets/Images/about/Cultural_Immersion.jpg";
-import Community_Spirit from "../assets/Images/about/Community_Spirit.jpg";
+import Cultural_Immersion from "../assets/Images/about/Cultural_Immersion.webp";
+import Community_Spirit from "../assets/Images/about/Community_Spirit.webp";
 export const Founderdata = ()=>{
     const {setFounderSocialmedia,setStudentRev} = useContext(ContextProvide);
     useEffect(()=>{
@@ -27,12 +27,10 @@ export const Founderdata = ()=>{
             {id:4,stdImg:<FaRegUserCircle/>,name:"Student Name",review:"Good Environment", skill:"Kalari"},
         ];
         setStudentRev(data);
-    },[])
+    },[setStudentRev])
 
     return null;
 }
-
-
 export const Studiodata = ()=>{
     const {setStudioVideo} = useContext(ContextProvide);
     useEffect(()=>{
@@ -40,7 +38,6 @@ export const Studiodata = ()=>{
     },[])
     return null;
 }
-
 export const Environmentdata = ()=>{
     const {setEnvironment} = useContext(ContextProvide);
     useEffect(()=>{

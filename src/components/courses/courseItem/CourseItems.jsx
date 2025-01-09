@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../Button/Button";
-const CourseItems = ({ id, img, intro, program_name, program_subname, slider }) => {
+const CourseItems = ({ id, img, intro, program_name, program_subname, slider, history_content,gallery }) => {
     const navigate = useNavigate();
     return (
         <div className="container py-10">
@@ -12,7 +12,7 @@ const CourseItems = ({ id, img, intro, program_name, program_subname, slider }) 
                 <div className="w-full lg:w-7/12 bg-themebrown/40 px-10 py-5 rounded-xl flex flex-col justify-center relative overflow-hidden pb-20 lg:pb-0">
                     <h2 className="font-mainFont1 text-xl text-themebrown">{program_subname}</h2>
                     <p className="font-mainFont2 text-[18px] line-clamp-3 text-gray-800">{intro}</p>
-                    <div onClick={()=>{navigate(`/courses/${program_name}`,{state:{id,img,intro,program_name,program_subname,slider}})}} className="absolute bottom-5 left-10 translate-y-[200%] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out">
+                    <div onClick={()=>{navigate(`/courses/${program_name}`,{state:{id,img,intro,program_name,program_subname,slider,history_content,gallery}});window.scrollTo(0,0)}} className="absolute bottom-5 left-10 translate-y-[200%] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out">
                         <Button
                             text="View Details"
                             hoverbg="bg-themebrown"

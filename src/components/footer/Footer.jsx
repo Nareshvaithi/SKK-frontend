@@ -4,17 +4,27 @@ import Logo from "../../assets/Images/header/logo-SKK.png";
 import footerBg from "../../assets/Images/footer/footerBg.jpg"
 import { ContextProvide } from "../../Context_API/contextProvider";
 import { NavLink } from "react-router-dom";
+import KonceptsLogo from "../../assets/Images/footer/Logo";
+import Button from "../Button/Button";
 const Footer = ()=>{
     const {footerlinks,footersocialmedia,footercontact} = useContext(ContextProvide);
 
     return(
         <>
-            <div className="w-full h-auto pt-10 pb-5">
+            <div className="w-full h-auto pb-5">
                 <div style={{backgroundImage:`url(${footerBg})`}} className="relative w-full h-80 bg-center bg-no-repeat bg-cover">
                     <div className="absolute w-full h-full">
                         <div className="text-white font-mainFont2 flex flex-col gap-5 items-center justify-center container h-full">
                             <h1 className="text-xl lg:text-4xl font-bold text-center">Saraswathy Kala Kendra is a vibrant sanctuary where young minds are nurtured to master the divine art of performance.</h1>
-                            <NavLink className={"px-4 py-2 bg-themebrown hover:bg-white hover:text-themebrown rounded-xl transition-colors duration-500"}>Explore Our Courses</NavLink>
+                            <Button 
+                                text="Explore Our Courses"
+                                link="/courses"
+                                hoverbg="bg-white"
+                                textcolor="text-white"
+                                hovertextcolor="group-hover:text-themebrown" 
+                                bg="bg-themebrown" 
+                            />
+
                         </div>
                     </div>
                 </div>
@@ -38,7 +48,7 @@ const Footer = ()=>{
                         <div>
                             {
                                 footerlinks.map(({id,title,to})=>(
-                                    <NavLink key={id} to={to} className={"font-mainFont2 block py-1"}>
+                                    <NavLink onClick={()=>{window.scrollTo(0,0)}} key={id} to={to} className={"font-mainFont2 block py-1"}>
                                         <div className="footerlinks w-fit">
                                         {title}
                                         </div>
@@ -92,6 +102,9 @@ const Footer = ()=>{
                     </div>
                     <div className="text-center">
                         copyright Saraswathi Kala Kendra &copy; {new Date().getFullYear()}. All Rights Reserved
+                    </div>
+                    <div>
+                        <KonceptsLogo/>
                     </div>
                 </div>
             </div>

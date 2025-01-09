@@ -5,7 +5,8 @@ import Hero from "../components/home/Hero/Hero";
 import Programs from "../components/home/programs/Programs";
 import SpecialityOfSkk from "../components/home/speciality/SpecialityOfSkk";
 import WhyLearnBharadhanatyam from "../components/home/WhyLearn/WhyLearn";
-import Gallery from "./gallery";
+import HomeGallery from "../components/home/homegallery/HomeGallery";
+import Review from "../components/home/review/Review";
 
 
 
@@ -17,9 +18,10 @@ const Home = ()=>{
             <Guruscomp/>
             <Programs/>
             <WhyLearnBharadhanatyam/>
-            <Gallery/>
+            <HomeGallery/>
             <SpecialityOfSkk/>
             <HomeFaq/>
+            <Review/>
         </div>
     )
 }
