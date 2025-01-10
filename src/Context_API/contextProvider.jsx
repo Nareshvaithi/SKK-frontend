@@ -24,9 +24,8 @@ export const Context = ({ children }) => {
     const [environment,setEnvironment] = useState([]);
     const [gallery,setGallery] = useState([]);
     const [testimonials,setTestimonials] = useState([]);
-    const [blogs,setBlogs] = useState([])
-    const [blogSocialMedia,setBlogSocialMedia] = useState([]);
-    
+    const [eventBanner,setEventBanner]=useState([])
+    const [eventList,setEventList]=useState([])
     return (
         <ContextProvide.Provider value={{
             navbarData,
@@ -70,10 +69,10 @@ export const Context = ({ children }) => {
             testimonials,
             setTestimonials,
             APIurl,
-            blogs,
-            setBlogs,
-            blogSocialMedia,
-            setBlogSocialMedia
+            eventBanner,
+            setEventBanner,
+            eventList,
+            setEventList
             }}>
             {children}
         </ContextProvide.Provider>
