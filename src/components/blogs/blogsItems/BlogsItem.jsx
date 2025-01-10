@@ -27,19 +27,22 @@ const BlogsItems = () => {
                     <h1 className="headingText">Blogs</h1>
                     <p className="contentText py-2">Our Latest Creations</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="columns-1 md:columns-2 lg:columns-3 space-y-5">
                     {
                         currentBlogs.map(({ id, title, date, thumbnail, content }) => (
-                            <div key={id} className="w-full h-[300px] relative group overflow-hidden">
-                                <div className="w-full h-full rounded-t-xl rounded-b-2xl overflow-hidden">
-                                    <img className="w-full h-full object-cover" src={thumbnail} alt="" />
+                            <div key={id} className="w-full h-auto relative group overflow-hidden">
+                                <div className="w-full h-full rounded-xl overflow-hidden">
+                                    <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000" src={thumbnail} alt="" />
                                 </div>
-                                <div className="p-5 rounded-b-xl absolute z-10 w-full h-auto text-gray-700 bottom-0 bg-white transition-all duration-1000 ease-in-out group-hover:pb-8">
-                                    <h1 className="text-sm font-mainFont1 font-semibold line-clamp-2">{title}</h1>
-                                    <p className="text-sm font-mainFont2">{date}</p>
-                                    <button className="font-mainFont2 text-sm border-[1px] border-themebrown/50 text-themebrown px-3 py-1 mt-2">
-                                        Read More
-                                    </button>
+                                <div className="flex rounded-xl text-white flex-col justify-end p-5 rounded-b-xl absolute z-10 w-full h-full inset-0 bg-gradient-to-bl from-transparent via-transparent via-black/30 to-black">
+                                    <div className="group-hover:-translate-y-1 transition-all duration-700 ease-in-out">
+                                    <h1 className="font-mainFont1 text-xl">{title}</h1>
+                                    <p className="font-mainFont2 text-sm">{date}</p>
+                                    <div className="flex items-center gap-5 pt-2">
+                                        <p className="font-mainFont2 text-sm line-clamp-2">{content}</p>
+                                        <button className="font-mainFont2 text-sm text-nowrap underline hover:text-blue-500">Learn More</button>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         ))

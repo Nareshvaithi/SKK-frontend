@@ -24,8 +24,10 @@ export const Context = ({ children }) => {
     const [environment,setEnvironment] = useState([]);
     const [gallery,setGallery] = useState([]);
     const [testimonials,setTestimonials] = useState([]);
-    const [eventBanner,setEventBanner]=useState([])
-    const [eventList,setEventList]=useState([])
+    const [eventBanner,setEventBanner]=useState([]);
+    const [eventList,setEventList]=useState([]);
+    const [blogSocialMedia,setBlogSocialMedia] = useState([]);
+    const [blogs,setBlogs] = useState([]);
     return (
         <ContextProvide.Provider value={{
             navbarData,
@@ -72,7 +74,11 @@ export const Context = ({ children }) => {
             eventBanner,
             setEventBanner,
             eventList,
-            setEventList
+            setEventList,
+            blogs,
+            setBlogs,
+            blogSocialMedia,
+            setBlogSocialMedia,
             }}>
             {children}
         </ContextProvide.Provider>
