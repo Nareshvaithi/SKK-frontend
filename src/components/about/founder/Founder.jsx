@@ -93,7 +93,7 @@ const Founder = ()=>{
                                             <SwiperSlide className="w-full" key={id}>
                                                 <iframe
                                                     className="w-full h-40" 
-                                                    src={url} 
+                                                    src={`https://www.youtube.com/embed/${url}`} 
                                                     allow="autoplay; encrypted-media" 
                                                     allowFullScreen 
                                                  ></iframe>

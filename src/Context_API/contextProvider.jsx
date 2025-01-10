@@ -24,6 +24,8 @@ export const Context = ({ children }) => {
     const [environment,setEnvironment] = useState([]);
     const [gallery,setGallery] = useState([]);
     const [testimonials,setTestimonials] = useState([]);
+    const [blogs,setBlogs] = useState([])
+    const [blogSocialMedia,setBlogSocialMedia] = useState([]);
     
     return (
         <ContextProvide.Provider value={{
@@ -67,7 +69,11 @@ export const Context = ({ children }) => {
             setGallery,
             testimonials,
             setTestimonials,
-            APIurl
+            APIurl,
+            blogs,
+            setBlogs,
+            blogSocialMedia,
+            setBlogSocialMedia
             }}>
             {children}
         </ContextProvide.Provider>

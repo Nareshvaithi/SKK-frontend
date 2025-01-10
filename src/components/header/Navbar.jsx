@@ -44,7 +44,7 @@ const Navbar = () => {
                     </div>
                     <ul className="hidden lg:flex items-center gap-5">
                         {navbarData.map(({ id, title, to, sublinks }) => (
-                            <li key={id} className="group relative">
+                            <li onClick={()=>{window.scrollTo(0,0)}} key={id} className="group relative">
                                 <NavLink
                                     to={to}
                                     className={({ isActive }) =>

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { ContextProvide } from "../Context_API/contextProvider";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineFacebook } from "react-icons/ai";
-import OurStudioVideo from "../assets/Images/about/ourstudio.mp4";
+import OurStudioVideo from "../assets/Images/about/ourstudio.webm";
 import Traditional_Ambiance from "../assets/Images/about/Traditional_Ambiance.webp";
 import Positive_Learning_Atmosphere from "../assets/Images/about/Positive_Learning_Atmosphere.jpg";
 import State_of_the_Art from "../assets/Images/about/State_of_the_Art.jpg";

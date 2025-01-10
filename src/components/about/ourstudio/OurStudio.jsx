@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Studiodata } from "../../../DataStore/Aboutdata";
-import video from "../../../assets/Images/about/ourstudio.mp4"
+import video from "../../../assets/Images/about/ourstudio.webm"
 const OurStudio = () => {
     const { studioVideo } = useContext(ContextProvide);
     const videoRef = useRef(null); // Reference to the video element

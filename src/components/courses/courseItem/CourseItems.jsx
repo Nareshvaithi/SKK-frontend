@@ -19,6 +19,8 @@ const CourseItems = ({ id, img, intro, program_name, program_subname, slider, hi
                             textcolor="text-themebrown"
                             hovertextcolor="group-hover:text-white"
                             bg="bg-white"
+                            px={"px-5"}
+                            py={"py-2"}
                         />
                     </div>
                 </div>

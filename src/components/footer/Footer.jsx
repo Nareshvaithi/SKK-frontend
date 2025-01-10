@@ -23,6 +23,8 @@ const Footer = ()=>{
                                 textcolor="text-white"
                                 hovertextcolor="group-hover:text-themebrown" 
                                 bg="bg-themebrown" 
+                                px={"px-5"}
+                                py={"py-2"}
                             />
 
                         </div>
