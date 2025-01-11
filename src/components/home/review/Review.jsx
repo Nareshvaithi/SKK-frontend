@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import reviewbg from  "../../../assets/Images/home/reviewBg.jpg"
+import reviewbg from  "../../../assets/Images/home/reviewBg.webp"
 import { useContext } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Testimonialsdata } from "../../../DataStore/HomeStore";

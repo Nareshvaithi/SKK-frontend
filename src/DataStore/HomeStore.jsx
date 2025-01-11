@@ -1,13 +1,8 @@
 import { useEffect, useContext } from "react";
 import { ContextProvide } from "../Context_API/contextProvider";
-import specialityimg_0 from "../assets/Images/home/speciality_0.jpg";
-import specialityimg_1 from "../assets/Images/home/speciality_1.jpg";
-import specialityimg_2 from "../assets/Images/home/speciality_2.jpg";
-import youtubevideo_sub_ico from "../assets/Images/header/youtubevideo_sub.png";
-import courses_sub_ico from "../assets/Images/header/courses_sub.png";
-import shorts_sub_ico from "../assets/Images/header/shorts_sub.png";
-import guru_sub_ico from "../assets/Images/header/guru_sub.png";
-import founder_sub_ico from "../assets/Images/header/founder_sub.png";
+import specialityimg_0 from "../assets/Images/home/speciality_0.webp";
+import specialityimg_1 from "../assets/Images/home/speciality_1.webp";
+import specialityimg_2 from "../assets/Images/home/speciality_2.webp";
 import homegallery_1 from "../assets/Images/home/homegallery_1.jpg";
 import homegallery_2 from "../assets/Images/home/homegallery_2.jpg";
 import homegallery_3 from "../assets/Images/home/homegallery_3.jpg";
@@ -22,11 +17,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
-import Bharatanatyam from "../assets/Images/home/Bharatanatyam.jpg";
-import kalari from "../assets/Images/home/kalari.jpg";
-import mridangam from "../assets/Images/home/mridangam.jpg";
-import music from "../assets/Images/home/music.jpg";
-import veena from "../assets/Images/home/veena.jpg";
+import Bharatanatyam from "../assets/Images/home/Bharatanatyam.webp";
+import kalari from "../assets/Images/home/kalari.webp";
+import mridangam from "../assets/Images/home/mridangam.webp";
+import music from "../assets/Images/home/music.webp";
+import veena from "../assets/Images/home/veena.webp";
 import Bhagallery01 from "../assets/Images/gallery/bharatanatyamGallery/gallery01.webp";
 import Bhagallery02 from "../assets/Images/gallery/bharatanatyamGallery/gallery02.webp";
 import Bhagallery03 from "../assets/Images/gallery/bharatanatyamGallery/gallery03.webp";
@@ -52,38 +47,50 @@ import veenagallery02 from "../assets/Images/gallery/veenaGallery/gallery02.webp
 import veenagallery03 from "../assets/Images/gallery/veenaGallery/gallery03.webp";
 import veenagallery04 from "../assets/Images/gallery/veenaGallery/gallery04.webp";
 import veenagallery05 from "../assets/Images/gallery/veenaGallery/gallery05.webp";
+import whatsappIcon from "../assets/Images/header/whatsapp.webp";
+import locationIcon from "../assets/Images/header/location.webp";
+import gmailIcon from "../assets/Images/header/gmail.webp";
 import axios from 'axios';
 export const Headerdata = () => {
     const {setNavbarData} = useContext(ContextProvide);
     useEffect(() => {
         const data = [
             { id: 1, title: "Home", to: "/",sublinks:[
-                { id: 1, icon: youtubevideo_sub_ico, label: "YouTube Video", label2: "Video content for all", to: "" },
-                { id: 2, icon: shorts_sub_ico, label: "YouTube Shorts", label2: "Quick video clips", to: "" },
-                { id: 3, icon: founder_sub_ico, label: "Meet The Founder", label2: "Founder introduction", to: "" },
-                { id: 4, icon: guru_sub_ico, label: "Gurus", label2: "Meet the Gurus", to: "" },
-                { id: 5, icon: courses_sub_ico, label: "Programs", label2: "Explore the programs", to: "" },
+                { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "" },
+                { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "" },
+                { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "" },
+                { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "" },
+                { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
-            { id: 1, label: "Our Studio", to: "" },
-            { id: 2, label: "About Gurus", to: "#gurus" },
-            { id: 3, label: "Environment", to: "" },
-            { id: 4, label: "The Founder", to: "" },
+                { id: 1, label: "The Founder", icon:"", to: "" },
+                { id: 2, label: "Our Studio", icon:"", to: "" },
+                { id: 3, label: "Environment", icon:"", to: "" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
-            { id: 1, label: "Class", to: "" },
+            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
+            { id: 2, label: "Kalari", icon:kalari, to: "" },
+            { id: 3, label: "Carnatic Music", icon:music, to: "" },
+            { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
+            { id: 5, label: "Veena", icon:veena, to: "" },
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
-            { id: 1, label: "Production", to: "" },
+            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
+            { id: 2, label: "Kalari", icon:kalari, to: "" },
+            { id: 3, label: "Carnatic Music", icon:music, to: "" },
+            { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
+            { id: 5, label: "Veena", icon:veena, to: "" },
         ]},
         { id: 5, title: "Events", to: "/events", sublinks: [
             { id: 1, label: "Press Release", to: "" },
         ]},
-        { id: 6, title: "Blogs", to: "/blogs", sublinks: [
-            { id: 1, label: "Press Release", to: "" },
-        ]},
+        { id: 6, title: "Blogs", to: "/blogs",},
         { id: 7, title: "Faq", to: "/faq" },
-        { id: 8, title: "Contact", to: "/contact" },
+        { id: 8, title: "Contact", sublinks:[
+            {id:1,label:"WhatsApp",icon:whatsappIcon,to:""},
+            {id:2,label:"Gmail",icon:gmailIcon,to:""},
+            {id:3,label:"Location",icon:locationIcon,to:""},
+        ] },
         ];
         setNavbarData(data);
     }, []);

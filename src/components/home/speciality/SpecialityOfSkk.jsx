@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Specialitydata } from "../../../DataStore/HomeStore";
-import specialityimg_0 from "../../../assets/Images/home/speciality_0.jpg"
+import specialityimg_0 from "../../../assets/Images/home/speciality_0.webp"
 
 const SpecialityOfSkk = ()=>{
     const {speciality} = useContext(ContextProvide);

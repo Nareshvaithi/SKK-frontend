@@ -1,4 +1,4 @@
-import WhylearnImg from "../../../assets/Images/home/WhyLearn.jpg"
+import WhylearnImg from "../../../assets/Images/home/WhyLearn.webp"
 const WhyLearnBharadhanatyam = ()=>{
     return(
         <div>

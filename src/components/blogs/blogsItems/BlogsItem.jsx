@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import Blogsdata from "../../../DataStore/Blogsdata";
+import { useNavigate } from "react-router-dom";
 
 const BlogsItems = () => {
+    const navigate = useNavigate();
     const { blogs } = useContext(ContextProvide);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
@@ -29,8 +31,8 @@ const BlogsItems = () => {
                 </div>
                 <div className="columns-1 md:columns-2 lg:columns-3 space-y-5">
                     {
-                        currentBlogs.map(({ id, title, date, thumbnail, content }) => (
-                            <div key={id} className="w-full h-auto relative group overflow-hidden">
+                        currentBlogs.map(({ id, title, date, thumbnail, content, author }) => (
+                            <div onClick={()=>{navigate(`/blogs/${title}`,{state:{id,title,date,thumbnail,content,author}});window.scrollTo(0,0)}} key={id} className="w-full h-auto relative group overflow-hidden">
                                 <div className="w-full h-full rounded-xl overflow-hidden">
                                     <img className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000" src={thumbnail} alt="" />
                                 </div>
@@ -52,7 +54,7 @@ const BlogsItems = () => {
                 <div className="flex justify-center mt-5">
                     <button
                         disabled={currentPage === 1}
-                        onClick={(e) =>{e.preventDefault();handlePageChange(currentPage - 1);window.scrollTo(0,0)}}
+                        onClick={(e)=>{e.preventDefault();window.scrollTo(0,0);handlePageChange(currentPage - 1)}}
                         className="px-3 py-1 mx-1 rounded-xl text-white bg-themebrown disabled:opacity-50"
                     >
                         Previous
@@ -61,7 +63,7 @@ const BlogsItems = () => {
                         Array.from({ length: totalPages }, (_, i) => (
                             <button
                                 key={i + 1}
-                                onClick={(e) => {e.preventDefault();handlePageChange(i + 1);window.scrollTo(0,0)}}
+                                onClick={()=> {window.scrollTo(0,0);handlePageChange(i + 1)}}
                                 className={`px-3 py-1 mx-1 ${currentPage === i + 1 ? 'bg-themebrown rounded-xl text-white' : 'bg-gray-200'}`}
                             >
                                 {i + 1}
@@ -70,7 +72,7 @@ const BlogsItems = () => {
                     }
                     <button
                         disabled={currentPage === totalPages}
-                        onClick={(e) =>{e.preventDefault();handlePageChange(currentPage + 1);window.scrollTo(0,0)}}
+                        onClick={(e)=>{e.preventDefault();window.scrollTo(0,0);handlePageChange(currentPage + 1)}}
                         className="px-3 py-1 mx-1 rounded-xl text-white bg-themebrown disabled:opacity-50"
                     >
                         Next

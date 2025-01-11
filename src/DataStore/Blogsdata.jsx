@@ -26,6 +26,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-09",
                 thumbnail: thumbnail01,
                 title: "History and Evolution of Bharatanatyam",
+                author:"Author_01",
                 content: "Bharatanatyam is one of the oldest classical dance forms of India. It originated in Tamil Nadu and has a rich history that dates back over 2,000 years. Originally performed in temples as a form of devotional expression, it has evolved into a popular stage art form."
 
             },
@@ -34,6 +35,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-10",
                 thumbnail: thumbnail02,
                 title: "The Significance of Mudras in Bharatanatyam",
+                author:"Author_02",
                 content: "Mudras, or hand gestures, play a crucial role in Bharatanatyam. Each mudra has a specific meaning and helps convey the story or emotions of the performance. They are a fundamental aspect of the dance, enhancing its expressive power."
             },
             {
@@ -41,6 +43,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-11",
                 thumbnail: thumbnail03,
                 title: "Costumes and Jewelry in Bharatanatyam",
+                author:"Author_03",
                 content: "The traditional costume of a Bharatanatyam dancer is elaborate and colorful, often made of silk with zari work. Jewelry, including necklaces, earrings, and bangles, plays a significant role in enhancing the dancer's appearance and the visual appeal of the performance."
             },
             {
@@ -48,6 +51,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-12",
                 thumbnail: thumbnail04,
                 title: "Learning Bharatanatyam: Tips for Beginners",
+                author:"Author_04",
                 content: "Starting your journey in Bharatanatyam requires dedication and patience. Beginners should focus on mastering the basic steps, understanding the rhythm, and practicing regularly. Finding a good guru and being consistent with practice are key to progress."
             },
             {
@@ -55,6 +59,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-13",
                 thumbnail: thumbnail05,
                 title: "The Role of Music in Bharatanatyam",
+                author:"Author_05",
                 content: "Music is an integral part of Bharatanatyam. The dance is usually performed to Carnatic music, with instruments like the mridangam, veena, and flute providing rhythm and melody. The lyrics, often devotional, help convey the theme of the performance."
             },
             {
@@ -62,6 +67,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-14",
                 thumbnail: thumbnail06,
                 title: "Bharatanatyam and Spirituality",
+                author:"Author_06",
                 content: "Bharatanatyam is deeply rooted in spirituality. Originally performed in temples as an offering to deities, it is considered a form of meditation and devotion. The dance seeks to connect the performer and the audience with the divine."
             },
             {
@@ -69,6 +75,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-15",
                 thumbnail: thumbnail07,
                 title: "The Global Influence of Bharatanatyam",
+                author:"Author_07",
                 content: "Bharatanatyam has gained international acclaim, with performances and practitioners around the world. Its universal themes of storytelling and expression resonate with diverse audiences, making it a global ambassador of Indian culture."
             },
             {
@@ -76,6 +83,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-16",
                 thumbnail: thumbnail08,
                 title: "Famous Bharatanatyam Performers",
+                author:"Author_08",
                 content: "Many renowned artists have contributed to the popularity of Bharatanatyam. Dancers like Rukmini Devi Arundale and Yamini Krishnamurthy have left an indelible mark on the art form, inspiring generations of performers."
             },
             {
@@ -83,6 +91,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-17",
                 thumbnail: thumbnail09,
                 title: "Bharatanatyam as a Fitness Regimen",
+                author:"Author_9",
                 content: "Practicing Bharatanatyam can be an excellent workout, improving flexibility, strength, and stamina. The dance form requires rigorous physical movements and control, making it a great way to stay fit and healthy."
             },
             {
@@ -90,6 +99,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-18",
                 thumbnail: thumbnail10,
                 title: "Cultural Festivals Celebrating Bharatanatyam",
+                author:"Author_10",
                 content: "Several cultural festivals across India and abroad celebrate Bharatanatyam, showcasing its beauty and richness. Events like the Natyanjali Festival provide a platform for dancers to perform and promote the art form to wider audiences."
             },
             {
@@ -97,6 +107,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-09",
                 thumbnail: thumbnail01,
                 title: "History and Evolution of Bharatanatyam",
+                author:"Author_11",
                 content: "Bharatanatyam is one of the oldest classical dance forms of India. It originated in Tamil Nadu and has a rich history that dates back over 2,000 years. Originally performed in temples as a form of devotional expression, it has evolved into a popular stage art form."
 
             },
@@ -105,6 +116,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-10",
                 thumbnail: thumbnail02,
                 title: "The Significance of Mudras in Bharatanatyam",
+                author:"Author_12",
                 content: "Mudras, or hand gestures, play a crucial role in Bharatanatyam. Each mudra has a specific meaning and helps convey the story or emotions of the performance. They are a fundamental aspect of the dance, enhancing its expressive power."
             },
             {
@@ -112,6 +124,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-11",
                 thumbnail: thumbnail03,
                 title: "Costumes and Jewelry in Bharatanatyam",
+                author:"Author_13",
                 content: "The traditional costume of a Bharatanatyam dancer is elaborate and colorful, often made of silk with zari work. Jewelry, including necklaces, earrings, and bangles, plays a significant role in enhancing the dancer's appearance and the visual appeal of the performance."
             },
             {
@@ -119,6 +132,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-12",
                 thumbnail: thumbnail04,
                 title: "Learning Bharatanatyam: Tips for Beginners",
+                author:"Author_14",
                 content: "Starting your journey in Bharatanatyam requires dedication and patience. Beginners should focus on mastering the basic steps, understanding the rhythm, and practicing regularly. Finding a good guru and being consistent with practice are key to progress."
             },
             {
@@ -126,6 +140,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-13",
                 thumbnail: thumbnail05,
                 title: "The Role of Music in Bharatanatyam",
+                author:"Author_15",
                 content: "Music is an integral part of Bharatanatyam. The dance is usually performed to Carnatic music, with instruments like the mridangam, veena, and flute providing rhythm and melody. The lyrics, often devotional, help convey the theme of the performance."
             },
             {
@@ -133,6 +148,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-14",
                 thumbnail: thumbnail06,
                 title: "Bharatanatyam and Spirituality",
+                author:"Author_16",
                 content: "Bharatanatyam is deeply rooted in spirituality. Originally performed in temples as an offering to deities, it is considered a form of meditation and devotion. The dance seeks to connect the performer and the audience with the divine."
             },
             {
@@ -140,6 +156,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-15",
                 thumbnail: thumbnail07,
                 title: "The Global Influence of Bharatanatyam",
+                author:"Author_17",
                 content: "Bharatanatyam has gained international acclaim, with performances and practitioners around the world. Its universal themes of storytelling and expression resonate with diverse audiences, making it a global ambassador of Indian culture."
             },
             {
@@ -147,6 +164,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-16",
                 thumbnail: thumbnail08,
                 title: "Famous Bharatanatyam Performers",
+                author:"Author_18",
                 content: "Many renowned artists have contributed to the popularity of Bharatanatyam. Dancers like Rukmini Devi Arundale and Yamini Krishnamurthy have left an indelible mark on the art form, inspiring generations of performers."
             },
             {
@@ -154,6 +172,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-17",
                 thumbnail: thumbnail09,
                 title: "Bharatanatyam as a Fitness Regimen",
+                author:"Author_19",
                 content: "Practicing Bharatanatyam can be an excellent workout, improving flexibility, strength, and stamina. The dance form requires rigorous physical movements and control, making it a great way to stay fit and healthy."
             },
             {
@@ -161,6 +180,7 @@ const Blogsdata = ()=>{
                 date: "2025-01-18",
                 thumbnail: thumbnail10,
                 title: "Cultural Festivals Celebrating Bharatanatyam",
+                author:"Author_20",
                 content: "Several cultural festivals across India and abroad celebrate Bharatanatyam, showcasing its beauty and richness. Events like the Natyanjali Festival provide a platform for dancers to perform and promote the art form to wider audiences."
             }
         ];

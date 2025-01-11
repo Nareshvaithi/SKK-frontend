@@ -33,13 +33,15 @@ const Gallery = () => {
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
+      window.scrollTo(0,0);
+      setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
     );
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
+      window.scrollTo(0,0);
+      setCurrentImageIndex((prevIndex) =>
       prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
     );
   };
@@ -55,7 +57,7 @@ const Gallery = () => {
   return (
     <>
       <Gallerydata />
-      <div className="pt-24">
+      <div className="pt-24 pb-10">
         <div className="container">
           {isLoading ? (
             <div className="text-center py-5">Loading...</div>
@@ -87,7 +89,7 @@ const Gallery = () => {
               </div>
               <div className="flex justify-center space-x-4 mt-6">
                 <button
-                  className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                  className="px-10 py-2 bg-themebrown text-white rounded-xl disabled:opacity-50"
                   onClick={prevPage}
                   disabled={currentPage === 1}
                 >
@@ -97,7 +99,7 @@ const Gallery = () => {
                   Page {currentPage} of {totalPages}
                 </span>
                 <button
-                  className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                  className="px-10 py-2 bg-themebrown text-white rounded-xl disabled:opacity-50"
                   onClick={nextPage}
                   disabled={currentPage === totalPages}
                 >

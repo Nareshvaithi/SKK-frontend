@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Footerdata } from "../../DataStore/HomeStore";
 import Logo from "../../assets/Images/header/logo-SKK.png";
-import footerBg from "../../assets/Images/footer/footerBg.jpg"
+import footerBg from "../../assets/Images/footer/footerBg.webp"
 import { ContextProvide } from "../../Context_API/contextProvider";
 import { NavLink } from "react-router-dom";
-import KonceptsLogo from "../../assets/Images/footer/Logo";
+import TejusdigiLogo from "../../assets/Images/footer/Logo.webp";
 import Button from "../Button/Button";
 const Footer = ()=>{
     const {footerlinks,footersocialmedia,footercontact} = useContext(ContextProvide);
@@ -105,8 +105,8 @@ const Footer = ()=>{
                     <div className="text-center">
                         copyright Saraswathi Kala Kendra &copy; {new Date().getFullYear()}. All Rights Reserved
                     </div>
-                    <div>
-                        <KonceptsLogo/>
+                    <div title="TejusDigi" alt="this site developed by https://tejusdigi.com" className="w-20" onClick={()=>window.open('https://tejusdigi.com')}>
+                        <img src={TejusdigiLogo} alt="" />
                     </div>
                 </div>
             </div>
