@@ -16,6 +16,7 @@ import EditShorts from "./adminPanel/Adminpages/EditShorts";
 import EditBannerSlider from "./adminPanel/Adminpages/EditSlider";
 import CoursesDetails from "./pages/ProgramsDetails";
 import BlogsDetails from "./pages/BlogsDetails";
+import GuruDetails from "./pages/GuruDetails";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:title" element={<BlogsDetails/>}/>
               <Route path="/faq" element={<Faq />} />
+              <Route path="/guru/:name" element={<GuruDetails/>}/>
               <Route path="*" element={<Nopage />} />
             </Route>
             {/* Admin Routes */}

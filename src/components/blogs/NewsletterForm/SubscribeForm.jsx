@@ -47,9 +47,6 @@ const SubscribeForm = ()=>{
                 </div>
             </div>
             <Blogsdata/>
-            <div className="py-10">
-            <BlogsItems/>
-            </div>
         </div>
        )
 }

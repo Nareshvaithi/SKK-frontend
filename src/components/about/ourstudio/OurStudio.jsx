@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Studiodata } from "../../../DataStore/Aboutdata";
-import video from "../../../assets/Images/about/ourstudio.webm"
+import video from "../../../assets/Images/about/ourstudio.webm";
+
 const OurStudio = () => {
     const { studioVideo } = useContext(ContextProvide);
     const videoRef = useRef(null); // Reference to the video element
@@ -46,17 +47,17 @@ const OurStudio = () => {
 
     return (
         <>
-            <div className="w-full">
+            <div id="ourstudio" className="w-full py-10">
                 <div className="container">
                     <div className="text-center py-5">
                         <h1 className="headingText py-5">Our Studio</h1>
-                        <p className="font-mainFont2 text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error veniam, aut laboriosam magnam cupiditate omnis aliquid facilis distinctio expedita voluptatem accusamus, quisquam placeat quod repellendus incidunt non reprehenderit. Quo, error!</p>
+                        <p className="contentText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error veniam, aut laboriosam magnam cupiditate omnis aliquid facilis distinctio expedita voluptatem accusamus, quisquam placeat quod repellendus incidunt non reprehenderit. Quo, error!</p>
                     </div>
                 </div>
-                <div className="w-full px-52 relative">
+                <div className="w-full px-5 sm:px-10 md:px-20 lg:px-52 relative">
                     <video 
                         ref={videoRef} 
-                        className="block w-full h-1/2 focus:outline-none cursor-pointer" 
+                        className="block w-full h-[500px] focus:outline-none cursor-pointer" 
                         autoPlay 
                         muted 
                         loop

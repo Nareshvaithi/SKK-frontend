@@ -8,11 +8,11 @@ const Programs = () => {
     const navigate = useNavigate()
     return (
         <>
-        <div className="bg-white">
+        <div className="bg-white py-10">
 
-        <div className="container w-full h-full text-gray-700 py-10">
-            <div className="text-center py-5 w-5/6 mx-auto">
-                <h1 className="headingText py-2">Our Courses</h1>
+        <div className="container w-full h-full text-gray-700">
+            <div className="text-center w-5/6 mx-auto pb-5">
+                <h1 className="headingText pb-2">Our Courses</h1>
                 <p className="contentText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi officiis quasi nisi. Veritatis repudiandae et architecto. Nostrum debitis dolore iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. iste!</p>
             </div>
 

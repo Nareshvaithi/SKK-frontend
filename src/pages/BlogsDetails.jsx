@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import SubscribeForm from "../components/blogs/NewsletterForm/SubscribeForm";
+import BlogsItems from "../components/blogs/blogsItems/BlogsItem";
 
 const BlogsDetails = ()=>{
     const location = useLocation();
@@ -24,6 +25,7 @@ const BlogsDetails = ()=>{
                 </div>
             </div>
             <SubscribeForm/>
+            <BlogsItems/>
         </div>
     )
 }

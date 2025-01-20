@@ -2,13 +2,14 @@ import React, { useContext, useState, useEffect } from "react";
 import { ContextProvide } from "../Context_API/contextProvider";
 import { motion, AnimatePresence } from "framer-motion";
 import Gallerydata from "../DataStore/Gallerydata";
+import Button from "../components/Button/Button";
 
-const IMAGES_PER_PAGE = 30;
+const IMAGES_PER_LOAD = 20;
 
 const Gallery = () => {
   const { gallery } = useContext(ContextProvide);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [imagesToShow, setImagesToShow] = useState(IMAGES_PER_LOAD);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -17,15 +18,12 @@ const Gallery = () => {
     }
   }, [gallery]);
 
-  const totalPages = Math.ceil(gallery.length / IMAGES_PER_PAGE);
-
-  const currentGallery = gallery.slice(
-    (currentPage - 1) * IMAGES_PER_PAGE,
-    currentPage * IMAGES_PER_PAGE
-  );
+  const loadMoreImages = () => {
+    setImagesToShow((prev) => Math.min(prev + IMAGES_PER_LOAD, gallery.length));
+  };
 
   const openLightbox = (index) => {
-    setCurrentImageIndex(index + (currentPage - 1) * IMAGES_PER_PAGE);
+    setCurrentImageIndex(index);
   };
 
   const closeLightbox = () => {
@@ -33,25 +31,17 @@ const Gallery = () => {
   };
 
   const prevImage = () => {
-      window.scrollTo(0,0);
-      setCurrentImageIndex((prevIndex) =>
+    window.scrollTo(0, 0);
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
     );
   };
 
   const nextImage = () => {
-      window.scrollTo(0,0);
-      setCurrentImageIndex((prevIndex) =>
+    window.scrollTo(0, 0);
+    setCurrentImageIndex((prevIndex) =>
       prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
     );
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
 
   return (
@@ -72,7 +62,7 @@ const Gallery = () => {
                 </p>
               </div>
               <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {currentGallery.map(({ id, url }, index) => (
+                {gallery.slice(0, imagesToShow).map(({ id, url }, index) => (
                   <div
                     key={id}
                     className="w-full overflow-hidden rounded-lg cursor-pointer"
@@ -87,25 +77,21 @@ const Gallery = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center space-x-4 mt-6">
-                <button
-                  className="px-10 py-2 bg-themebrown text-white rounded-xl disabled:opacity-50"
-                  onClick={prevPage}
-                  disabled={currentPage === 1}
-                >
-                  Previous
-                </button>
-                <span className="px-4 py-2">
-                  Page {currentPage} of {totalPages}
-                </span>
-                <button
-                  className="px-10 py-2 bg-themebrown text-white rounded-xl disabled:opacity-50"
-                  onClick={nextPage}
-                  disabled={currentPage === totalPages}
-                >
-                  Next
-                </button>
-              </div>
+              {imagesToShow < gallery.length && (
+                <div onClick={loadMoreImages} className="flex justify-center mt-6">
+                  <Button
+                    text={"Load More"}
+                    px={"px-5"}
+                    py={"py-2"}
+                    bg={"bg-themebrown"}
+                    hoverbg={"bg-white"}
+                    border={"border"}
+                    borderColor={"border-themebrown"}
+                    textcolor={"text-white"}
+                    hovertextcolor={"group-hover:text-themebrown"}
+                  />
+                </div>
+              )}
             </>
           )}
         </div>
@@ -153,7 +139,6 @@ const Gallery = () => {
           </motion.div>
         </AnimatePresence>
       )}
-      <Gallerydata/>
     </>
   );
 };

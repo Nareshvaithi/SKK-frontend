@@ -8,9 +8,7 @@ import homegallery_2 from "../assets/Images/home/homegallery_2.jpg";
 import homegallery_3 from "../assets/Images/home/homegallery_3.jpg";
 import homegallery_4 from "../assets/Images/home/homegallery_4.jpg";
 import homegallery_5 from "../assets/Images/home/homegallery_5.jpg";
-import homegallery_6 from "../assets/Images/home/homegallery_6.jpg";
-import homegallery_7 from "../assets/Images/home/homegallery_7.jpg";
-import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp, AiOutlineFacebook } from "react-icons/ai";
+import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { PiNotePencilThin } from "react-icons/pi";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
@@ -51,6 +49,7 @@ import whatsappIcon from "../assets/Images/header/whatsapp.webp";
 import locationIcon from "../assets/Images/header/location.webp";
 import gmailIcon from "../assets/Images/header/gmail.webp";
 import axios from 'axios';
+import { CiFacebook } from "react-icons/ci";
 export const Headerdata = () => {
     const {setNavbarData} = useContext(ContextProvide);
     useEffect(() => {
@@ -59,12 +58,12 @@ export const Headerdata = () => {
                 { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "" },
                 { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "" },
                 { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "" },
-                { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "" },
+                { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
                 { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
                 { id: 1, label: "The Founder", icon:"", to: "" },
-                { id: 2, label: "Our Studio", icon:"", to: "" },
+                { id: 2, label: "Our Studio", icon:"", to: "/aboutskk#ourstudio" },
                 { id: 3, label: "Environment", icon:"", to: "" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
@@ -85,11 +84,11 @@ export const Headerdata = () => {
             { id: 1, label: "Press Release", to: "" },
         ]},
         { id: 6, title: "Blogs", to: "/blogs",},
-        { id: 7, title: "Faq", to: "/faq" },
+        { id: 7, title: "FAQ", to: "/faq" },
         { id: 8, title: "Contact", sublinks:[
-            {id:1,label:"WhatsApp",icon:whatsappIcon,to:""},
-            {id:2,label:"Gmail",icon:gmailIcon,to:""},
-            {id:3,label:"Location",icon:locationIcon,to:""},
+            {id:1,label:"WhatsApp",icon:whatsappIcon,to:"https://wa.me/+919840166155"},
+            {id:2,label:"Gmail",icon:gmailIcon,to:"mailto:saraswathykalakendra@gmail.com"},
+            {id:3,label:"Location",icon:locationIcon,to:"https://maps.app.goo.gl/QTUhU5Y2hohRnxi38"},
         ] },
         ];
         setNavbarData(data);
@@ -127,8 +126,8 @@ export const Herodata = ()=>{
           }
         }
     
-        fetchbannervideo();
-        fetchshortslink();
+        // fetchbannervideo();
+        // fetchshortslink();
         fetchsliderlink();
       }, []);
     
@@ -187,7 +186,7 @@ export const Footerdata = ()=>{
     useEffect(()=>{
         const data = [
             {id:1,title:"Home",to:"/"},
-            {id:2,title:"About",to:"/about"},
+            {id:2,title:"About",to:"/aboutskk"},
             {id:3,title:"Gallery",to:"/gallery"},
             {id:4,title:"Courses",to:"/courses"},
             {id:5,title:"Events",to:"/events"},
@@ -204,7 +203,7 @@ export const Footerdata = ()=>{
             {id:1,icon:<AiOutlineWhatsApp/>,name:"Whatsapp",link:""},
             {id:2,icon:<AiOutlineInstagram/>,name:"Instagram",link:""},
             {id:3,icon:<AiOutlineYoutube/>,name:"YouTube",link:""},
-            {id:4,icon:<AiOutlineFacebook/>,name:"Facebook",link:""},
+            {id:4,icon:<CiFacebook/>,name:"Facebook",link:""},
         ]
         setFootersocialmedia(data)
     },[setFootersocialmedia])
@@ -245,7 +244,7 @@ export const Testimonialsdata = ()=>{
                 name:"Priya S",
                 skill:"Bharatanatyam",
                 img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,]
+                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
             },
             {
@@ -254,7 +253,7 @@ export const Testimonialsdata = ()=>{
                 name:"Rajesh K",
                 skill:"Kalari",
                 img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,]
+                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
             },
             {
@@ -263,7 +262,7 @@ export const Testimonialsdata = ()=>{
                 name:"Anjali M",
                 skill:"Carnatic Music",
                 img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,]
+                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
             },
             {
@@ -272,7 +271,7 @@ export const Testimonialsdata = ()=>{
                 name:"Aarav V",
                 skill:"Veena",
                 img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,]
+                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
             },
             {
@@ -281,7 +280,7 @@ export const Testimonialsdata = ()=>{
                 name:" Meera P",
                 skill:"Mridangam",
                 img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,]
+                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
             },
 
