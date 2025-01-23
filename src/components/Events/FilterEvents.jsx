@@ -22,6 +22,7 @@ function FilterEvents() {
                   value={selectedValue}
                   onChange={handleChange}
                 >
+                  <option>All</option>
                   {eventList.map((items) => {
                     return (
                       <>
@@ -32,24 +33,28 @@ function FilterEvents() {
                 </select>
               </div>
             </div>
-            <div className="flex">
-              <p>Events</p>
+            <div className="flex justify-center items-center">
+              <p>Events :</p>
               <div>
                 <select className="cursor-pointer border rounded px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <option>All</option>
                   {eventList.map((items) => {
                     if (selectedValue === items.categeroy) {
-                      items.events.map((value) => {
-                      
+                      return items.events.map((value) => {
                         return <>
                             <option>{value.event_name}</option>
                           </>
                         ;
                       });
+                      
                     }
                   })}
                 </select>
               </div>
             </div>
+          </div>
+          <div className="border border-black w-full h-auto">
+
           </div>
         </div>
       </div>
