@@ -7,21 +7,31 @@ import SpecialityOfSkk from "../components/home/speciality/SpecialityOfSkk";
 import WhyLearnBharadhanatyam from "../components/home/WhyLearn/WhyLearn";
 import HomeGallery from "../components/home/homegallery/HomeGallery";
 import Review from "../components/home/review/Review";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 const Home = ()=>{
+    const location = useLocation();
+    useEffect(() => {
+        if (location.state?.hash) {
+            const element = document.getElementById(location.state.hash);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location.state]);
     return(
         <div>
-            <Hero/>
+            <Hero />
             <AboutComp/>
-            <Guruscomp/>
-            <Programs/>
-            <WhyLearnBharadhanatyam/>
-            <HomeGallery/>
-            <SpecialityOfSkk/>
-            <HomeFaq/>
-            <Review/>
+            <Guruscomp />
+            <Programs />
+            <WhyLearnBharadhanatyam />
+            <HomeGallery />
+            <SpecialityOfSkk />
+            <HomeFaq />
+            <Review />
         </div>
     )
 }

@@ -46,13 +46,13 @@ const CoursesDetails = ()=>{
                        {
                         slider.map((items,index)=>(
                             <SwiperSlide key={index} className="w-full h-full rounded-xl">
-                                <img src={items} className="w-full h-full rounded-xl" alt="" />
+                                <img src={items} className="w-full h-full" alt="" />
                             </SwiperSlide>
                         ))
                        }
                     </Swiper>
-                    <div className="absolute w-full h-full inset-0 z-10 text-white bg-black/20 rounded-xl">
-                        <p className="w-1/2 pt-20 pl-20 text-xl font-mainFont1 leading-8">
+                    <div className="absolute w-full h-full inset-0 z-10 text-white bg-black/20 rounded-xl flex items-center">
+                        <p className="ml-auto w-1/2 pr-20 text-sm lg:text-xl right-0 font-mainFont1 leading-tight">
                             {intro}
                         </p>
                     </div>
@@ -69,7 +69,7 @@ const CoursesDetails = ()=>{
                                 <img src={img} className="w-full h-full rounded-xl object-cover" alt="" />
                             </div>
                             <div className="w-full lg:w-1/2">
-                                <p className="font-mainFont2 text-lg leading-9">{history_content}</p>
+                                <p className="font-mainFont2 text-lg">{history_content}</p>
                             </div>
                         </div>
                     </div>
@@ -78,27 +78,21 @@ const CoursesDetails = ()=>{
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {
                             gurus.filter((items)=>items.prof === program_name).map(({id,prof,name,about,url})=>(
-                                <div key={id} className="w-full h-[500px] rounded-xl relative group overflow-hidden">
-                                    <img className="w-full h-full rounded-xl object-cover" src={url} alt="" />
+                                <div key={id} className="w-full h-[500px] relative group overflow-hidden">
+                                    <div className="w-full h-full rounded-xl overflow-hidden relative">
+                                        <img className="w-full h-full rounded-t-xl rounded-b-2xl object-cover" src={url} alt="" />
+                                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                                    </div>
                                     <div className="p-5 rounded-b-xl absolute z-10 w-full h-auto text-gray-700 group-hover:text-white bottom-0 bg-white group-hover:bg-transparent transition-colors duration-1000">
-                                        <h1 className="text-2xl font-mainFont1">{name}</h1>
+                                        <h1 className="text-2xl font-mainFont1 pb-2">{name}</h1>
                                         <h2 className="text-xl font-mainFont1">{prof}</h2>
-                                        <p className="line-clamp-2 font-mainFont2 text-lg pt-2">{about}</p>
-                                        <div>
-                                            <Button
-                                                text={"View Details"}
-                                                bg={"bg-white"}
-                                                textcolor={"text-themebrown"}
-                                                hoverbg={"bg-themebrown"}
-                                                hovertextcolor={"group-hover:text-white"}
-                                                px={"px-5"}
-                                                py={"py-1"}
-                                                border={"border-dashed"}
-                                                borderColor={"border-themebrown"}
-                                            />
-                                        </div>
+                                        <p className="line-clamp-2 leading-5 font-mainFont2">{about}</p>
+                                        <button className="font-mainFont2 text-sm border-[1px] border-themebrown/50 text-themebrown group-hover:text-white px-3 py-1 group-hover:border-white mt-2">
+                                            View Details
+                                        </button>
                                     </div>
                                 </div>
+
                             ))
                         }
                     </div>

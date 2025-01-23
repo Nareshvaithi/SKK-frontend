@@ -3,9 +3,10 @@ import { ContextProvide } from "../../Context_API/contextProvider";
 import Logo from "../../assets/Images/header/logo-SKK.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import { CiFacebook } from "react-icons/ci";
 import { LuPhone } from "react-icons/lu";
 import { LiaUser } from "react-icons/lia";
-import { RiMenuFoldLine } from "react-icons/ri";
+import { RiMenuFoldLine, RiMenuUnfold2Line } from "react-icons/ri";
 import { Headerdata } from "../../DataStore/HomeStore";
 
 const Navbar = () => {
@@ -34,59 +35,75 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll); // Clean up on component unmount
         };
     }, [lastScrollTop]);
+    
 
     return (
         <>
             <div className={`${isScrollingUp ? 'transform translate-y-0' : 'transform -translate-y-full'} transition-all duration-500 bg-white fixed top-0 right-0 left-0 shadow-themebrown/30 shadow-sm z-30`}>
                 <div className="container mx-auto flex justify-between items-center py-4">
                     <div className="w-40">
-                        <img src={Logo} alt="Logo" />
+                        <img src={Logo} alt="Saraswathy Kala Kendra Logo" />
                     </div>
                     <ul className="hidden lg:flex items-center gap-5">
                         {navbarData.map(({ id, title, to, sublinks }) => (
                             <li key={id} className="group relative">
                                 <NavLink
-                                    to={to}
+                                onClick={()=>{window.scrollTo(0,0)}}
+                                    to={to && to}
                                     className={({ isActive }) =>
-                                        `relative text-gray-700 group ${isActive ? 'text-themebrown' : ''} font-mainFont2 links`
+                                        `relative text-gray-700 group-hover:text-themebrown ${isActive ? 'text-themebrown' : ''} font-mainFont2 links`
                                     }
                                 >
                                     {title}
                                 </NavLink>
                                 
-                                {/* {sublinks && (
-                                    <div className="absolute transition-all duration-1000 bg-white hidden group-hover:block items-center justify-center">
-                                        <div className="w-full h-full container">
-                                            {sublinks.map(({ id, label, label2, to ,icon }) => (
-                                                    <NavLink 
-                                                        key={id}
-                                                        to={to} 
-                                                        className="flex gap-5 items-center group py-3"
-                                                    >
-                                                        <div className="w-14">
-                                                            <img src={icon} alt="" />
-                                                        </div>
-                                                        <div>
-                                                            <h1 className="group-hover:sublinks font-mainFont1 text-lg">{label}</h1>
-                                                            <p className="font-mainFont2 text-sm pt-1">{label2}</p>
-                                                        </div>
-                                                    </NavLink>
+                                {sublinks && (
+                                    <div className="w-fit hidden group-hover:block absolute top-5 bg-white shadow-lg -ml-12 mt-2 rounded-xl">
+                                        <div className="p-3">
+                                            {sublinks.map(({ id, label, to ,icon }) => (
+                                                <NavLink
+                                                to={to.split("#")[0]} // Navigate to the page without the hash
+                                                key={id}
+                                                className="flex items-center gap-5 py-2 px-2 hover:bg-gray-100"
+                                                onClick={(e) => {
+                                                    e.preventDefault(); // Prevent default anchor behavior
+                                            
+                                                    const [path, hash] = to.split("#");
+                                            
+                                                    // Navigate to the correct page
+                                                    navigate(path, {
+                                                        replace: false,
+                                                        state: { hash }, // Pass the hash as state
+                                                    });
+                                                }}
+                                            >
+                                                <div className="w-10">
+                                                    <img className="object-cover" src={icon} alt={label} />
+                                                </div>
+                                                <div>
+                                                    <h1 className="text-sm font-mainFont2 text-nowrap">{label}</h1>
+                                                </div>
+                                            </NavLink>                                            
+                                            
                                             ))}
                                         </div>
                                     </div>
-                                )} */}
+                                )}
                             </li>
                         ))}
                         <div className="border-r border-black h-4"></div>
 
                         <div className="flex items-center gap-2">
-                            <li>
+                            <li className="cursor-pointer" onClick={()=>{window.open('https://wa.me/+919840166155')}}>
                                 <AiOutlineWhatsApp size={19} />
                             </li>
-                            <li>
+                            <li className="cursor-pointer" onClick={()=>{window.open('https://instagram.com/this_is_skk')}}>
                                 <AiOutlineInstagram size={20} />
                             </li>
-                            <li>
+                            <li className="cursor-pointer" onClick={()=>{window.open('https://facebook.com/SKK1971')}}>
+                                <CiFacebook size={20} />
+                            </li>
+                            <li className="cursor-pointer" onClick={()=>{window.open('https://www.youtube.com/@saraswathykalakendra5572')}}>
                                 <AiOutlineYoutube size={22} />
                             </li>
                         </div>

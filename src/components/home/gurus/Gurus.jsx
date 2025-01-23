@@ -8,8 +8,10 @@ import 'swiper/css/pagination';
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Gurusdata } from "../../../DataStore/HomeStore";
+import { useNavigate } from "react-router-dom";
 
 const Guruscomp = () => {
+    const navigate = useNavigate();
     const {gurus} = useContext(ContextProvide)
     return (
         <div id="gurus" className="py-10 bg-gray-100 text-gray-700">
@@ -64,8 +66,8 @@ const Guruscomp = () => {
                             }}
                         >
                             {
-                                gurus.map(({ _id, name, about, url, prof }) => (
-                                    <SwiperSlide key={_id} className="flex w-[200px] h-[200px]">
+                                gurus.map(({ _id, name, about, url, prof, facebook, instagram }) => (
+                                    <SwiperSlide onClick={()=>{navigate(`/guru/${name}`,{state:{_id,name,about,url,prof,facebook, instagram}});window.scrollTo(0, 0)}} key={_id} className="flex w-[200px] h-[200px]">
                                         <div className="w-[200px] lg:w-[150px] h-[200px] lg:h-[150px] mx-auto">
                                             <img src={url} className="w-full h-full rounded-xl" alt={name} />
                                         </div>

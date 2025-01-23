@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Footerdata } from "../../DataStore/HomeStore";
 import Logo from "../../assets/Images/header/logo-SKK.png";
-import footerBg from "../../assets/Images/footer/footerBg.jpg"
+import footerBg from "../../assets/Images/footer/footerBg.webp"
 import { ContextProvide } from "../../Context_API/contextProvider";
 import { NavLink } from "react-router-dom";
-import KonceptsLogo from "../../assets/Images/footer/Logo";
+import TejusdigiLogo from "../../assets/Images/footer/Logo.webp";
 import Button from "../Button/Button";
 const Footer = ()=>{
     const {footerlinks,footersocialmedia,footercontact} = useContext(ContextProvide);
@@ -16,6 +16,7 @@ const Footer = ()=>{
                     <div className="absolute w-full h-full">
                         <div className="text-white font-mainFont2 flex flex-col gap-5 items-center justify-center container h-full">
                             <h1 className="text-xl lg:text-4xl font-bold text-center">Saraswathy Kala Kendra is a vibrant sanctuary where young minds are nurtured to master the divine art of performance.</h1>
+                            <div onClick={()=>{window.scrollTo(0, 0)}}>
                             <Button 
                                 text="Explore Our Courses"
                                 link="/courses"
@@ -23,12 +24,15 @@ const Footer = ()=>{
                                 textcolor="text-white"
                                 hovertextcolor="group-hover:text-themebrown" 
                                 bg="bg-themebrown" 
+                                px={"px-5"}
+                                py={"py-3"}                 
                             />
+                            </div>
 
                         </div>
                     </div>
                 </div>
-                <div className="container w-full flex-wrap lg:flex-nowrap h-full flex items-start py-10">
+                <div className="container w-full flex-wrap lg:flex-nowrap h-full flex items-start pt-5">
                     <div className="w-full lg:w-2/6 flex flex-col items-start gap-3">
                         <div className="w-40">
                             <img src={Logo} alt="" />
@@ -42,13 +46,13 @@ const Footer = ()=>{
                     <div className="w-full lg:w-4/6 flex flex-wrap lg:flex-nowrap items-start">
 
                     <div className="w-1/2 lg:w-full">
-                        <div>
-                            <h1 className="font-mainFont1 text-lg">Explore SKK</h1>
+                        <div className="pb-3">
+                            <h1 className="font-mainFont1 text-lg font-semibold">Explore SKK</h1>
                         </div>
                         <div>
                             {
                                 footerlinks.map(({id,title,to})=>(
-                                    <NavLink onClick={()=>{window.scrollTo(0,0)}} key={id} to={to} className={"font-mainFont2 block py-1"}>
+                                    <NavLink onClick={()=>{window.scrollTo(0,0)}} key={id} to={to} className={"font-mainFont2 block pb-2"}>
                                         <div className="footerlinks w-fit">
                                         {title}
                                         </div>
@@ -58,16 +62,17 @@ const Footer = ()=>{
                         </div>
                     </div>
                     <div className="w-1/2 lg:w-full">
-                        <div>
-                            <h1 className="font-mainFont1 text-lg">Follow Us</h1>
+                        <div className="pb-3">
+                            <h1 className="font-mainFont1 text-lg font-semibold">Follow Us</h1>
                         </div>
                         <div>
                             {
                                 footersocialmedia.map(({id,icon,name,link})=>(
                                     <NavLink 
+                                        key={id}
                                         to={link} 
                                         className={({ isActive }) => 
-                                            `font-mainFont2 py-1 flex gap-2 items-center group ${isActive ? 'active' : ''}`
+                                            `font-mainFont2 pb-2 flex gap-2 items-center group ${isActive ? 'active' : ''}`
                                           }
                                         >
                                         <div className="text-2xl">{icon}</div>
@@ -78,13 +83,13 @@ const Footer = ()=>{
                         </div>
                     </div>
                     <div className="w-full">
-                        <div>
-                            <h1 className="font-mainFont1 text-lg">Contact</h1>
+                        <div className="pb-3">
+                            <h1 className="font-mainFont1 text-lg font-semibold">Contact</h1>
                         </div>
                         <div>
                             {
                                 footercontact.map(({id,icon,title,link})=>(
-                                    <NavLink key={id} to={'/'} className={`flex gap-2 items-center font-mainFont2 group py-1`}>
+                                    <NavLink key={id} to={'/'} className={`flex gap-2 items-center font-mainFont2 group pb-2`}>
                                         <div className="text-xl">{icon}</div>
                                         <div className="footerlinks">{title}</div>
                                     </NavLink>
@@ -103,8 +108,8 @@ const Footer = ()=>{
                     <div className="text-center">
                         copyright Saraswathi Kala Kendra &copy; {new Date().getFullYear()}. All Rights Reserved
                     </div>
-                    <div>
-                        <KonceptsLogo/>
+                    <div title="TejusDigi" alt="this site developed by https://tejusdigi.com" className="w-20" onClick={()=>window.open('https://tejusdigi.com')}>
+                        <img src={TejusdigiLogo} alt="" />
                     </div>
                 </div>
             </div>
