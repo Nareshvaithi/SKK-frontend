@@ -17,12 +17,14 @@ import EditBannerSlider from "./adminPanel/Adminpages/EditSlider";
 import CoursesDetails from "./pages/ProgramsDetails";
 import BlogsDetails from "./pages/BlogsDetails";
 import GuruDetails from "./pages/GuruDetails";
+import Meta from "./components/meta/meta";
 
 function App() {
   return (
     <Context>
       <AdminContext>
         <BrowserRouter>
+          <Meta/>
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Layout />}>

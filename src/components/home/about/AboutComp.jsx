@@ -19,7 +19,7 @@ const AboutComp = () => {
   }, []);
 
   return (
-    <div className="w-full h-auto bg-white py-10">
+    <div id="meetfounder" className="w-full h-auto bg-white py-10">
       <div className="container mx-auto w-full lg:w-4/5">
         <div className="text-center">
           <h1 className="headingText">Meet The Founder</h1>
@@ -43,7 +43,7 @@ const AboutComp = () => {
                 grandmother, the accomplished vocalist Smt. Dhanalakshmi Ammal.Research and study spanned a year and a half before popular music director C. Sathya
                 orchestrated the masterpiece in 2009. VEERATTAM revolutionized the dance field, with
                 students performing it alongside the traditional Margam in their Arangetram, garnering
-              immense appreciation.
+                immense appreciation.
               </p>
             </div>
             <div className="" onClick={() => { window.scrollTo(0, 0); }}>

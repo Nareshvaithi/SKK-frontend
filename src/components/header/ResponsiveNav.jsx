@@ -48,7 +48,7 @@ const ResponsiveNav = () => {
                                     {sublinks && (
                                         <ul className={`overflow-hidden transition-all ease-linear duration-1000 ${expandedItem === id ? 'max-h-screen' : 'max-h-0'}`}>
                                             {sublinks.map(({ id, label, to }) => (
-                                                <li key={id}>
+                                                <li key={id} className="text-sm">
                                                     <NavLink to={to}>{label}</NavLink>
                                                 </li>
                                             ))}

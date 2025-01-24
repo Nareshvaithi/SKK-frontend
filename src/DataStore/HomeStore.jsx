@@ -55,23 +55,26 @@ export const Headerdata = () => {
     useEffect(() => {
         const data = [
             { id: 1, title: "Home", to: "/",sublinks:[
-                { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "" },
-                { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "" },
-                { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "" },
+                { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
+                { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
+                { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
                 { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
-                { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "" },
+                { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "/#programs" },
+                { id: 6, icon: "", label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
+                { id: 7, icon: "", label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
+                { id: 8, icon: "", label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
-                { id: 1, label: "The Founder", icon:"", to: "" },
+                { id: 1, label: "The Founder", icon:"", to: "/aboutskk#founder" },
                 { id: 2, label: "Our Studio", icon:"", to: "/aboutskk#ourstudio" },
-                { id: 3, label: "Environment", icon:"", to: "" },
+                { id: 3, label: "Environment", icon:"", to: "/aboutskk#environment" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
-            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
-            { id: 2, label: "Kalari", icon:kalari, to: "" },
-            { id: 3, label: "Carnatic Music", icon:music, to: "" },
-            { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
-            { id: 5, label: "Veena", icon:veena, to: "" },
+            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "/gallery#bharatanatyam" },
+            { id: 2, label: "Kalari", icon:kalari, to: "/gallery#kalari" },
+            { id: 3, label: "Carnatic Music", icon:music, to: "/gallery#carnaticmusic" },
+            { id: 4, label: "Mirdangam", icon:mridangam, to: "/gallery#mirdangam" },
+            { id: 5, label: "Veena", icon:veena, to: "/gallery#veena" },
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
             { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
@@ -126,8 +129,8 @@ export const Herodata = ()=>{
           }
         }
     
-        // fetchbannervideo();
-        // fetchshortslink();
+        fetchbannervideo();
+        fetchshortslink();
         fetchsliderlink();
       }, []);
     

@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full">
             <div className="w-full h-full">
-                <div className="relative group w-full h-[300px]">
+                <div id="youtubevideo" className="relative group w-full h-[300px]">
                   {/* Custom Previous Button */}
                   <button
                     className="youtubebanner-next absolute left-0 top-1/2 transform -translate-y-1/2 text-white hover:text-white/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 w-10 h-full"
@@ -66,7 +66,7 @@ const Hero = () => {
                   </Swiper>
                 </div>
                 {/* Shorts Links Grid */}
-                <div className="mt-5">
+                <div id="youtubeshorts" className="mt-5">
                   <div className="grid grid-cols-3 gap-5">
                     {shorts.map(({ _id, title, url }) => (
                       <iframe

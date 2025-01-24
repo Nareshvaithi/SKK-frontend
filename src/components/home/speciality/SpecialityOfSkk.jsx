@@ -8,7 +8,7 @@ const SpecialityOfSkk = ()=>{
    
     return(
         <>
-        <div className="pb-10 bg-gray-100">
+        <div id="specialityofskk" className="pb-10 bg-gray-100">
             <div className="container">
                 <div className="text-center py-10">
                     <h1 className="headingText">Speciality of Sarawathy Kala Kendra</h1>

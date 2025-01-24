@@ -35,7 +35,7 @@ const Founder = ()=>{
 
     return(
         <>
-            <div className="pt-20 pb-10 bg-gray-100">
+            <div id="founder" className="pt-20 pb-10 bg-gray-100">
                 <div className="container w-full h-full">
                     <div className="text-center">
                         <h1 className="headingText py-10">Founder of the Saraswathy Kala Kendra</h1>

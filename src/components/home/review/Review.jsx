@@ -1,18 +1,18 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import reviewbg from  "../../../assets/Images/home/reviewBg.webp"
+import reviewbg from  "../../../assets/Images/home/reviewBg.jpg"
 import { useContext } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Testimonialsdata } from "../../../DataStore/HomeStore";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import { RiDoubleQuotesR,RiDoubleQuotesL } from "react-icons/ri";
+import { RiDoubleQuotesR } from "react-icons/ri";
 const Review = ()=>{
     const {testimonials} = useContext(ContextProvide)
     return(
         <>
-            <div className="py-10 bg-gray-100">
+            <div id="testimonials" className="py-10 bg-gray-100">
                 <div className="container">
                     <div className="text-center pb-5">
                         <h1 className="headingText">Testimonials</h1>
@@ -49,14 +49,14 @@ const Review = ()=>{
                            >
                             {
                                 testimonials.map(({id,review,img,star,name,skill})=>(
-                                    <SwiperSlide key={id} className="w-full h-full bg-white/80 rounded-xl">
+                                    <SwiperSlide key={id} className="w-full h-full bg-black/60 rounded-xl group relative overflow-hidden">
                                         <div className="w-full h-[300px] px-10 py-10 flex flex-col justify-between">
-                                            <div style={{backgroundImage:`url(${<RiDoubleQuotesL/>})`}}>
-                                                <p className="text-sm font-mainFont2 line-clamp-6"><sup><RiDoubleQuotesL className="inline text-themebrown/70 text-xl"/></sup>{review} <sup><RiDoubleQuotesR className="text-themebrown/70 inline text-xl"/></sup></p>
-                                                <p className="text-sm font-mainFont2 text-themebrown cursor-pointer hover:underline w-fit">read more</p>
+                                            <div className="text-white">
+                                                <p className="text-sm font-mainFont2 line-clamp-6">{review}</p>
+                                                <p  className="text-sm font-mainFont2 w-fit underline cursor-pointer hover:text-blue-600 relative z-20">read more</p>
                                             </div>
                                             <div className="flex justify-between items-end">
-                                                <div>
+                                                <div className="text-white">
                                                     <h1 className="text-lg lg:text-xl font-mainFont1">{name}</h1>
                                                     <p className="font-mainFont2">{skill}</p>
                                                     <div className="flex items-center gap-1 text-2xl text-yellow-500">{star}</div>
@@ -66,13 +66,13 @@ const Review = ()=>{
                                                 </div>
                                             </div>
                                         </div>
-                                     
+                                        <div className="text-5xl absolute w-full h-full z-10 text-white inset-0"><RiDoubleQuotesR/></div>
                                     </SwiperSlide>
                                 ))
                             }
                         </Swiper>
-                        <button className="reviewNext absolute right-2 active:animate-ping p-1 lg:p-2 text-xl lg:text-2xl rounded-full text-white bg-[#ff8031] z-10"><GrFormNext/></button>
-                        <button className="reviewPrev absolute left-2 active:animate-ping p-1 lg:p-2 text-xl lg:text-2xl rounded-full text-white bg-[#ff8031] z-10"><GrFormPrevious/></button>
+                        <button className="reviewNext absolute right-1 active:animate-ping text-xl lg:text-4xl rounded-full text-black z-10"><GrFormNext/></button>
+                        <button className="reviewPrev absolute left-1 active:animate-ping text-xl lg:text-4xl rounded-full text-black z-10"><GrFormPrevious/></button>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const Environment = ()=>{
     const {environment} = useContext(ContextProvide);
     return(
         <>
-            <div className="py-10 bg-gray-100">
+            <div id="environment" className="py-10 bg-gray-100">
                 <div className="container">
                     <div className="text-center py-5">
                         <h1 className="headingText">Our Environment</h1>

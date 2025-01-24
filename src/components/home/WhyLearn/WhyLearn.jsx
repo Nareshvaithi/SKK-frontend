@@ -1,7 +1,7 @@
 import WhylearnImg from "../../../assets/Images/home/WhyLearn.webp"
 const WhyLearnBharadhanatyam = ()=>{
     return(
-        <div className="bg-gray-100 py-10">
+        <div id="whylearnbha" className="bg-gray-100 py-10">
             <div className="container">
                 <div className="text-center pb-10">
                     <h1 className="headingText">Why Learn Bharatanatyam</h1>

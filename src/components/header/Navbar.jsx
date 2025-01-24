@@ -49,9 +49,9 @@ const Navbar = () => {
                             <li key={id} className="group relative">
                                 <NavLink
                                 onClick={()=>{window.scrollTo(0,0)}}
-                                    to={to && to}
+                                    to={to}
                                     className={({ isActive }) =>
-                                        `relative text-gray-700 group-hover:text-themebrown ${isActive ? 'text-themebrown' : ''} font-mainFont2 links`
+                                        `relative text-gray-700 group-hover:text-themebrown ${isActive && to ? 'text-themebrown' : ''} font-mainFont2 links`
                                     }
                                 >
                                     {title}
