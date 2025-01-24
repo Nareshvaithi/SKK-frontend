@@ -28,9 +28,11 @@ function FilterEvents() {
   const handleShow=(value)=>{
     eventList.map((items)=>{
       items.events.map((values)=>{
+        
         if(value==values.event_name){
+          
           setShow(true)
-          return setData(items.images)
+          return setData(values.images)
         }
       })
     })
@@ -76,12 +78,12 @@ function FilterEvents() {
             {eventList.map((value) => {
               return (
                 <>
-                  <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4">
+                  <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4 ">
                     {activate == value.categeroy
                       ? value.events.map((items,index) => {
                           return (
                             <>
-                              <div className=" border p-2 shadow-lg rounded-xl " onMouseEnter={()=>handlePlay(index,items.event_name)}>
+                              <div className=" border p-2 shadow-lg rounded-xl relative overflow-hidden " onMouseEnter={()=>handlePlay(index,items.event_name)}>
                                 <div className="w-full">
                                   <div className="h-44 w-full ">
                                     <img
@@ -91,7 +93,7 @@ function FilterEvents() {
                                     />
                                   </div>
                                 </div>
-                                <div className="relative">
+                                <div className="">
                                   <p className="font-bold">
                                     {items.event_name}
                                   </p>
@@ -106,7 +108,7 @@ function FilterEvents() {
                                     </span>
                                   </p>
                                   <div className="flex justify-center items-center w-full mx-auto absolute  top-1/4">
-                                    <button className={`${play==items.event_name ? "translate-y-0" : "-translate-y-[1000px]" } transition-all duration-1000 text-3xl text-themebrown  rounded-full p-2 bg-white/50`} onClick={()=>handleShow(play)}>
+                                    <button className={`${play==items.event_name ? "translate-y-0" : "-translate-y-[500px]" } transition-all duration-1000 text-3xl text-themebrown  rounded-full p-2 bg-white/50`} onClick={()=>handleShow(play)}>
                                     <CiExport />
                                     </button>
                                   </div>
