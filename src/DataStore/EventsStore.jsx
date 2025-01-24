@@ -6,7 +6,7 @@ import bannerImg3 from "../assets/Images/Events/Banner/51.webp"
 import bannerImg4 from "../assets/Images/Events/Banner/19.webp"
 import bannerImg5 from "../assets/Images/Events/Banner/110.webp"
 
-//bharathanatiyam...................................................................
+//bharathanatiyam............................................................................
 //event_01 images ...............................................
 import bharathanatiyam_event_01 from "../assets/Images/Events/bharathanattiyam/teaching01.webp"
 import bharathanatiyam_event_02 from "../assets/Images/Events/bharathanattiyam/teaching02.webp"
@@ -58,24 +58,28 @@ function EventsStore() {
             
             {     
                   id:1,
-                  categeroy:"bharatahanatiyam",
+                  categeroy:"bharatanatyam",
                   events:[
                         
                               {
                                     id:1,
                                     event_name:"Bharatahanatiyam_Event_01",
+                                    about:"",
+                                    date:"dd/mm/yyyy",
                                     images:[bharathanatiyam_event_01,bharathanatiyam_event_02,bharathanatiyam_event_03,bharathanatiyam_event_04,bharathanatiyam_event_05,bharathanatiyam_event_06,bharathanatiyam_event_07,bharathanatiyam_event_08,bharathanatiyam_event_09,bharathanatiyam_event_10,]
                               },
 
                               {
                                     id:2,
                                     event_name:"Bharatahanatiyam_Event_02",
+                                    date:"dd/mm/yyyy",
                                     images:[bharathanatiyam_event_11,bharathanatiyam_event_12,bharathanatiyam_event_13,bharathanatiyam_event_14,bharathanatiyam_event_15,bharathanatiyam_event_16,bharathanatiyam_event_17,bharathanatiyam_event_18]
                               },
                               {
                                     id:3,
                                     event_name:"Bharatahanatiyam_Event_03",
-                                    images:[bharathanatiyam_event_11,bharathanatiyam_event_12,bharathanatiyam_event_13,bharathanatiyam_event_14,bharathanatiyam_event_15,bharathanatiyam_event_16,bharathanatiyam_event_17,bharathanatiyam_event_18]
+                                    date:"dd/mm/yyyy",
+                                    images:[bharathanatiyam_event_12,bharathanatiyam_event_11,bharathanatiyam_event_13,bharathanatiyam_event_14,bharathanatiyam_event_15,bharathanatiyam_event_16,bharathanatiyam_event_17,bharathanatiyam_event_18]
                               }
                         ]
                   },
@@ -87,17 +91,108 @@ function EventsStore() {
                                           {
                                                 id:1,
                                                 event_name:"Kalari_Event_01",
+                                                date:"dd/mm/yyyy",
                                                 images:[kalari_event_01,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,kalari_event_06,kalari_event_07,kalari_event_08,kalari_event_09,kalari_event_10,]
                                           },
                                           {
                                                 id:2,
                                                 event_name:"Kalari_Event_02",
-                                                images:[kalari_event_01,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,]
+                                                date:"dd/mm/yyyy",
+                                                images:[kalari_event_02,kalari_event_01,kalari_event_03,kalari_event_04,kalari_event_05,]
+                                          },                                          {
+                                                id:3,
+                                                event_name:"Kalari_Event_03",
+                                                date:"dd/mm/yyyy",
+                                                images:[kalari_event_03,kalari_event_02,kalari_event_01,kalari_event_04,kalari_event_05,]
                                           },
+            
             
                                           
                                     ]
-                              }
+                              },
+                              {
+                                    id:3,
+                                    categeroy:"Mridangam",
+                                    events:[
+                                                
+                                                      {
+                                                            id:1,
+                                                            event_name:"Mridangam_Event_01",
+                                                            date:"dd/mm/yyyy",
+                                                            images:[kalari_event_04,kalari_event_02,kalari_event_03,kalari_event_01,kalari_event_05,kalari_event_06,kalari_event_07,kalari_event_08,kalari_event_09,kalari_event_10,]
+                                                      },
+                                                      {
+                                                            id:2,
+                                                            event_name:"Mridangam_Event_02",
+                                                            date:"dd/mm/yyyy",
+                                                            images:[kalari_event_05,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_01,]
+                                                      },
+                                                      {
+                                                            id:3,
+                                                            event_name:"Mridangam_Event_03",
+                                                            date:"dd/mm/yyyy",
+                                                            images:[kalari_event_03,kalari_event_02,kalari_event_05,kalari_event_04,kalari_event_01,]
+                                                      },
+
+                                                      
+                                                ]
+                                          },
+                                          {
+                                                id:4,
+                                                categeroy:"Carnatic Music",
+                                                events:[
+                                                            
+                                                                  {
+                                                                        id:1,
+                                                                        event_name:"Carnatic Music_Event_01",
+                                                                        date:"dd/mm/yyyy",
+                                                                        images:[kalari_event_07,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,kalari_event_06,kalari_event_01,kalari_event_08,kalari_event_09,kalari_event_10,]
+                                                                  },
+                                                                  {
+                                                                        id:2,
+                                                                        event_name:"Carnatic Music_Event_02",
+                                                                        date:"dd/mm/yyyy",
+                                                                        images:[kalari_event_10,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,]
+                                                                  },
+                                                                  {
+                                                                        id:3,
+                                                                        event_name:"Carnatic Music_Event_03",
+                                                                        date:"dd/mm/yyyy",
+                                                                        images:[kalari_event_08,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,kalari_event_06,kalari_event_01,kalari_event_07,kalari_event_09,kalari_event_10,]
+                                                                  },
+                                    
+                                                                  
+                                                            ]
+                                                      },
+                                                      {
+                                                            id:5,
+                                                            categeroy:"Veena",
+                                                            events:[
+                                                                        
+                                                                              {
+                                                                                    id:1,
+                                                                                    event_name:"Veena_Event_01",
+                                                                                    date:"dd/mm/yyyy",
+                                                                                    images:[kalari_event_09,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,kalari_event_06,kalari_event_07,kalari_event_08,kalari_event_01,kalari_event_10,]
+                                                                              },
+                                                                              {
+                                                                                    id:2,
+                                                                                    event_name:"Veena_Event_02",
+                                                                                    date:"dd/mm/yyyy",
+                                                                                    images:[kalari_event_06,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,]
+                                                                              },
+                                                                              {
+                                                                                    id:3,
+                                                                                    event_name:"Veena_Event_03",
+                                                                                    date:"dd/mm/yyyy",
+                                                                                    images:[kalari_event_07,kalari_event_02,kalari_event_03,kalari_event_04,kalari_event_05,kalari_event_06,kalari_event_01,kalari_event_08,kalari_event_09,kalari_event_10,]
+                                                                              },
+                                                
+                                                                              
+                                                                        ]
+                                                                  }
+                        
+            
       ]
       const eventData=[]
       useEffect(()=>{
