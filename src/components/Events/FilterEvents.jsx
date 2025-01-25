@@ -50,10 +50,10 @@ function FilterEvents() {
 
   }
  
-  const handleDisplay=(img)=>{
-    data.map((items)=>{
-        if(img==items){
-          setDisplay(items)
+  const handleDisplay=(id)=>{
+    data.map((items,index)=>{
+        if(id==index){
+          setDisplay(index)
           setColor(true)
         }
     })
@@ -95,34 +95,35 @@ function FilterEvents() {
               );
             })}
           </div>
-          <div className={`${show ? "hidden" : "block"} py-10`}>
+          <div className={`${show ? "hidden" : "block"} py-10 w-full` }>
             {eventList.map((value) => {
               return (
                 <>
-                  <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4 ">
+                  <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-5 ">
                     {activate == value.categeroy
                       ? value.events.map((items,index) => {
                           return (
                             <>
-                              <div className=" border p-2 shadow-lg rounded-xl relative overflow-hidden cursor-pointer" onMouseEnter={()=>handlePlay(index,items.event_name)}>
+                              <div className="shadow-lg relative overflow-hidden cursor-pointer" onMouseEnter={()=>handlePlay(index,items.event_name)}>
                                 <div className="w-full">
-                                  <div className="h-44 w-full ">
+                                  <div className="h-52">
                                     <img
                                       src={items.images[0]}
                                       alt=""
-                                      className="w-full h-full rounded-lg"
+                                      className="w-full h-full transition-transform duration-300 hover:scale-105"
                                     />
                                   </div>
                                 </div>
-                                <div className="">
-                                  <p className="font-bold">
+                                <div className="border p-4 font-mainFont1">
+                                  <p className="font-semibold">
                                     {items.event_name}
                                   </p>
-                                  <p className="text-sm/6 leading-5">
+                                  <p className="text-sm/6 leading-5 mt-2">
                                     Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit adipisicing elit.{" "}
+                                    adipisicing Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing .{" "}
                                   </p>
-                                  <p className="text-sm/6 ">
+                                  <p className="text-sm/6 mt-2">
                                     Event_Date :{" "}
                                     <span className="font-semibold">
                                       {items.date}
@@ -141,25 +142,26 @@ function FilterEvents() {
                       : activate == "all" ? value.events.map((item,index)=>{
                         return (
                           <>
-                            <div className=" border p-2 mb-4 shadow-lg rounded-xl relative overflow-hidden cursor-pointer" onMouseEnter={()=>handlePlay(index,item.event_name)}>
+                            <div className=" mb-4 shadow-lg  relative overflow-hidden cursor-pointer" onMouseEnter={()=>handlePlay(index,item.event_name)}>
                               <div className="w-full">
                                 <div className="h-44 w-full">
                                   <img
                                     src={item.images[0]}
                                     alt=""
-                                    className="w-full h-full rounded-lg"
+                                    className="w-full h-full  transition-transform duration-300 hover:scale-105"
                                   />
                                 </div>
                               </div>
-                              <div className="">
-                                <p className="font-bold">
+                              <div className="p-4 font-mainFont1">
+                                <p className="font-semibold ">
                                   {item.event_name}
                                 </p>
-                                <p className="text-sm/6 leading-5">
+                                <p className="text-sm/6 leading-5 mt-2">
                                   Lorem ipsum dolor sit amet consectetur,
-                                  adipisicing elit adipisicing elit.{" "}
+                                  adipisicing Lorem ipsum dolor sit amet consectetur,
+                                  adipisicing .{" "}
                                 </p>
-                                <p className="text-sm/6 ">
+                                <p className="text-sm/6 mt-2">
                                   Event_Date :{" "}
                                   <span className="font-semibold">
                                     {item.date}
@@ -205,7 +207,7 @@ function FilterEvents() {
               src={value} 
               alt={`Bharatanatyam Event ${index + 1}`}
               className="w-full h-auto transition-transform duration-300 hover:scale-105"
-              onClick={()=>handleDisplay(value)}
+              onClick={()=>handleDisplay(index)}
             />
           </div>
             </>
@@ -215,24 +217,32 @@ function FilterEvents() {
           </div>
           {
             color ? <div className="">
-              <div className="fixed inset-0 bg-black/60 z-50 flex justify-center items-center w-full mx-auto">
-            {data.map((value)=>{
-              if(value==display){
+              <div className="fixed inset-0 bg-black/90 z-50 flex justify-center items-center w-full mx-auto">
+            {data.map((value,index)=>{
+              if(index==display){
                 return <>
           
-                <img src={value} alt="" className="object-contain h-[90vh]"/>
+                <img src={value} alt="" className="object-contain h-[90vh] cursor-pointer" />
                 </>
               }
             })}
             <button
               className="absolute left-0 text-white active:text-white/80 text-4xl px-4"
-              // onClick={prevImage}
+              onClick={()=>{
+                if(display>=0){
+                  handleDisplay(display-1)
+                }
+              }}
             >
               &#8592;
             </button>
             <button
               className="absolute right-0 text-white active:text-white/80 text-4xl px-4"
-              // onClick={nextImage}
+              onClick={()=>{
+                if(display<data.length){
+                  handleDisplay(display+1)
+                }
+              }}
             >
               &#8594;
             </button>
