@@ -10,75 +10,68 @@ const AdminHeaderStore = ()=>{
             {
               id: 1,
               title: "Home",
-              to: "/adminlayout",
-              sublinks: [
-                { id: 1, label: "Banner Video", to: "/adminlayout" },
-                { id: 2, label: "Shorts", to: "/adminlayout/editshorts" },
-                { id: 3, label: "Banner Slider", to: "/adminlayout/editbannerslider" },
-              ],
-              icon:"roofing"
+              to: "",
+              icon:"roofing",
+              sublinks:[
+                {id:1,label:"Youtube Banner Video",to:""},
+                {id:2,label:"Youtube Banner Video",to:""},
+                {id:3,label:"Youtube Banner Video",to:""},
+                {id:4,label:"Youtube Banner Video",to:""},
+              ]
             },
             {
               id: 2,
               title: "About",
-              to: "/about",
-              sublinks: [
-                { id: 1, label: "Our Studio", to: "" },
-                { id: 2, label: "About Gurus", to: "" },
-                { id: 3, label: "Environment", to: "" },
-                { id: 4, label: "The Founder", to: "" },
-              ],
-              icon:"person_raised_hand"
+              to: "",
+              icon:"emoji_people",
+              sublinks:[
+                {id:1,label:"Youtube Banner Video",to:""},
+                {id:2,label:"Youtube Banner Video",to:""},
+                {id:3,label:"Youtube Banner Video",to:""},
+                {id:4,label:"Youtube Banner Video",to:""},
+              ]
             },
             {
               id: 3,
               title: "Gallery",
-              to: "/gallery",
-              sublinks: [
-                { id: 1, label: "Class", to: "" },
-              ],
-              icon:"photo_library"
+              to: "",
+              icon:"vrpano",
+              sublinks:[
+                {id:1,label:"Youtube Banner Video",to:""},
+                {id:2,label:"Youtube Banner Video",to:""},
+                {id:3,label:"Youtube Banner Video",to:""},
+                {id:4,label:"Youtube Banner Video",to:""},
+              ]
             },
             {
               id: 4,
               title: "Courses",
-              to: "/courses",
-              sublinks: [
-                { id: 1, label: "Production", to: "" },
-              ],
-              icon:"play_lesson"
+              to:"",
+              icon: "book",
+              sublinks:[
+                {id:1,label:"Youtube Banner Video",to:""},
+                {id:2,label:"Youtube Banner Video",to:""},
+                {id:3,label:"Youtube Banner Video",to:""},
+                {id:4,label:"Youtube Banner Video",to:""},
+              ]
             },
             {
               id: 5,
               title: "Events",
-              to: "/events",
-              sublinks: [
-                { id: 1, label: "Press Release", to: "" },
-              ],
-              icon:"emoji_events"
+              to:"",
+              icon: "calendar_month",
             },
             {
               id: 6,
               title: "Blogs",
-              to: "/blogs",
-              sublinks: [
-                { id: 1, label: "Press Release", to: "" },
-              ],
-              icon:"inventory"
+              to:"",
+              icon: "edit",
             },
             {
               id: 7,
               title: "Faq",
-              to: "/faq",
-              sublinks: [],
-              icon:"quiz"
-            },
-            {
-              id: 8,
-              title: "Contact", 
-              to: "/contact",
-              sublinks: [],
-              icon:"contact_support"
+              to:"",
+              icon: "quiz",
             },
           ];
           

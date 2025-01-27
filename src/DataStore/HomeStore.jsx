@@ -55,19 +55,19 @@ export const Headerdata = () => {
     useEffect(() => {
         const data = [
             { id: 1, title: "Home", to: "/",sublinks:[
-                { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
-                { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
-                { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
-                { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
-                { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "/#programs" },
-                { id: 6, icon: "", label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
-                { id: 7, icon: "", label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
-                { id: 8, icon: "", label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
+                { id: 1, icon:Bharatanatyam, label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
+                { id: 2, icon:Bharatanatyam, label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
+                { id: 3, icon:Bharatanatyam, label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
+                { id: 4, icon:Bharatanatyam, label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
+                { id: 5, icon:Bharatanatyam, label: "Programs", label2: "Explore the programs", to: "/#programs" },
+                { id: 6, icon:Bharatanatyam, label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
+                { id: 7, icon:Bharatanatyam, label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
+                { id: 8, icon:Bharatanatyam, label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
-                { id: 1, label: "The Founder", icon:"", to: "/aboutskk#founder" },
-                { id: 2, label: "Our Studio", icon:"", to: "/aboutskk#ourstudio" },
-                { id: 3, label: "Environment", icon:"", to: "/aboutskk#environment" },
+                { id: 1, label: "The Founder", icon:Bharatanatyam, to: "/aboutskk#founder" },
+                { id: 2, label: "Our Studio", icon:Bharatanatyam, to: "/aboutskk#ourstudio" },
+                { id: 3, label: "Environment", icon:Bharatanatyam, to: "/aboutskk#environment" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
             { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "/gallery#bharatanatyam" },
@@ -83,9 +83,7 @@ export const Headerdata = () => {
             { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
             { id: 5, label: "Veena", icon:veena, to: "" },
         ]},
-        { id: 5, title: "Events", to: "/events", sublinks: [
-            { id: 1, label: "Press Release", to: "" },
-        ]},
+        { id: 5, title: "Events", to: "/events"},
         { id: 6, title: "Blogs", to: "/blogs",},
         { id: 7, title: "FAQ", to: "/faq" },
         { id: 8, title: "Contact", sublinks:[
@@ -160,10 +158,10 @@ export const Specialitydata = ()=>{
                 {id:6,points:"Opportunity to perform National/International forums and festivals."},
                 {id:7,points:"Can get Diploma /Degree Certification through our affiliated Tilak Maharashtra University.(UGC Approved)"}
             ]
-       setSpeciality(data)
+       setSpeciality(data);
         
     },[])
-    console.log(speciality,"data")
+    console.log(speciality,"data");
     return null;
 }
 

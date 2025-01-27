@@ -122,7 +122,7 @@ const Navbar = () => {
 
                         <div className="border-r border-black h-4"></div>
 
-                        <div onClick={() => navigate('/adminlayout')}>
+                        <div className="cursor-pointer" onClick={() => navigate('/admin')}>
                             <LiaUser size={20} />
                         </div>
                     </ul>

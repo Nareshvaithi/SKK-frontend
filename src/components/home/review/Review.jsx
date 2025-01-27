@@ -49,7 +49,7 @@ const Review = ()=>{
                            >
                             {
                                 testimonials.map(({id,review,img,star,name,skill})=>(
-                                    <SwiperSlide key={id} className="w-full h-full bg-black/60 rounded-xl group relative overflow-hidden">
+                                    <SwiperSlide key={id} className="w-full h-full bg-black/70 rounded-xl group relative overflow-hidden">
                                         <div className="w-full h-[300px] px-10 py-10 flex flex-col justify-between">
                                             <div className="text-white">
                                                 <p className="text-sm font-mainFont2 line-clamp-6">{review}</p>

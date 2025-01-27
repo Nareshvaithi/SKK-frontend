@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
@@ -8,16 +8,32 @@ import 'swiper/css/pagination';
 import { RiArrowLeftWideFill, RiArrowRightWideFill } from "react-icons/ri";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { Gurusdata } from "../../../DataStore/HomeStore";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Guruscomp = () => {
+
     const navigate = useNavigate();
-    const {gurus} = useContext(ContextProvide)
+    const {gurus} = useContext(ContextProvide);
+    const location = useLocation();
+    const [hiddentext,setHiddentext] = useState(false);
+    
+    useEffect(()=>{
+        const gurusURL = gurus.map(({name})=> {
+            return `/guru/${name}`
+        });
+        if(gurusURL.includes(location.pathname)){
+            setHiddentext(true);
+        }
+        else{
+            setHiddentext(false)
+        };
+
+    },[location.pathname,gurus]);
     return (
         <div id="gurus" className="py-10 bg-gray-100 text-gray-700">
             <div className="container">
                 <div className="">
-                    <div className="text-center pb-5 w-5/6 mx-auto">
+                    <div className={`text-center pb-5 w-5/6 mx-auto ${hiddentext === true ? "hidden" : "block"}`}>
                         <h1 className="headingText py-2 text-gray-900">Our Gurus</h1>
                         <p className="contentText">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi officiis quasi nisi. 

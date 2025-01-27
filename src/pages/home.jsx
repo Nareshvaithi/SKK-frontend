@@ -21,6 +21,7 @@ const Home = ()=>{
             }
         }
     }, [location.state]);
+    
     return(
         <div>
             <Hero />

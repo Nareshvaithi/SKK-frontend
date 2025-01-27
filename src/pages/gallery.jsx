@@ -44,21 +44,50 @@ const Gallery = () => {
     );
   };
 
+  useEffect(()=>{
+    const hiddenLightBox = (event)=>{
+      if(event.key === 'Escape'){
+        setCurrentImageIndex(null);
+      }
+    }
+    const handleRightArrow = (event)=>{
+      if(event.key === 'ArrowRight'){
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
+      )}
+    }
+    const handleLeftArrow = (event)=>{
+      if(event.key === 'ArrowLeft'){
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
+        );
+      }
+    }
+
+
+    window.addEventListener('keydown',handleRightArrow);
+    window.addEventListener('keydown',handleLeftArrow);
+    window.addEventListener('keydown',hiddenLightBox);
+    return ()=> {
+      window.removeEventListener('keydown',hiddenLightBox);
+      window.removeEventListener('keydown',handleLeftArrow);
+      window.removeEventListener('keydown',handleRightArrow);
+    }
+  },[gallery.length,currentImageIndex])
+
   return (
     <>
       <Gallerydata />
       <div className="pt-24 pb-10">
         <div className="container">
           {isLoading ? (
-            <div className="text-center py-5">Loading...</div>
+            <div className="text-center py-5 headingText">Loading...</div>
           ) : (
             <>
               <div className="text-center py-5">
                 <h1 className="headingText">Our Exclusive Gallery</h1>
                 <p className="contentText py-2">
-                  Welcome to the vibrant world of Saraswathy Kala Kendra, where
-                  every moment is a celebration of art, culture, and dedication.
-                  Our gallery captures the essence of our journey, showcasing:
+                  Welcome to the vibrant world of Saraswathy Kala Kendra, where every moment is a celebration of art, culture, and dedication. Our gallery captures the essence of our journey, showcasing:
                 </p>
               </div>
               <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
