@@ -15,7 +15,8 @@ import BlogsDetails from "./pages/BlogsDetails";
 import GuruDetails from "./pages/GuruDetails";
 import Meta from "./components/meta/meta";
 import Admin from "./adminPanel/Adminpages/Admin";
-import EditYoutubeVideo from "./adminPanel/Components/EditYoutubeVideo";
+import AdminWorkSpace from "./adminPanel/Components/AdminWorkSpace";
+
 
 function App() {
   return (
@@ -39,8 +40,9 @@ function App() {
               <Route path="*" element={<Nopage />} />
             </Route>
              {/* Admin Route */}
-             <Route path="/admin" element={<Admin/>}>
-              <Route index element={<EditYoutubeVideo/>}/>
+              <Route path="/admin" element={<Admin/>}>
+              <Route index element={<AdminWorkSpace/>}/>
+              
               </Route>
           </Routes>
         </BrowserRouter>

@@ -89,7 +89,7 @@ const Footer = ()=>{
                         <div>
                             {
                                 footercontact.map(({id,icon,title,link})=>(
-                                    <NavLink key={id} to={'/'} className={`flex gap-2 items-center font-mainFont2 group pb-2`}>
+                                    <NavLink onClick={()=>{window.open(link);window.scrollTo(0,0)}} key={id} className={`flex gap-2 items-start font-mainFont2 group pb-2`}>
                                         <div className="text-xl">{icon}</div>
                                         <div className="footerlinks">{title}</div>
                                     </NavLink>
@@ -106,7 +106,7 @@ const Footer = ()=>{
                         <NavLink>Private Policy</NavLink>
                     </div>
                     <div className="text-center">
-                        copyright Saraswathi Kala Kendra &copy; {new Date().getFullYear()}. All Rights Reserved
+                    &copy; {new Date().getFullYear()} copyright Saraswathi Kala Kendra. All Rights Reserved
                     </div>
                     <div title="TejusDigi" alt="this site developed by https://tejusdigi.com" className="w-20" onClick={()=>window.open('https://tejusdigi.com')}>
                         <img src={TejusdigiLogo} alt="" />

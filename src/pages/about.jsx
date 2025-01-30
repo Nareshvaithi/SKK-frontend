@@ -1,9 +1,13 @@
-import CurriculumUnique from "../components/about/CurriculumUnique/CurriculumUnique";
-import Environment from "../components/about/environment/Environment";
+// import CurriculumUnique from "../components/about/CurriculumUnique/CurriculumUnique";
+// import Environment from "../components/about/environment/Environment";
 import Founder from "../components/about/founder/Founder";
-import OurStudio from "../components/about/ourstudio/OurStudio";
+// import OurStudio from "../components/about/ourstudio/OurStudio";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Vision from "../components/about/Vision/Vision";
+import Training from "../components/about/Training/Training";
+import TheGuru from "../components/about/The_Guru/TheGuru";
+import TeachingAndLearning from "../components/about/Teaching/TeachingAndLearning";
 const About = ()=>{
     const location = useLocation();
     useEffect(() => {
@@ -15,11 +19,15 @@ const About = ()=>{
         }
     }, [location.state]);
     return(
-        <div>
+        <div className="bg-gray-100">
             <Founder/>
-            <OurStudio/>
-            <Environment/>
-            <CurriculumUnique/>
+            <Vision/>
+            <Training/>
+            <TheGuru/>
+            <TeachingAndLearning/>
+            {/* <OurStudio/> */}
+            {/* <Environment/> */}
+            {/* <CurriculumUnique/> */}
         </div>
     )
 }

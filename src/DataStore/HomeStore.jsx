@@ -70,11 +70,11 @@ export const Headerdata = () => {
                 { id: 3, label: "Environment", icon:Bharatanatyam, to: "/aboutskk#environment" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
-            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "/gallery#bharatanatyam" },
-            { id: 2, label: "Kalari", icon:kalari, to: "/gallery#kalari" },
-            { id: 3, label: "Carnatic Music", icon:music, to: "/gallery#carnaticmusic" },
-            { id: 4, label: "Mirdangam", icon:mridangam, to: "/gallery#mirdangam" },
-            { id: 5, label: "Veena", icon:veena, to: "/gallery#veena" },
+            { id: 1, label: "Bharatanatyam", icon: Bharatanatyam,type:'Bharatanatyam'},
+            { id: 2, label: "Carnatic Music", icon: music,type:'Music'},
+            { id: 3, label: "Veena", icon: veena,type:'Veena'},
+            { id: 4, label: "Mridangam", icon: mridangam,type:'Mridangam'},
+            { id: 5, label: "Kalari", icon: kalari,type:'Kalari'},            
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
             { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
@@ -175,7 +175,7 @@ export const HomegalleryData = ()=>{
             {id:4,img:homegallery_4},
             {id:5,img:homegallery_5},
             // {id:6,img:homegallery_6},
-            // {id:7,img:homegallery_7},
+            // {id:7,img:homegallery_7}, /
         ]
         setHomegallery(data)
     },[])
@@ -210,10 +210,10 @@ export const Footerdata = ()=>{
     },[setFootersocialmedia])
     useEffect(()=>{
         const data = [
-            {id:1,icon:<PiNotePencilThin/>,title:"Leave a Message",link:""},
-            {id:2,icon:<FiPhoneCall/>,title:"+91 98401 66155",link:""},
-            {id:3,icon:<IoLocationOutline/>,title:"#100,Street,Area,State,Country-100000",link:""},
-            {id:4,icon:<TfiEmail/>,title:"example@gmail.com",link:""},
+            {id:1,icon:<PiNotePencilThin/>,title:"Leave a Message",link:"https://wa.me/+919840166155"},
+            {id:2,icon:<FiPhoneCall/>,title:"+91 98401 66155",link:"tel:919840166155"},
+            {id:3,icon:<IoLocationOutline/>,title:"# 73, Kannabiraan Koil St, Chinnaiyan Colony, Perambur, Chennai, Tamil Nadu-600039",link:"https://maps.app.goo.gl/QTUhU5Y2hohRnxi38"},
+            {id:4,icon:<TfiEmail/>,title:"saraswathykalakendra@gmail.com",link:"mailto:saraswathykalakendra@gmail.com"},
         ]
         setFootercontact(data);
     },[])

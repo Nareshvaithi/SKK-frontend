@@ -6,10 +6,12 @@ import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineWhatsApp } from "react-i
 import { CiFacebook } from "react-icons/ci";
 import { LuPhone } from "react-icons/lu";
 import { LiaUser } from "react-icons/lia";
-import { RiMenuFoldLine, RiMenuUnfold2Line } from "react-icons/ri";
+import { RiMenuFoldLine } from "react-icons/ri";
 import { Headerdata } from "../../DataStore/HomeStore";
 
+
 const Navbar = () => {
+    const {galleryType,setGalleryType} = useContext(ContextProvide);
     const { menu, setMenu } = useContext(ContextProvide);
     const navigate = useNavigate();
     const { navbarData } = useContext(ContextProvide);
@@ -36,7 +38,11 @@ const Navbar = () => {
         };
     }, [lastScrollTop]);
     
-
+    
+    const handleClick = (label)=>{
+        setGalleryType(label)
+    }
+  
     return (
         <>
             <div className={`${isScrollingUp ? 'transform translate-y-0' : 'transform -translate-y-full'} transition-all duration-500 bg-white fixed top-0 right-0 left-0 shadow-themebrown/30 shadow-sm z-30`}>
@@ -45,10 +51,10 @@ const Navbar = () => {
                         <img src={Logo} alt="Saraswathy Kala Kendra Logo" />
                     </div>
                     <ul className="hidden lg:flex items-center gap-5">
-                        {navbarData.map(({ id, title, to, sublinks }) => (
-                            <li key={id} className="group relative">
+                        {navbarData.map(({ id, title, to, sublinks }) => {
+                            return <li key={id} className="group relative">
                                 <NavLink
-                                onClick={()=>{window.scrollTo(0,0)}}
+                                    onClick={()=>{window.scrollTo(0,0);setGalleryType(null)}}
                                     to={to}
                                     className={({ isActive }) =>
                                         `relative text-gray-700 group-hover:text-themebrown ${isActive && to ? 'text-themebrown' : ''} font-mainFont2 links`
@@ -60,28 +66,31 @@ const Navbar = () => {
                                 {sublinks && (
                                     <div className="w-fit hidden group-hover:block absolute top-5 bg-white shadow-lg -ml-12 mt-2 rounded-xl">
                                         <div className="p-3">
-                                            {sublinks.map(({ id, label, to ,icon }) => (
+                                            {sublinks.map(({ id, label, to ,icon, type }) => (
                                                 <NavLink
-                                                to={to.split("#")[0]} // Navigate to the page without the hash
+                                                to={to && to.split("#")[0]} // Navigate to the page without the hash
                                                 key={id}
                                                 className="flex items-center gap-5 py-2 px-2 hover:bg-gray-100"
                                                 onClick={(e) => {
-                                                    e.preventDefault(); // Prevent default anchor behavior
-                                            
-                                                    const [path, hash] = to.split("#");
-                                            
-                                                    // Navigate to the correct page
-                                                    navigate(path, {
-                                                        replace: false,
-                                                        state: { hash }, // Pass the hash as state
-                                                    });
+                                                    e.preventDefault(); 
+                                                    if(title === 'Contact'){
+                                                        window.open(to)
+                                                    }
+                                                    else{
+                                                        const [path, hash] = to.split("#");
+                                                        navigate(path, {
+                                                            replace: false,
+                                                            state: { hash },
+                                                        });
+                                                    }
+                                                    
                                                 }}
                                             >
                                                 <div className="w-10">
                                                     <img className="object-cover" src={icon} alt={label} />
                                                 </div>
                                                 <div>
-                                                    <h1 className="text-sm font-mainFont2 text-nowrap">{label}</h1>
+                                                    <h1 onClick={()=>handleClick(type)} className="text-sm font-mainFont2 text-nowrap">{label}</h1>
                                                 </div>
                                             </NavLink>                                            
                                             
@@ -90,7 +99,7 @@ const Navbar = () => {
                                     </div>
                                 )}
                             </li>
-                        ))}
+                        })}
                         <div className="border-r border-black h-4"></div>
 
                         <div className="flex items-center gap-2">

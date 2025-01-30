@@ -7,7 +7,7 @@ import Button from "../components/Button/Button";
 const IMAGES_PER_LOAD = 20;
 
 const Gallery = () => {
-  const { gallery } = useContext(ContextProvide);
+  const { gallery, galleryType } = useContext(ContextProvide);
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
   const [imagesToShow, setImagesToShow] = useState(IMAGES_PER_LOAD);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,11 +19,11 @@ const Gallery = () => {
   }, [gallery]);
 
   const loadMoreImages = () => {
-    setImagesToShow((prev) => Math.min(prev + IMAGES_PER_LOAD, gallery.length));
+    setImagesToShow((prev) => Math.min(prev + IMAGES_PER_LOAD, allImages.length));
   };
 
-  const openLightbox = (index) => {
-    setCurrentImageIndex(index);
+  const openLightbox = (parentIndex, imageIndex) => {
+    setCurrentImageIndex({ parentIndex, imageIndex });
   };
 
   const closeLightbox = () => {
@@ -31,49 +31,41 @@ const Gallery = () => {
   };
 
   const prevImage = () => {
-    window.scrollTo(0, 0);
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
-    );
+    setCurrentImageIndex(({ parentIndex, imageIndex }) => {
+      if (imageIndex === 0) {
+        const newParentIndex = parentIndex === 0 ? gallery.length - 1 : parentIndex - 1;
+        return {
+          parentIndex: newParentIndex,
+          imageIndex: gallery[newParentIndex].images.length - 1,
+        };
+      }
+      return { parentIndex, imageIndex: imageIndex - 1 };
+    });
   };
 
   const nextImage = () => {
-    window.scrollTo(0, 0);
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentImageIndex(({ parentIndex, imageIndex }) => {
+      const currentGalleryImages = gallery[parentIndex].images;
+      if (imageIndex === currentGalleryImages.length - 1) {
+        const newParentIndex = parentIndex === gallery.length - 1 ? 0 : parentIndex + 1;
+        return { parentIndex: newParentIndex, imageIndex: 0 };
+      }
+      return { parentIndex, imageIndex: imageIndex + 1 };
+    });
   };
 
-  useEffect(()=>{
-    const hiddenLightBox = (event)=>{
-      if(event.key === 'Escape'){
-        setCurrentImageIndex(null);
-      }
-    }
-    const handleRightArrow = (event)=>{
-      if(event.key === 'ArrowRight'){
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === gallery.length - 1 ? 0 : prevIndex + 1
-      )}
-    }
-    const handleLeftArrow = (event)=>{
-      if(event.key === 'ArrowLeft'){
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === 0 ? gallery.length - 1 : prevIndex - 1
-        );
-      }
-    }
-
-
-    window.addEventListener('keydown',handleRightArrow);
-    window.addEventListener('keydown',handleLeftArrow);
-    window.addEventListener('keydown',hiddenLightBox);
-    return ()=> {
-      window.removeEventListener('keydown',hiddenLightBox);
-      window.removeEventListener('keydown',handleLeftArrow);
-      window.removeEventListener('keydown',handleRightArrow);
-    }
-  },[gallery.length,currentImageIndex])
+  // Flatten images if galleryType is null
+  const allImages =
+    galleryType === null
+      ? gallery.flatMap(({ id, images }, parentIndex) =>
+          images.map((item, imageIndex) => ({
+            id,
+            item,
+            parentIndex,
+            imageIndex,
+          }))
+        )
+      : [];
 
   return (
     <>
@@ -85,28 +77,52 @@ const Gallery = () => {
           ) : (
             <>
               <div className="text-center py-5">
-                <h1 className="headingText">Our Exclusive Gallery</h1>
+                <h1 className="headingText">
+                  {galleryType === null ? "Our Exclusive Gallery" : galleryType}
+                </h1>
                 <p className="contentText py-2">
                   Welcome to the vibrant world of Saraswathy Kala Kendra, where every moment is a celebration of art, culture, and dedication. Our gallery captures the essence of our journey, showcasing:
                 </p>
               </div>
+
               <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                {gallery.slice(0, imagesToShow).map(({ id, url }, index) => (
-                  <div
-                    key={id}
-                    className="w-full overflow-hidden rounded-lg cursor-pointer"
-                    onClick={() => openLightbox(index)}
-                  >
-                    <img
-                      loading="lazy"
-                      className="w-full h-auto rounded-lg object-contain hover:scale-110 transition-transform duration-700 ease-linear"
-                      src={url}
-                      alt={`Gallery ${id}`}
-                    />
-                  </div>
-                ))}
+                {galleryType === null
+                  ? allImages.slice(0, imagesToShow).map(({ id, item, parentIndex, imageIndex }) => (
+                      <div
+                        key={`${parentIndex}-${imageIndex}`}
+                        className="w-full overflow-hidden rounded-lg cursor-pointer"
+                        onClick={() => openLightbox(parentIndex, imageIndex)}
+                      >
+                        <img
+                          loading="lazy"
+                          className="w-full h-auto rounded-lg object-contain hover:scale-110 transition-transform duration-700 ease-linear"
+                          src={item}
+                          alt={`Gallery ${id}`}
+                        />
+                      </div>
+                    ))
+                  : gallery
+                      .filter(({ type }) => type === galleryType)
+                      .slice(0, imagesToShow)
+                      .flatMap(({ id, images }, parentIndex) =>
+                        images.map((item, imageIndex) => (
+                          <div
+                            key={`${parentIndex}-${imageIndex}`}
+                            className="w-full overflow-hidden rounded-lg cursor-pointer"
+                            onClick={() => openLightbox(parentIndex, imageIndex)}
+                          >
+                            <img
+                              loading="lazy"
+                              className="w-full h-auto rounded-lg object-contain hover:scale-110 transition-transform duration-700 ease-linear"
+                              src={item}
+                              alt={`Gallery ${id}`}
+                            />
+                          </div>
+                        ))
+                      )}
               </div>
-              {imagesToShow < gallery.length && (
+
+              {imagesToShow < allImages.length && (
                 <div onClick={loadMoreImages} className="flex justify-center mt-6">
                   <Button
                     text={"Load More"}
@@ -149,7 +165,9 @@ const Gallery = () => {
             >
               <img
                 className="max-w-3xl max-h-[90vh] object-contain rounded-lg"
-                src={gallery[currentImageIndex].url}
+                src={
+                  gallery[currentImageIndex.parentIndex].images[currentImageIndex.imageIndex]
+                }
                 alt="Selected"
               />
             </motion.div>
