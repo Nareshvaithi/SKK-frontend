@@ -18,6 +18,8 @@ import CoursesDetails from "./pages/ProgramsDetails";
 import BlogsDetails from "./pages/BlogsDetails";
 import GuruDetails from "./pages/GuruDetails";
 import Meta from "./components/meta/meta";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   return (
