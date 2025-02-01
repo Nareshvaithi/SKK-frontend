@@ -20,9 +20,69 @@ import teaching3 from "../assets/Images/about/teaching3.jpg";
 import teaching4 from "../assets/Images/about/teaching4.jpg";
 import teaching5 from "../assets/Images/about/teaching5.jpg";
 import teaching6 from "../assets/Images/about/teaching6.jpg";
-
+import award1 from "../assets/Images/about/award1.jpg";
+import award2 from "../assets/Images/about/award2.jpg";
+import award3 from "../assets/Images/about/award3.jpg";
+import award4 from "../assets/Images/about/award4.jpg";
+import award5 from "../assets/Images/about/award5.jpg";
+import award6 from "../assets/Images/about/award6.jpg";
+import award7 from "../assets/Images/about/award7.jpg";
+import innovation1 from "../assets/Images/about/innovation1.jpg";
+import innovation2 from "../assets/Images/about/innovation2.jpg";
+import innovation3 from "../assets/Images/about/innovation3.jpg";
+import innovation4 from "../assets/Images/about/innovation4.jpg";
+import activity1 from "../assets/Images/about/activity1.jpg";
+import activity2 from "../assets/Images/about/activity2.jpg";
+import activity3 from "../assets/Images/about/activity3.jpg";
+import tvshow1 from "../assets/Images/about/tvshow1.jpg";
+import tvshow2 from "../assets/Images/about/tvshow2.jpg";
+import tvshow3 from "../assets/Images/about/tvshow3.jpg";
+import tvshow4 from "../assets/Images/about/tvshow4.jpg";
+import tvshow5 from "../assets/Images/about/tvshow5.jpg";
+import tvshow6 from "../assets/Images/about/tvshow6.jpg";
+import tvshow7 from "../assets/Images/about/tvshow7.jpg";
+import tvshow8 from "../assets/Images/about/tvshow8.jpg";
+import contemporary1 from "../assets/Images/about/contemporary1.jpg";
+import contemporary2 from "../assets/Images/about/contemporary2.jpg";
+import contemporary3 from "../assets/Images/about/contemporary3.jpg";
+import contemporary4 from "../assets/Images/about/contemporary4.jpg";
+import annaiMozhiye1 from "../assets/Images/about/annai1.jpg";
+import annaiMozhiye2 from "../assets/Images/about/annai2.jpg";
+import annaiMozhiye3 from "../assets/Images/about/annai3.jpg";
+import annaiMozhiye4 from "../assets/Images/about/annai4.jpg";
+import margazh1 from "../assets/Images/about/margazh1.jpg";
+import margazh2 from "../assets/Images/about/margazh2.jpg";
+import margazh3 from "../assets/Images/about/margazh3.jpg";
+import margazh4 from "../assets/Images/about/margazh4.jpg";
+import margazh5 from "../assets/Images/about/margazh5.jpg";
+import activity2_1 from "../assets/Images/about/activity2.1.jpg";
+import activity2_2 from "../assets/Images/about/activity2.2.jpg";
+import activity2_3 from "../assets/Images/about/activity2.3.jpg";
+import activity2_4 from "../assets/Images/about/activity2.4.jpg";
+import activity2_5 from "../assets/Images/about/activity2.5.jpg";
+import activity2_6 from "../assets/Images/about/activity2.6.jpg";
+import activity2_7 from "../assets/Images/about/activity2.7.jpg";
+import activity2_8 from "../assets/Images/about/activity2.8.jpg";
+import activity2_9 from "../assets/Images/about/activity2.9.jpg";
+import activity2_10 from "../assets/Images/about/activity2.10.jpg";
 const Aboutdata = ()=>{
-    const {setTheFounder,setVision,setTraining,setTheGuru,setTeachAndLearn} = useContext(ContextProvide);
+    const {
+        setTheFounder,
+        setVision,
+        setTraining,
+        setTheGuru,
+        setTeachAndLearn,
+        setAwardAndHonour,
+        setInnovation,
+        setActivity,
+        setTvShow,
+        setContemporary,
+        setAnnaiMozhiye,
+        setMargazh,
+        setActivity2
+
+    } = useContext(ContextProvide);
+
     useEffect(()=>{
        const getTheFounder = ()=>{
         const data = [{
@@ -97,13 +157,157 @@ const Aboutdata = ()=>{
         setTeachAndLearn(data);
        }
 
+       const getAwardAndHonour = ()=>{
+        const data = [{
+            id:1,
+            content1:"The Government of Tamilnadu inspired by our services in the art field honored us with the state recognition in 1981. Krishna leela, Dasavatharam, Padmavathi Kalyanam are few among the many choreographs made by Meera Narayan which got appreciation from people all around.",
+            content2:"Then Chief Minister J Jayalalitha appreciated Meera Narayan for her choreography in republic day Celebration at St. Fort George in the year 1992.",
+            content3:"Celebrities who gave appreciation and support during their visits for our institute's annual day programmes.",
+            awardImg1:award1,
+            awardImg2:award2,
+            awardImg3:award3,
+            awardImg4:award4,
+            awardImg5:award5,
+            awardImg6:award6,
+            awardImg7:award7
+        }];
+        setAwardAndHonour(data);
+       }
 
+       const getInnovations = ()=>{
+            const data = [{
+                id:1,
+                content1:"It was in the year 2008 the foundation for the production of VEERATTAM was laid. The research and study for Veerattam took almost 1 and half year; before it was recorded and orchestrated by popular Music director of Engayum Eppothum film C.Sathya in the year 2009.",
+                content2:"After that Students started performing VEERATTAM as a special Performance in their Arangetram along with the Routine Margam , which got paramount appreciation for the out of the box thinking and making a revolution in the Dance field.",
+                innovationImg1:innovation1,
+                innovationImg2:innovation2,
+                innovationImg3:innovation3,
+                innovationImg4:innovation4,
+            }];
+            setInnovation(data);
+       }
+
+       const getActivity = ()=>{
+        const data = [{
+            id:1,
+            content1:(
+                    <>
+                    <span className="font-bold">Study trips:</span> Senior students are enthusiastically participating their field trips that are arranged twice in a year where they are visiting ancient temples and enlighten their knowledge on sthala puranam, sculptures, mythology, spiritual and tradition. Projects will be given to students after the field trip in groups.
+                    </>
+                ),
+            content2:(
+                <span className="font-bold">Recent performances:</span>   
+            ),
+            points:[
+                {id:1,point:"Sivarathri program at Thiruvenkadu temple"},
+                {id:2,point:"Natyanjali art festival, Thiruvarur"},
+                {id:3,point:"Natyanjali art festival, Chidambaram"},
+                {id:4,point:"Navarathri performance in Thiruvanmiyur, Karneeswarar temple, Purasawakkam, Puliyur-Kodambakkam, Seerkazhi, Thirukovalur Veerattam temple"},
+            ],
+            activityImg1:activity1,
+            activityImg2:activity2,
+            activityImg3:activity3,
+        }];
+        setActivity(data);
+       } 
+
+       const getTvshow = ()=>{
+        const data = [{
+            content1:`Saraswathy Kala Kendra has been recognized with the prestigious Vijay TV's dance programme "Dancing Super Stars" which was globally appreciated for its India's variety dances in single concept.`,
+            content2:"Moreover, SKK Team participated and won many awards in the dance competition in Makkal TV and Doordarshan and performed many dance programs in various TV channels.",
+            content3:"SKK shows lot of interest to teach this invaluable art of Bharatanatyam to as many as students and brings out the talent from them.",
+            tvshowImg1:tvshow1,
+            tvshowImg2:tvshow2,
+            tvshowImg3:tvshow3,
+            tvshowImg4:tvshow4,
+            tvshowImg5:tvshow5,
+            tvshowImg6:tvshow6,
+            tvshowImg7:tvshow7,
+            tvshowImg8:tvshow8,
+        }]
+        setTvShow(data);
+        
+       }
+       const getContemporary = ()=>{
+        const data = [{
+            id:1,
+            content1:(
+                <p><span className="block font-bold">Veenaiyadi nee enakku...</span>A contemporary Dance production based on female abuse and unreported crimes.</p>
+            ),
+            contemporaryImg1:contemporary1,
+            contemporaryImg2:contemporary2,
+            contemporaryImg3:contemporary3,
+            contemporaryImg4:contemporary4,
+        }]
+        setContemporary(data)
+       }
+
+       const getAnnaiMozhiye = ()=>{
+        const data = [{
+            id:1,
+            content1:"SKK Team has also been recognised by the government of Tamilnadu to perform the Tamil lessons of school children in dance form which is telecasted in Government Television Channel.",
+            annaiMozhiyeImg1:annaiMozhiye1,
+            annaiMozhiyeImg2:annaiMozhiye2,
+            annaiMozhiyeImg3:annaiMozhiye3,
+            annaiMozhiyeImg4:annaiMozhiye4,
+        }];
+        setAnnaiMozhiye(data);
+       }
+
+       const getMargazh = ()=>{
+        const data = [{
+            id:1,
+            margazhImg1:margazh1,
+            margazhImg2:margazh2,
+            margazhImg3:margazh3,
+            margazhImg4:margazh4,
+            margazhImg5:margazh5,
+        }]
+        setMargazh(data);
+       }
+
+       const getActivity2 = ()=>{
+        const data = [{
+            id:1,
+            points:[
+                {id:1,point:"Performance at Karaikkal Ammaiyar temple"},
+                {id:2,point:"Vishranti, Old age home"},
+                {id:3,point:"Madurai Meenakshi Amman Temple"},
+                {id:4,point:"TV channels"},
+                {id:4,point:"TV channels"},
+                {id:5,point:"Special show in Sun TV for Vijayadhasami (2013)"},
+                {id:6,point:"Conducted two season programs called “Bhaava Raaga Thaalam” in Makkal TV (2014 and 2015)"},
+                {id:7,point:"Deepavali special program in Puthuyugam (2017)"},
+                {id:8,point:"Margazhi utsavam at Kapaleeshwar temple, Mylapore (2019)"},
+            ],
+            activityImg1:activity2_1,
+            activityImg2:activity2_2,
+            activityImg3:activity2_3,
+            activityImg4:activity2_4,
+            activityImg5:activity2_5,
+            activityImg6:activity2_6,
+            activityImg7:activity2_7,
+            activityImg8:activity2_8,
+            activityImg9:activity2_9,
+            activityImg10:activity2_10
+        }]
+        setActivity2(data);
+       }
+       
        getTheFounder();
        getVision();
        getTraining();
        getTheGuru();
        getTheGuru();
        getTeachingAndLearning();
+       getAwardAndHonour();
+       getInnovations();
+       getActivity();
+       getTvshow();
+       getContemporary();
+       getAnnaiMozhiye();
+       getMargazh();
+       getActivity2();
     },[])
     return null;
 } 

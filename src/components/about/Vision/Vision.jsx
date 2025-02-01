@@ -31,7 +31,6 @@ const Vision = ()=>{
                     }
                 </div>
             </div>
-            <Aboutdata/>
         </div>
     )
 }

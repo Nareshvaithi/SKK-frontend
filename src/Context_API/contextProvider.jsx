@@ -18,6 +18,14 @@ export const Context = ({ children }) => {
     const [training,setTraining] = useState([]);
     const [theGuru,setTheGuru] = useState([]);
     const [teachAndLearn,setTeachAndLearn] = useState([]);
+    const [awardAndHonour,setAwardAndHonour] = useState([]);
+    const [innovation,setInnovation] = useState([]);
+    const [activity,setActivity] = useState([]);
+    const [tvShow,setTvShow] = useState([]);
+    const [contemporary,setContemporary] = useState([]);
+    const [annaiMozhiye,setAnnaiMozhiye] = useState([]);
+    const [margazh,setMargazh] = useState([]);
+    const [activity2,setActivity2] = useState([]);
     const [footerlinks, setFooterlinks] = useState([]);
     const [footersocialmedia, setFootersocialmedia] = useState([]);
     const [footercontact, setFootercontact] = useState([]);
@@ -67,7 +75,15 @@ export const Context = ({ children }) => {
             vision,setVision,
             training,setTraining,
             theGuru,setTheGuru,
-            teachAndLearn,setTeachAndLearn
+            teachAndLearn,setTeachAndLearn,
+            awardAndHonour,setAwardAndHonour,
+            innovation,setInnovation,
+            activity,setActivity,
+            tvShow,setTvShow,
+            contemporary,setContemporary,
+            annaiMozhiye,setAnnaiMozhiye,
+            margazh,setMargazh,
+            activity2,setActivity2
         }}>
             {children}
         </ContextProvide.Provider>
