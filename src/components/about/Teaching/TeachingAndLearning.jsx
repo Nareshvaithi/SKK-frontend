@@ -16,8 +16,8 @@ const TeachingAndLearning = ()=>{
                             id,
                             content1,
                             content2,
-                            content3,
                             content4,
+                            content3,
                             content5,
                             content6,
                             teachingImg1,
@@ -45,7 +45,6 @@ const TeachingAndLearning = ()=>{
                     }
                 </div>
             </div>
-            <Aboutdata/>
         </div>
     )
 }

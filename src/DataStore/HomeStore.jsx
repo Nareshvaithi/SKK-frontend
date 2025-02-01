@@ -247,7 +247,7 @@ export const Testimonialsdata = ()=>{
                 img:<FaUser/>,
                 star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
                 
-            },
+            },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
             {
                 id:2,
                 review:"Kalari has taught me more than just physical discipline — it has strengthened my mind, body, and spirit. The environment at Saraswathy Kala Kendra is both supportive and challenging, helping me improve my coordination, flexibility, and mental focus while also building physical strength.",
@@ -308,14 +308,16 @@ export const Programsdata = ()=>{
             },
             { 
                 id: 2, 
-                img: kalari, 
-                program_name: "Kalari",
-                program_subname:"The Ancient Martial Art of Warriors",
-                intro:"Our Kalari course emphasizes traditional techniques, self-defense, and meditation to help students achieve harmony between mind and body. Whether you're a beginner or looking to deepen your practice, this course offers a transformative journey into this ancient art form.",
-                slider:[kalari,kalari,kalari],
-                history_content:"Kalaripayattu, one of the world's oldest martial arts, originated in Kerala over 3,000 years ago. It combines combat techniques, weaponry, and healing practices, reflecting a holistic approach to physical and mental discipline. The art form is believed to have been developed by the sage Parashurama and incorporates elements of yoga and Ayurveda. Historically practiced by warriors, Kalaripayattu focuses on strength, agility, and self-defense. Today, it is practiced globally not only for combat skills but also for its therapeutic and spiritual benefits, promoting overall well-being and self-awareness.",
-                gallery:[{id:1,img:kalgallery01},{id:2,img:kalgallery02},{id:3,img:kalgallery03},{id:4,img:kalgallery04},{id:5,img:kalgallery05},]
+                img: music, 
+                program_name: "Carnatic Music",
+                program_subname:"The Soulful Sound of Tradition",
+                intro:"Our course offers structured vocal training, helping students master ragas, talas, and compositions by legendary composers. Through practice and guidance, students will gain a profound appreciation for the intricacies of this classical South Indian music tradition.",
+                slider:[music,music,music],
+                history_content:"Carnatic music, originating in South India, evolved from ancient Vedic traditions and gained prominence during the Bhakti movement. It was formalized by the contributions of the Carnatic Trinity—Tyagaraja, Muthuswami Dikshitar, and Syama Sastri—who enriched its repertoire with devotional compositions. Carnatic music is characterized by complex ragas and talas, emphasizing both composition and improvisation. Its spiritual themes and technical precision have made it a profound art form. Today, it continues to thrive globally, with numerous festivals, schools, and performers dedicated to preserving and propagating this classical tradition.",
+                gallery:[{id:1,img:Carmusicgallery01},{id:2,img:Carmusicgallery02},{id:3,img:Carmusicgallery03},{id:4,img:Carmusicgallery04},{id:5,img:Carmusicgallery05},]
+
             },
+          
             { 
                 id: 3, 
                 img: mridangam, 
@@ -326,19 +328,9 @@ export const Programsdata = ()=>{
                 history_content:"The Mridangam is a prominent percussion instrument in Carnatic music, known for its deep, resonant sound. Made from wood, it features two drumheads of different pitches, producing a variety of tones when played with both hands. The instrument provides essential rhythmic support in classical music, dance performances, and religious ceremonies. Its intricate playing techniques and ability to create complex rhythms make it a vital part of South Indian musical tradition. The Mridangam continues to be a cornerstone of Carnatic concerts, with many renowned artists dedicating their careers to mastering this instrument.",
                 gallery:[{id:1,img:Mirgallery01},{id:2,img:Mirgallery02},{id:3,img:Mirgallery03},{id:4,img:Mirgallery04},{id:5,img:Mirgallery05},]
             },
+            
             { 
                 id: 4, 
-                img: music, 
-                program_name: "Carnatic Music",
-                program_subname:"The Soulful Sound of Tradition",
-                intro:"Our course offers structured vocal training, helping students master ragas, talas, and compositions by legendary composers. Through practice and guidance, students will gain a profound appreciation for the intricacies of this classical South Indian music tradition.",
-                slider:[music,music,music],
-                history_content:"Carnatic music, originating in South India, evolved from ancient Vedic traditions and gained prominence during the Bhakti movement. It was formalized by the contributions of the Carnatic Trinity—Tyagaraja, Muthuswami Dikshitar, and Syama Sastri—who enriched its repertoire with devotional compositions. Carnatic music is characterized by complex ragas and talas, emphasizing both composition and improvisation. Its spiritual themes and technical precision have made it a profound art form. Today, it continues to thrive globally, with numerous festivals, schools, and performers dedicated to preserving and propagating this classical tradition.",
-                gallery:[{id:1,img:Carmusicgallery01},{id:2,img:Carmusicgallery02},{id:3,img:Carmusicgallery03},{id:4,img:Carmusicgallery04},{id:5,img:Carmusicgallery05},]
-
-            },
-            { 
-                id: 5, 
                 img: veena, 
                 program_name: "Veena",
                 program_subname:"The Voice of the Divine Strings",
@@ -347,6 +339,16 @@ export const Programsdata = ()=>{
                 history_content:"The Veena, a classical string instrument, holds a revered place in Carnatic music. It has a long neck, large resonating body, and multiple strings, producing a deep, melodic sound. Played with a plectrum, the Veena is ideal for performing intricate ragas and is associated with Goddess Saraswati, symbolizing knowledge and arts. Traditionally, it is used for both solo performances and accompaniment in Carnatic concerts. The Veena’s rich tones and expressive capabilities make it a cornerstone of Indian classical music, celebrated for its ability to convey complex emotions and spiritual depth.",
                 gallery:[{id:1,img:veenagallery01},{id:2,img:veenagallery02},{id:3,img:veenagallery03},{id:4,img:veenagallery04},{id:5,img:veenagallery05},]
             },  
+            { 
+                id: 5, 
+                img: kalari, 
+                program_name: "Kalari",
+                program_subname:"The Ancient Martial Art of Warriors",
+                intro:"Our Kalari course emphasizes traditional techniques, self-defense, and meditation to help students achieve harmony between mind and body. Whether you're a beginner or looking to deepen your practice, this course offers a transformative journey into this ancient art form.",
+                slider:[kalari,kalari,kalari],
+                history_content:"Kalaripayattu, one of the world's oldest martial arts, originated in Kerala over 3,000 years ago. It combines combat techniques, weaponry, and healing practices, reflecting a holistic approach to physical and mental discipline. The art form is believed to have been developed by the sage Parashurama and incorporates elements of yoga and Ayurveda. Historically practiced by warriors, Kalaripayattu focuses on strength, agility, and self-defense. Today, it is practiced globally not only for combat skills but also for its therapeutic and spiritual benefits, promoting overall well-being and self-awareness.",
+                gallery:[{id:1,img:kalgallery01},{id:2,img:kalgallery02},{id:3,img:kalgallery03},{id:4,img:kalgallery04},{id:5,img:kalgallery05},]
+            },
 
         ];
         setCourses(data)

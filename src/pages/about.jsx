@@ -1,13 +1,18 @@
-// import CurriculumUnique from "../components/about/CurriculumUnique/CurriculumUnique";
-// import Environment from "../components/about/environment/Environment";
 import Founder from "../components/about/founder/Founder";
-// import OurStudio from "../components/about/ourstudio/OurStudio";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Vision from "../components/about/Vision/Vision";
 import Training from "../components/about/Training/Training";
 import TheGuru from "../components/about/The_Guru/TheGuru";
 import TeachingAndLearning from "../components/about/Teaching/TeachingAndLearning";
+import AwardAndHonour from "../components/about/AwardAndHonour/AwardAndHonour";
+import Innovation from "../components/about/Innovation/Innovation";
+import Activity from "../components/about/Activity/Activity";
+import TVshow from "../components/about/TVshow/TVshow";
+import ContemporaryWorks from "../components/about/Contemporaryworks/Contemporaryworks";
+import AnnaiMozhiye from "../components/about/AnnaiMozhiye/AnnaiMozhiye";
+import Margazh from "../components/about/Margazh/Margazh";
+import RunningImages from "../components/about/RunningImages.jsx/RunningImages";
 const About = ()=>{
     const location = useLocation();
     useEffect(() => {
@@ -25,9 +30,14 @@ const About = ()=>{
             <Training/>
             <TheGuru/>
             <TeachingAndLearning/>
-            {/* <OurStudio/> */}
-            {/* <Environment/> */}
-            {/* <CurriculumUnique/> */}
+            <AwardAndHonour/>
+            <Innovation/>
+            <Activity/>
+            <TVshow/>
+            <ContemporaryWorks/>
+            <AnnaiMozhiye/>
+            <Margazh/>
+            <RunningImages/>
         </div>
     )
 }

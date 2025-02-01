@@ -17,7 +17,7 @@ const Gallerydata = () => {
     };
     
     fetchGallery();
-  }, [APIurl, setGallery]);
+  }, []);
 
   return null;
 };

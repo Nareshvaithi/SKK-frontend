@@ -46,7 +46,6 @@ const TheGuru = ()=>{
                     }
                 </div>
             </div>
-            <Aboutdata/>
         </div>
     )
 
