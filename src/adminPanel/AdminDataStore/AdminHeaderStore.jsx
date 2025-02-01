@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react"
 import { AdminContextProvide } from "../Context_API/ContextProvider"
-import { label } from "framer-motion/client";
+import { label, title } from "framer-motion/client";
 
 const AdminHeaderStore = ()=>{
 
@@ -14,26 +14,31 @@ const AdminHeaderStore = ()=>{
               to: "",
               icon:"roofing",
               sublinks:[
-                {id:1,label:"Youtube Banner Video",to:"",inputs:[
-                  {id:1,label:"Youtube Banner Video Title",type:"text"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text"},
+                {id:1,label:"Youtube Banner Video",endPoint:"banner",to:"",inputs:[
+                  {id:1,label:"Youtube Banner Video Title",type:"text",value:"title",endPoint:"banner"},
+                  {id:2,label:"YouTube Video Embeded Id",type:"text",value:"url"},
                 ]},
-                {id:2,label:"Youtube Shorts",to:"",inputs:[
-                  {id:1,label:"Youtube Shorts Title",type:"text"},
-                  {id:2,label:"YouTube Shorts Embeded Id",type:"text"},
+                {id:2,label:"Youtube Shorts",endPoint:"bannerShorts",to:"",inputs:[
+                  {id:1,label:"Youtube Shorts Title",type:"text",value:"title",endPoint:"bannerShorts"},
+                  {id:2,label:"YouTube Shorts Embeded Id",type:"text",value:"url",endPoint:"bannerShorts"},
                 ]},
-                {id:3,label:"Teachers",to:"",inputs:[
-                  {id:1,label:"Teacher Name",type:"text"},
-                  {id:2,label:"Teacher Style",type:"text"},
-                  {id:3,label:"Teacher Image",type:"file"}
+                {id:3,label:"Teachers",to:"",endPoint:"homeGurus",inputs:[
+                  {id:1,label:"Teacher Name",type:"text",endPoint:"homeGurus",value:"name"},
+                  {id:2,label:"Teacher passion",type:"text",endPoint:"homeGurus",value:"prof"},
+                  {id:2,label:"Teacher About",type:"text",endPoint:"homeGurus",value:"about"},
+                  {id:2,label:"Teacher Experience",type:"text",endPoint:"homeGurus",value:"experience"},
+                  {id:2,label:"Teacher Achivements",type:"text",endPoint:"homeGurus",value:"achivements"},
+                  {id:2,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
+                  {id:2,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
+                  {id:3,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"url"}
                 ]},
-                {id:4,label:"Home Gallery",to:"",inputs:[
-                  {id:1,label:"Youtube Banner Video Title",type:"text"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text"},
+                {id:4,label:"Home Gallery",to:"",endPoint:"gallery",inputs:[
+                  {id:1,label:"Youtube Banner Video Title",type:"text",endPoint:"gallery"},
+                  {id:2,label:"YouTube Video Embeded Id",type:"text",endPoint:"gallery"},
                 ]},
-                {id:5,label:"Testimonials",to:"",inputs:[
-                  {id:1,label:"Youtube Banner Video Title",type:"text"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text"},
+                {id:5,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
+                  {id:1,label:"Youtube Banner Video Title",type:"text",endPoint:"testimonials"},
+                  {id:2,label:"YouTube Video Embeded Id",type:"text",endPoint:"testimonials"},
                 ]},
               ],
             },
