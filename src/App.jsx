@@ -9,17 +9,14 @@ import Blogs from "./pages/blogs";
 import Faq from "./pages/faq";
 import { Context } from "./Context_API/contextProvider";
 import Nopage from "./pages/nopage";
-import AdminLayout from "./adminPanel/Adminpages/AdminLayout";
 import AdminContext from "./adminPanel/Context_API/ContextProvider";
-import EditBannerVideo from "./adminPanel/Adminpages/EditBannervideo";
-import EditShorts from "./adminPanel/Adminpages/EditShorts";
-import EditBannerSlider from "./adminPanel/Adminpages/EditSlider";
 import CoursesDetails from "./pages/ProgramsDetails";
 import BlogsDetails from "./pages/BlogsDetails";
 import GuruDetails from "./pages/GuruDetails";
 import Meta from "./components/meta/meta";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import Admin from "./adminPanel/Adminpages/Admin";
+import AdminWorkSpace from "./adminPanel/Components/AdminWorkSpace";
+
 
 function App() {
   return (
@@ -42,12 +39,11 @@ function App() {
               <Route path="/guru/:name" element={<GuruDetails/>}/>
               <Route path="*" element={<Nopage />} />
             </Route>
-            {/* Admin Routes */}
-            <Route path="/adminlayout" element={<AdminLayout />}>
-              <Route index element={<EditBannerVideo />} />
-              <Route path="editshorts" element={<EditShorts />} />
-              <Route path="editbannerslider" element={<EditBannerSlider/>}/>
-            </Route>
+             {/* Admin Route */}
+              <Route path="/admin" element={<Admin/>}>
+              <Route index element={<AdminWorkSpace/>}/>
+              
+              </Route>
           </Routes>
         </BrowserRouter>
       </AdminContext>

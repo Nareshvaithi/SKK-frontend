@@ -1,8 +1,14 @@
+import { Outlet } from "react-router-dom";
+import SideBar from "../Components/SideBar";
+
 
 const Admin = ()=>{
     return(
-        <div>
-            admin
+        <div className="">
+            <div className="flex">
+                <SideBar/>
+                <Outlet/>
+            </div>
         </div>
     )
 }

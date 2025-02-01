@@ -9,12 +9,13 @@ const Gallerydata = () => {
     const fetchGallery = async () => {
       try {
         const galleryimages = await axios.get(`${APIurl}/gallery`);
+       
         setGallery(galleryimages.data);
-        console.log("mark", galleryimages.data);
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching gallery data:", error);
       }
     };
+    
     fetchGallery();
   }, [APIurl, setGallery]);
 

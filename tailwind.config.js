@@ -7,12 +7,26 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        borderFocus: {
+          '0%': { 'clip-path': 'inset(0 100% 100% 0)' },
+          '25%': { 'clip-path': 'inset(0 0 100% 0)' },
+          '50%': { 'clip-path': 'inset(0 0 0 100%)' },
+          '100%': { 'clip-path': 'inset(0 0 0 0)' },
+        },
+      },
+      animation: {
+        'border-focus': 'borderFocus 0.5s ease-in-out forwards',
+      },
       colors:{
-        "themebrown":"#b35c21"
+        "themebrown":"#b35c21",
+        "admintheme":"#00a1ff"
       },
       fontFamily:{
         "mainFont1":["Playfair Display","serif"],
-        "mainFont2":["Josefin Sans","sans serif"]
+        "mainFont2":["Josefin Sans","sans serif"],
+        "adminFont":["Inter","serif"]
+
       },
       container:{
         center:true,

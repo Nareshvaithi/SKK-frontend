@@ -64,7 +64,7 @@ const BlogsItems = () => {
                             <button
                                 key={i + 1}
                                 onClick={()=> {window.scrollTo(0,0);handlePageChange(i + 1)}}
-                                className={`px-3 py-1 mx-1 ${currentPage === i + 1 ? 'bg-themebrown rounded-xl text-white' : 'bg-gray-200'}`}
+                                className={`px-3 py-1 mx-1 ${currentPage === i + 1 ? 'bg-themebrown rounded-xl text-white' : 'rounded-xl bg-gray-200'}`}
                             >
                                 {i + 1}
                             </button>

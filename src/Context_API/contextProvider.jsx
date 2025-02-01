@@ -10,10 +10,14 @@ export const Context = ({ children }) => {
     const [shorts, setShorts] = useState([]);
     const [bannerSlider, setBannerSlider] = useState([]);
     const [gurus, setGurus] = useState([]);
-    const [adminNavbarData, setAdminNavbarData] = useState([]);
     const [courses, setCourses] = useState([]);
     const [speciality, setSpeciality] = useState([]);
     const [homegallery, setHomegallery] = useState([]);
+    const [theFounder,setTheFounder] = useState([]);
+    const [vision,setVision] = useState([]);
+    const [training,setTraining] = useState([]);
+    const [theGuru,setTheGuru] = useState([]);
+    const [teachAndLearn,setTeachAndLearn] = useState([]);
     const [footerlinks, setFooterlinks] = useState([]);
     const [footersocialmedia, setFootersocialmedia] = useState([]);
     const [footercontact, setFootercontact] = useState([]);
@@ -29,9 +33,11 @@ export const Context = ({ children }) => {
     const [blogSocialMedia, setBlogSocialMedia] = useState([]);
     const [blogs, setBlogs] = useState([]);
     const [curriculam,setCurriculam] = useState([]);
+    const [galleryType,setGalleryType] = useState(null);
 
     return (
         <ContextProvide.Provider value={{
+            APIurl,
             navbarData,setNavbarData,
             bannerVideo,setBannerVideo,
             shorts,setShorts,
@@ -51,12 +57,17 @@ export const Context = ({ children }) => {
             environment,setEnvironment,
             gallery,setGallery,
             testimonials,setTestimonials,
-            APIurl,
             eventBanner,setEventBanner,
             eventList,setEventList,
             blogs,setBlogs,
             blogSocialMedia,setBlogSocialMedia,
-            curriculam,setCurriculam
+            curriculam,setCurriculam,
+            galleryType,setGalleryType,
+            theFounder,setTheFounder,
+            vision,setVision,
+            training,setTraining,
+            theGuru,setTheGuru,
+            teachAndLearn,setTeachAndLearn
         }}>
             {children}
         </ContextProvide.Provider>

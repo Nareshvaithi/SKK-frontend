@@ -55,26 +55,26 @@ export const Headerdata = () => {
     useEffect(() => {
         const data = [
             { id: 1, title: "Home", to: "/",sublinks:[
-                { id: 1, icon: "", label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
-                { id: 2, icon: "", label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
-                { id: 3, icon: "", label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
-                { id: 4, icon: "", label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
-                { id: 5, icon: "", label: "Programs", label2: "Explore the programs", to: "/#programs" },
-                { id: 6, icon: "", label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
-                { id: 7, icon: "", label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
-                { id: 8, icon: "", label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
+                { id: 1, icon:Bharatanatyam, label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
+                { id: 2, icon:Bharatanatyam, label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
+                { id: 3, icon:Bharatanatyam, label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
+                { id: 4, icon:Bharatanatyam, label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
+                { id: 5, icon:Bharatanatyam, label: "Programs", label2: "Explore the programs", to: "/#programs" },
+                { id: 6, icon:Bharatanatyam, label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
+                { id: 7, icon:Bharatanatyam, label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
+                { id: 8, icon:Bharatanatyam, label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
-                { id: 1, label: "The Founder", icon:"", to: "/aboutskk#founder" },
-                { id: 2, label: "Our Studio", icon:"", to: "/aboutskk#ourstudio" },
-                { id: 3, label: "Environment", icon:"", to: "/aboutskk#environment" },
+                { id: 1, label: "The Founder", icon:Bharatanatyam, to: "/aboutskk#founder" },
+                { id: 2, label: "Our Studio", icon:Bharatanatyam, to: "/aboutskk#ourstudio" },
+                { id: 3, label: "Environment", icon:Bharatanatyam, to: "/aboutskk#environment" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
-            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "/gallery#bharatanatyam" },
-            { id: 2, label: "Kalari", icon:kalari, to: "/gallery#kalari" },
-            { id: 3, label: "Carnatic Music", icon:music, to: "/gallery#carnaticmusic" },
-            { id: 4, label: "Mirdangam", icon:mridangam, to: "/gallery#mirdangam" },
-            { id: 5, label: "Veena", icon:veena, to: "/gallery#veena" },
+            { id: 1, label: "Bharatanatyam", icon: Bharatanatyam,type:'Bharatanatyam'},
+            { id: 2, label: "Carnatic Music", icon: music,type:'Music'},
+            { id: 3, label: "Veena", icon: veena,type:'Veena'},
+            { id: 4, label: "Mridangam", icon: mridangam,type:'Mridangam'},
+            { id: 5, label: "Kalari", icon: kalari,type:'Kalari'},            
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
             { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
@@ -83,9 +83,7 @@ export const Headerdata = () => {
             { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
             { id: 5, label: "Veena", icon:veena, to: "" },
         ]},
-        { id: 5, title: "Events", to: "/events", sublinks: [
-            { id: 1, label: "Press Release", to: "" },
-        ]},
+        { id: 5, title: "Events", to: "/events"},
         { id: 6, title: "Blogs", to: "/blogs",},
         { id: 7, title: "FAQ", to: "/faq" },
         { id: 8, title: "Contact", sublinks:[
@@ -160,10 +158,10 @@ export const Specialitydata = ()=>{
                 {id:6,points:"Opportunity to perform National/International forums and festivals."},
                 {id:7,points:"Can get Diploma /Degree Certification through our affiliated Tilak Maharashtra University.(UGC Approved)"}
             ]
-       setSpeciality(data)
+       setSpeciality(data);
         
     },[])
-    console.log(speciality,"data")
+    console.log(speciality,"data");
     return null;
 }
 
@@ -177,7 +175,7 @@ export const HomegalleryData = ()=>{
             {id:4,img:homegallery_4},
             {id:5,img:homegallery_5},
             // {id:6,img:homegallery_6},
-            // {id:7,img:homegallery_7},
+            // {id:7,img:homegallery_7}, /
         ]
         setHomegallery(data)
     },[])
@@ -212,10 +210,10 @@ export const Footerdata = ()=>{
     },[setFootersocialmedia])
     useEffect(()=>{
         const data = [
-            {id:1,icon:<PiNotePencilThin/>,title:"Leave a Message",link:""},
-            {id:2,icon:<FiPhoneCall/>,title:"+91 98401 66155",link:""},
-            {id:3,icon:<IoLocationOutline/>,title:"#100,Street,Area,State,Country-100000",link:""},
-            {id:4,icon:<TfiEmail/>,title:"example@gmail.com",link:""},
+            {id:1,icon:<PiNotePencilThin/>,title:"Leave a Message",link:"https://wa.me/+919840166155"},
+            {id:2,icon:<FiPhoneCall/>,title:"+91 98401 66155",link:"tel:919840166155"},
+            {id:3,icon:<IoLocationOutline/>,title:"# 73, Kannabiraan Koil St, Chinnaiyan Colony, Perambur, Chennai, Tamil Nadu-600039",link:"https://maps.app.goo.gl/QTUhU5Y2hohRnxi38"},
+            {id:4,icon:<TfiEmail/>,title:"saraswathykalakendra@gmail.com",link:"mailto:saraswathykalakendra@gmail.com"},
         ]
         setFootercontact(data);
     },[])

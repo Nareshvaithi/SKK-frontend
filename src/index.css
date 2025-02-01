@@ -28,7 +28,7 @@
 
 
 .contentText{
-    @apply font-mainFont2 text-sm lg:text-xl font-normal
+    @apply font-mainFont2 text-[16px] lg:text-xl font-normal
 }
 
 
