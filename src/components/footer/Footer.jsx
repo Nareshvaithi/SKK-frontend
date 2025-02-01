@@ -108,7 +108,7 @@ const Footer = ()=>{
                     <div className="text-center">
                     &copy; {new Date().getFullYear()} copyright Saraswathi Kala Kendra. All Rights Reserved
                     </div>
-                    <div title="TejusDigi" alt="this site developed by https://tejusdigi.com" className="w-20" onClick={()=>window.open('https://tejusdigi.com')}>
+                    <div title="TejusDigi" alt="this site developed by https://tejusdigi.com" className="w-20 cursor-pointer" onClick={()=>window.open('https://tejusdigi.com')}>
                         <img src={TejusdigiLogo} alt="" />
                     </div>
                 </div>

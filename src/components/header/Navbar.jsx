@@ -48,7 +48,7 @@ const Navbar = () => {
             <div className={`${isScrollingUp ? 'transform translate-y-0' : 'transform -translate-y-full'} transition-all duration-500 bg-white fixed top-0 right-0 left-0 shadow-themebrown/30 shadow-sm z-30`}>
                 <div className="container mx-auto flex justify-between items-center py-4">
                     <div className="w-40">
-                        <img src={Logo} alt="Saraswathy Kala Kendra Logo" />
+                        <img onClick={()=>navigate('/')} className="cursor-pointer" src={Logo} alt="Saraswathy Kala Kendra Logo" />
                     </div>
                     <ul className="hidden lg:flex items-center gap-5">
                         {navbarData.map(({ id, title, to, sublinks }) => {

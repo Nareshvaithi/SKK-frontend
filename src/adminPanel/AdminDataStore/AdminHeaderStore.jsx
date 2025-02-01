@@ -1,11 +1,10 @@
 import { useContext, useEffect } from "react"
 import { AdminContextProvide } from "../Context_API/ContextProvider"
-import { label } from "framer-motion/client";
 
 const AdminHeaderStore = ()=>{
 
     const {setAdminNavData} = useContext(AdminContextProvide);
-
+  
     useEffect(()=>{
         const data = [
             {
@@ -111,9 +110,7 @@ const AdminHeaderStore = ()=>{
               ]
             },
           ];
-          
-
-            setAdminNavData(data);
+          setAdminNavData(data);
     },[])
 
     return null

@@ -65,6 +65,57 @@ import activity2_7 from "../assets/Images/about/activity2.7.jpg";
 import activity2_8 from "../assets/Images/about/activity2.8.jpg";
 import activity2_9 from "../assets/Images/about/activity2.9.jpg";
 import activity2_10 from "../assets/Images/about/activity2.10.jpg";
+import RunImg1 from "../assets/Images/about/RunningImage/01.jpg";
+import RunImg2 from "../assets/Images/about/RunningImage/02.jpg";
+import RunImg3 from "../assets/Images/about/RunningImage/03.jpg";
+import RunImg4 from "../assets/Images/about/RunningImage/04.jpg";
+import RunImg5 from "../assets/Images/about/RunningImage/05.jpg";
+import RunImg6 from "../assets/Images/about/RunningImage/06.jpg";
+import RunImg7 from "../assets/Images/about/RunningImage/07.jpg";
+import RunImg8 from "../assets/Images/about/RunningImage/08.jpg";
+import RunImg9 from "../assets/Images/about/RunningImage/09.jpg";
+import RunImg10 from "../assets/Images/about/RunningImage/10.jpg";
+import RunImg11 from "../assets/Images/about/RunningImage/11.jpg";
+import RunImg12 from "../assets/Images/about/RunningImage/12.jpg";
+import RunImg13 from "../assets/Images/about/RunningImage/13.jpg";
+import RunImg14 from "../assets/Images/about/RunningImage/14.jpg";
+import RunImg15 from "../assets/Images/about/RunningImage/15.jpg";
+import RunImg16 from "../assets/Images/about/RunningImage/16.jpg";
+import RunImg17 from "../assets/Images/about/RunningImage/17.jpg";
+import RunImg18 from "../assets/Images/about/RunningImage/18.jpg";
+import RunImg19 from "../assets/Images/about/RunningImage/19.jpg";
+import RunImg20 from "../assets/Images/about/RunningImage/20.jpg";
+import RunImg21 from "../assets/Images/about/RunningImage/21.jpg";
+import RunImg22 from "../assets/Images/about/RunningImage/22.jpg";
+import RunImg23 from "../assets/Images/about/RunningImage/23.jpg";
+import RunImg24 from "../assets/Images/about/RunningImage/24.jpg";
+import RunImg25 from "../assets/Images/about/RunningImage/25.jpg";
+import RunImg26 from "../assets/Images/about/RunningImage/26.jpg";
+import RunImg27 from "../assets/Images/about/RunningImage/27.jpg";
+import RunImg28 from "../assets/Images/about/RunningImage/28.jpg";
+import RunImg29 from "../assets/Images/about/RunningImage/29.jpg";
+import RunImg30 from "../assets/Images/about/RunningImage/30.jpg";
+import RunImg31 from "../assets/Images/about/RunningImage/31.jpg";
+import RunImg32 from "../assets/Images/about/RunningImage/32.jpg";
+import RunImg33 from "../assets/Images/about/RunningImage/33.jpg";
+import RunImg34 from "../assets/Images/about/RunningImage/34.jpg";
+import RunImg35 from "../assets/Images/about/RunningImage/35.jpg";
+import RunImg36 from "../assets/Images/about/RunningImage/36.jpg";
+import RunImg37 from "../assets/Images/about/RunningImage/37.jpg";
+import RunImg38 from "../assets/Images/about/RunningImage/38.jpg";
+import RunImg39 from "../assets/Images/about/RunningImage/39.jpg";
+import RunImg40 from "../assets/Images/about/RunningImage/40.jpg";
+import RunImg41 from "../assets/Images/about/RunningImage/41.jpg";
+import RunImg42 from "../assets/Images/about/RunningImage/42.jpg";
+import RunImg43 from "../assets/Images/about/RunningImage/43.jpg";
+import RunImg44 from "../assets/Images/about/RunningImage/44.jpg";
+import RunImg45 from "../assets/Images/about/RunningImage/45.jpg";
+import RunImg46 from "../assets/Images/about/RunningImage/46.jpg";
+import RunImg47 from "../assets/Images/about/RunningImage/47.jpg";
+import RunImg48 from "../assets/Images/about/RunningImage/48.jpg";
+import RunImg49 from "../assets/Images/about/RunningImage/49.jpg";
+import RunImg50 from "../assets/Images/about/RunningImage/50.jpg";
+
 const Aboutdata = ()=>{
     const {
         setTheFounder,
@@ -79,7 +130,8 @@ const Aboutdata = ()=>{
         setContemporary,
         setAnnaiMozhiye,
         setMargazh,
-        setActivity2
+        setActivity2,
+        setRunningImage,
 
     } = useContext(ContextProvide);
 
@@ -293,6 +345,17 @@ const Aboutdata = ()=>{
         }]
         setActivity2(data);
        }
+
+       const getRunningImage = ()=>{
+        const data = [
+            RunImg1,RunImg2,RunImg3,RunImg4,RunImg5,RunImg6,RunImg7,RunImg8,RunImg9,RunImg10,
+            RunImg11,RunImg12,RunImg13,RunImg14,RunImg15,RunImg16,RunImg17,RunImg18,RunImg19,RunImg20,
+            RunImg21,RunImg22,RunImg23,RunImg24,RunImg25,RunImg26,RunImg27,RunImg28,RunImg29,RunImg30,
+            RunImg31,RunImg32,RunImg33,RunImg34,RunImg35,RunImg36,RunImg37,RunImg38,RunImg39,RunImg40,
+            RunImg41,RunImg42,RunImg43,RunImg44,RunImg45,RunImg46,RunImg47,RunImg48,RunImg49,RunImg50
+        ];
+        setRunningImage(data);
+       }
        
        getTheFounder();
        getVision();
@@ -308,6 +371,7 @@ const Aboutdata = ()=>{
        getAnnaiMozhiye();
        getMargazh();
        getActivity2();
+       getRunningImage();
     },[])
     return null;
 } 

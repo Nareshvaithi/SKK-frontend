@@ -238,56 +238,16 @@ export const Homefaqdata = ()=>{
 export const Testimonialsdata = ()=>{
     const {setTestimonials} = useContext(ContextProvide);
     useEffect(()=>{
-        const data = [
-            {
-                id:1,
-                review:"Saraswathy Kala Kendra has truly transformed my journey in Bharatanatyam. The teachers are incredibly patient, and their deep knowledge and passion for the art inspire me every day. I’ve gained not only technical skills but also a deeper appreciation for this beautiful tradition",
-                name:"Priya S",
-                skill:"Bharatanatyam",
-                img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
-                
-            },                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-            {
-                id:2,
-                review:"Kalari has taught me more than just physical discipline — it has strengthened my mind, body, and spirit. The environment at Saraswathy Kala Kendra is both supportive and challenging, helping me improve my coordination, flexibility, and mental focus while also building physical strength.",
-                name:"Rajesh K",
-                skill:"Kalari",
-                img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
-                
-            },
-            {
-                id:3,
-                review:"As a student of Carnatic Music at Saraswathy Kala Kendra, I have experienced the joy of discovering a connection with music that goes beyond sound. The teachers here help me develop vocal skills, improve my understanding of ragas, and express emotions through music",
-                name:"Anjali M",
-                skill:"Carnatic Music",
-                img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
-                
-            },
-            {
-                id:4,
-                review:"Learning the Veena at Saraswathy Kala Kendra has been a life-changing experience. The personal attention I receive, combined with structured lessons, has helped me develop my finger technique, mastery of ragas, and rhythm, advancing my skills much faster than I expected.",
-                name:"Aarav V",
-                skill:"Veena",
-                img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
-                
-            },
-            {
-                id:5,
-                review:"I’ve been training in Mridangam for the past year, and my experience at Saraswathy Kala Kendra has been nothing short of amazing. The instructors are experts in their field, and through their guidance, I’ve improved my hand technique, timing, and rhythm patterns. The cultural events they organize give us an opportunity to showcase our skills",
-                name:" Meera P",
-                skill:"Mridangam",
-                img:<FaUser/>,
-                star:[<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>,<MdOutlineStarPurple500/>]
-                
-            },
-
-        ]
-
-        setTestimonials(data)
+       const getTestimonails = async ()=>{
+        try{
+            const response = await axios.get("https://skk-api.konceptsdandd.com/testimonials");
+            setTestimonials(response.data);
+        }
+        catch(error){
+            console.error(error);
+        }
+       }
+       getTestimonails();
     },[])
 }
 

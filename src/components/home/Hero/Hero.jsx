@@ -68,7 +68,7 @@ const Hero = () => {
                 {/* Shorts Links Grid */}
                 <div id="youtubeshorts" className="mt-5">
                   <div className="grid grid-cols-3 gap-5">
-                    {shorts.map(({ _id, title, url }) => (
+                    {shorts.slice(0,3).map(({ _id, title, url }) => (
                       <iframe
                         key={_id}
                         className="w-full h-[130px] rounded-none lg:rounded-xl"
@@ -82,7 +82,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-full relative group">
+              <div className="w-full relative group">
                 <Swiper
                 className="w-full h-full rounded-none lg:rounded-xl"
                 modules={[Autoplay,Navigation]}

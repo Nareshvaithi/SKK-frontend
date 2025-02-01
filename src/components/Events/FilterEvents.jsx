@@ -11,8 +11,7 @@ function FilterEvents() {
   const [show, setShow] = useState(false);
   const [display, setDisplay] = useState([]);
   const [color, setColor] = useState(false);
-  const { eventBanner, setEventBanner, eventList, setEventList } =
-    useContext(ContextProvide);
+  const { eventBanner, setEventBanner, eventList, setEventList } = useContext(ContextProvide);
   const [selectedValue, setSelectedValue] = useState("");
   const handleChange = (e) => {
     setSelectedValue(e.target.value);

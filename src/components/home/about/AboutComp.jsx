@@ -46,7 +46,7 @@ const AboutComp = () => {
                 immense appreciation.
               </p>
             </div>
-            <div className="" onClick={() => { window.scrollTo(0, 0); }}>
+            <div className="mt-2" onClick={() => { window.scrollTo(0, 0); }}>
               <Button
                 text="Read More"
                 link="/aboutskk"

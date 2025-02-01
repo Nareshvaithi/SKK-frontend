@@ -26,6 +26,7 @@ export const Context = ({ children }) => {
     const [annaiMozhiye,setAnnaiMozhiye] = useState([]);
     const [margazh,setMargazh] = useState([]);
     const [activity2,setActivity2] = useState([]);
+    const [runningImage,setRunningImage] = useState([]);
     const [footerlinks, setFooterlinks] = useState([]);
     const [footersocialmedia, setFootersocialmedia] = useState([]);
     const [footercontact, setFootercontact] = useState([]);
@@ -83,7 +84,8 @@ export const Context = ({ children }) => {
             contemporary,setContemporary,
             annaiMozhiye,setAnnaiMozhiye,
             margazh,setMargazh,
-            activity2,setActivity2
+            activity2,setActivity2,
+            runningImage,setRunningImage
         }}>
             {children}
         </ContextProvide.Provider>
