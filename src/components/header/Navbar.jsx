@@ -37,15 +37,15 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll); // Clean up on component unmount
         };
     }, [lastScrollTop]);
-    
-    
+            
+            
     const handleClick = (label)=>{
         setGalleryType(label)
     }
   
     return (
         <>
-            <div className={`${isScrollingUp ? 'transform translate-y-0' : 'transform -translate-y-full'} transition-all duration-500 bg-white fixed top-0 right-0 left-0 shadow-themebrown/30 shadow-sm z-30`}>
+            <div className={`${isScrollingUp ? 'transform translate-y-0' : 'transform -translate-y-full'} transition-all duration-500 bg-white fixed top-0 right-0 left-0 z-30`}>
                 <div className="container mx-auto flex justify-between items-center py-4">
                     <div className="w-40">
                         <img onClick={()=>navigate('/')} className="cursor-pointer" src={Logo} alt="Saraswathy Kala Kendra Logo" />

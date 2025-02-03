@@ -34,7 +34,7 @@ const Guruscomp = () => {
             <div className="container">
                 <div className="">
                     <div className={`text-center pb-5 w-5/6 mx-auto ${hiddentext === true ? "hidden" : "block"}`}>
-                        <h1 className="headingText py-2 text-gray-900">Our Gurus</h1>
+                        <h1 className="headingText py-2 text-gray-900">Our Teachers</h1>
                         <p className="contentText">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi officiis quasi nisi. 
                             Veritatis repudiandae et architecto. Nostrum debitis dolore iste! Lorem ipsum dolor sit amet consectetur adipisicing elit. iste!

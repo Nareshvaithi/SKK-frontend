@@ -48,6 +48,8 @@ import veenagallery05 from "../assets/Images/gallery/veenaGallery/gallery05.webp
 import whatsappIcon from "../assets/Images/header/whatsapp.webp";
 import locationIcon from "../assets/Images/header/location.webp";
 import gmailIcon from "../assets/Images/header/gmail.webp";
+import windowFrontBanner1 from "../assets/Images/home/WindowFrontBanner1.jpg";
+import windowFrontBanner2 from "../assets/Images/home/WindowFrontBanner2.jpg";
 import axios from 'axios';
 import { CiFacebook } from "react-icons/ci";
 export const Headerdata = () => {
@@ -70,11 +72,11 @@ export const Headerdata = () => {
                 { id: 3, label: "Environment", icon:Bharatanatyam, to: "/aboutskk#environment" },
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
-            { id: 1, label: "Bharatanatyam", icon: Bharatanatyam,type:'Bharatanatyam'},
-            { id: 2, label: "Carnatic Music", icon: music,type:'Music'},
+            { id: 1, label: "Bharatanatyam", icon: Bharatanatyam,type:'Bharatanatyam',to: "/gallery"},
+            { id: 2, label: "Carnatic Music", icon: music,type:'Music',to: "/gallery"},
             { id: 3, label: "Veena", icon: veena,type:'Veena'},
-            { id: 4, label: "Mridangam", icon: mridangam,type:'Mridangam'},
-            { id: 5, label: "Kalari", icon: kalari,type:'Kalari'},            
+            { id: 4, label: "Mridangam", icon: mridangam,type:'Mridangam',to: "/gallery"},
+            { id: 5, label: "Kalari", icon: kalari,type:'Kalari',to: "/gallery"},            
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
             { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
@@ -312,6 +314,18 @@ export const Programsdata = ()=>{
 
         ];
         setCourses(data)
+    },[])
+    return null;
+}
+
+export const FrontBannerdata = ()=>{
+    const {setFrontBanner} = useContext(ContextProvide);
+    useEffect(()=>{
+        const data = [
+            {id:1,windowBanner:windowFrontBanner1,mobileBanner:""},
+            {id:2,windowBanner:windowFrontBanner2,mobileBanner:""},
+        ];
+        setFrontBanner(data);
     },[])
     return null;
 }

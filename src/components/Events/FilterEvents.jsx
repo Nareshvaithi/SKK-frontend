@@ -136,15 +136,15 @@ function FilterEvents() {
                                   </div>
                                 </div>
                                 <div className="border p-4 font-mainFont1">
-                                  <p className="font-semibold">
+                                  <p className="font-mainFont1 text-xl">
                                     {items.event_name}
                                   </p>
-                                  <p className="text-sm/6 leading-5 mt-2">
+                                  <p className="font-mainFont2 text-lg text-gray-700 leading-5 mt-2">
                                     Lorem ipsum dolor sit amet consectetur,
                                     adipisicing Lorem ipsum dolor sit amet
                                     consectetur, adipisicing .{" "}
                                   </p>
-                                  <p className="text-sm/6 mt-2">
+                                  <p className="text-sm font-mainFont2 mt-2">
                                     Event_Date :{" "}
                                     <span className="font-semibold">
                                       {items.date}
@@ -182,20 +182,20 @@ function FilterEvents() {
                                     <img
                                       src={item.images[0]}
                                       alt=""
-                                      className="w-full h-full  transition-transform duration-300 hover:scale-105"
+                                      className="w-full h-full transition-transform duration-300 hover:scale-105"
                                     />
                                   </div>
                                 </div>
                                 <div className="p-4 font-mainFont1">
-                                  <p className="font-semibold ">
+                                  <p className="font-mainFont1 text-xl">
                                     {item.event_name}
                                   </p>
-                                  <p className="text-sm/6 leading-5 mt-2">
+                                  <p className="text-lg font-mainFont2 text-gray-700 leading-5 mt-2">
                                     Lorem ipsum dolor sit amet consectetur,
                                     adipisicing Lorem ipsum dolor sit amet
                                     consectetur, adipisicing .{" "}
                                   </p>
-                                  <p className="text-sm/6 mt-2">
+                                  <p className="text-sm font-mainFont2 mt-2">
                                     Event_Date :{" "}
                                     <span className="font-semibold">
                                       {item.date}

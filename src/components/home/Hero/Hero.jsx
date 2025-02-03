@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -13,7 +13,7 @@ const Hero = () => {
   const {bannerVideo,bannerSlider,shorts} = useContext(ContextProvide);
   console.log("bannerVideo",bannerVideo)
   return (
-    <div className="w-full h-auto pt-28 pb-10 bg-gray-100">
+    <div className="w-full h-auto py-10 bg-gray-100">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full">
             <div className="w-full h-full">
