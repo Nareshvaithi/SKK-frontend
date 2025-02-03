@@ -15,7 +15,7 @@ const AdminHeaderStore = ()=>{
               sublinks:[
                 {id:1,label:"Youtube Banner Video",endPoint:"banner",to:"",inputs:[
                   {id:1,label:"Youtube Banner Video Title",type:"text",value:"title",endPoint:"banner"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text",value:"url"},
+                  {id:2,label:"YouTube Video Embeded Id",type:"text",value:"url",endPoint:"banner"},
                 ]},
                 {id:2,label:"Youtube Shorts",endPoint:"bannerShorts",to:"",inputs:[
                   {id:1,label:"Youtube Shorts Title",type:"text",value:"title",endPoint:"bannerShorts"},
@@ -29,78 +29,100 @@ const AdminHeaderStore = ()=>{
                   {id:2,label:"Teacher Achivements",type:"text",endPoint:"homeGurus",value:"achivements"},
                   {id:2,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
                   {id:2,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
-                  {id:3,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"url"}
+                  {id:3,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"image"}
                 ]},
-                {id:4,label:"Home Gallery",to:"",endPoint:"gallery",inputs:[
-                  {id:1,label:"Youtube Banner Video Title",type:"text",endPoint:"gallery"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text",endPoint:"gallery"},
-                ]},
-                {id:5,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
-                  {id:1,label:"Youtube Banner Video Title",type:"text",endPoint:"testimonials"},
-                  {id:2,label:"YouTube Video Embeded Id",type:"text",endPoint:"testimonials"},
+                {id:4,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
+                  {id:1,label:"Name",type:"text",endPoint:"testimonials",value:"name",endPoint:"testimonials"},
+                  {id:2,label:"profession",type:"text",endPoint:"testimonials",value:"profession"},
+                  {id:2,label:"review",type:"text",endPoint:"testimonials",value:"review"},
+                  {id:2,label:"starRating",type:"text",endPoint:"testimonials",label:"starRating"},
                 ]},
               ],
             },
             {
               id: 2,
-              title: "About",
-              to: "",
-              icon:"emoji_people",
-              sublinks:[
-                {id:1,label:"Youtube Banner Video1",to:""},
-                {id:2,label:"Youtube Banner Video1",to:""},
-                {id:3,label:"Youtube Banner Video1",to:""},
-                {id:4,label:"Youtube Banner Video1",to:""},
-              ]
-            },
-            {
-              id: 3,
               title: "Gallery",
               to: "",
               icon:"vrpano",
               sublinks:[
-                {id:1,label:"Bharatanayam",to:""},
-                {id:2,label:"Carnatic Music",to:""},
-                {id:3,label:"Veena",to:""},
-                {id:4,label:"Mirdangam",to:""},
-                {id:4,label:"Kalari",to:""},
+                {id:1,label:"Bharatanayam",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"gallery",value:"Bharatanayam"},
+                  {id:2,label:"image",type:"file",endPoint:"gallery",value:"image"},
+                ]},
+                {id:2,label:"Carnatic Music",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"gallery",value:"Carnatic Music"},
+                  {id:2,label:"image",type:"file",endPoint:"gallery",value:"image"},
+                ]},
+                {id:3,label:"Veena",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"gallery",value:"Veena"},
+                  {id:2,label:"image",type:"file",endPoint:"gallery",value:"image"},
+                ]},
+                {id:4,label:"Mirdangam",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"gallery",value:"Mirdangam"},
+                  {id:2,label:"image",type:"file",endPoint:"gallery",value:"image"},
+                ]},
+                {id:4,label:"Kalari",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"gallery",value:"Kalari"},
+                  {id:2,label:"image",type:"file",endPoint:"gallery",value:"image"},
+                ]},
               ]
             },
             {
               id: 4,
-              title: "Courses",
-              to:"",
-              icon: "book",
-              sublinks:[
-                {id:1,label:"Bharatanayam",to:""},
-                {id:2,label:"Carnatic Music",to:""},
-                {id:3,label:"Veena",to:""},
-                {id:4,label:"Mirdangam",to:""},
-                {id:4,label:"Kalari",to:""},
-              ]
-            },
-            {
-              id: 5,
               title: "Events",
               to:"",
               icon: "calendar_month",
               sublinks:[
-                {id:1,label:"Bharatanayam",to:""},
-                {id:2,label:"Carnatic Music",to:""},
-                {id:3,label:"Veena",to:""},
-                {id:4,label:"Mirdangam",to:""},
-                {id:4,label:"Kalari",to:""},
-
-              ]
-            },
+                {id:1,label:"Bharatanayam",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"events",value:"Bharatanayam"},
+                  {id:2,label:"Event Name",type:"text",endPoint:"events",value:"Event Name"},
+                  {id:3,label:"Event date",type:"date",endPoint:"events",value:"Event date"},
+                  {id:4,label:"Event about",type:"text",endPoint:"events",value:"Event about"},
+                  {id:5,label:"Image",type:"file",endPoint:"events",value:"image"},
+                ]},
+                {id:2,label:"Carnatic Music",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"events",value:"Carnatic Music"},
+                  {id:2,label:"Event Name",type:"text",endPoint:"events",value:"Event Name"},
+                  {id:3,label:"Event date",type:"date",endPoint:"events",value:"Event date"},
+                  {id:4,label:"Event about",type:"text",endPoint:"events",value:"Event about"},
+                  {id:5,label:"Image",type:"file",endPoint:"events",value:"image"},
+                ]},
+                {id:3,label:"Veena",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"events",value:"Veena"},
+                  {id:2,label:"Event Name",type:"text",endPoint:"events",value:"Event Name"},
+                  {id:3,label:"Event date",type:"date",endPoint:"events",value:"Event date"},
+                  {id:4,label:"Event about",type:"text",endPoint:"events",value:"Event about"},
+                  {id:5,label:"Image",type:"file",endPoint:"events",value:"image"},
+                ]},
+                {id:4,label:"Mirdangam",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"events",value:"Mirdangam"},
+                  {id:2,label:"Event Name",type:"text",endPoint:"events",value:"Event Name"},
+                  {id:3,label:"Event date",type:"date",endPoint:"events",value:"Event date"},
+                  {id:4,label:"Event about",type:"text",endPoint:"events",value:"Event about"},
+                  {id:5,label:"Image",type:"file",endPoint:"events",value:"image"},
+                ]},
+                {id:4,label:"Kalari",to:"",inputs:[
+                  {id:1,label:"Category",type:"text",endPoint:"events",value:"Kalari"},
+                  {id:2,label:"Event Name",type:"text",endPoint:"events",value:"Event Name"},
+                  {id:3,label:"Event date",type:"date",endPoint:"events",value:"Event date"},
+                  {id:4,label:"Event about",type:"text",endPoint:"events",value:"Event about"},
+                  {id:5,label:"Image",type:"file",endPoint:"events",value:"image"},
+                ]},
+              ]            },
             
             {
-              id: 6,
+              id: 5,
               title: "Blogs",
               to:"",
               icon: "edit",
               sublinks:[
-                {id:1,label:"Blogs",to:""},
+                {id:1,label:"Blogs",to:"",inputs:[
+                  {id:1,label:"Title",type:"text",endPoint:"blogs",value:"Title"},
+                  {id:2,label:"Author Name",type:"text",endPoint:"blogs",value:"authorName"},
+                  {id:3,label:"Content",type:"text",endPoint:"blogs",value:"content"},
+                  {id:4,label:"Gallary Image",type:"file",endPoint:"blogs",value:"gallaryImage"},
+                  {id:5,label:"Banner Image",type:"file",endPoint:"blogs",value:"bannerImage"},
+                ]},
               
               ]
             },

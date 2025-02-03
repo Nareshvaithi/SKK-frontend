@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AdminContextProvide } from "../Context_API/ContextProvider";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import axios from "axios";
 import { title } from "framer-motion/client";
 import { use } from "react";
@@ -11,62 +11,65 @@ const HomeTable = () => {
   const [inputs, setInputs] = useState([]);
   const [endPointCheck, setEndPointCheck] = useState("");
   const [intialValue, setIntialValue] = useState({});
-
+  const [galleryType,setGalleryType]=useState(false)
   useEffect(() => {
     const handleInitialValues = () => {
-      const newValues = inputs.reduce((acc, { value }) => {
-        acc[value] = "";
+      const newValues = inputs.reduce((acc, {label, value,endPoint }) => {
+        console.log(endPoint)
+        setEndPointCheck(endPoint);
+        if(label==="Category"){
+          acc[value] = value;
+        }else{
+          acc[value] = "";
+        }
         return acc;
       }, {});
       setIntialValue(newValues);
+      
     };
     handleInitialValues();
   }, [inputs]);
-
   const formik = useFormik({
     initialValues: intialValue,
 
     validate: (values) => {
       let error = {};
-      inputs.forEach(({ value }) => {
-        if (!values[value]) {
+      inputs.forEach(({label, value }) => {
+        if (label !== "Category" && !values[value]) {
           error[value] = "*Required*";
         }
       });
       return error;
     },
-
     onSubmit: async (values, { resetForm }) => {
       let formData = new FormData();
       let hasFile = false;
-      inputs.forEach((type, { value }) => {
+      inputs.map(( {type,value,endPoint}) => {
         if (type == "file" && values["image"]) {
           formData.append(value, values["image"]);
           hasFile = true;
         } else {
           formData.append(value, values[value]);
         }
-        if (endPointCheck == value.endPoint) {
-          return setPostValues(true);
-        }
+     
       });
-      if (postValues) {
         try {
+         
           const payload = hasFile ? formData : values;
-
-          await axios.post(`${API_URL}/${endPointCheck}`, payload, {
-            headers: hasFile ? { "Content-Type": "multipart/form-data" } : {},
-          });
+          console.log("formData  = >",formData,  "values  => ", values)
+          // await axios.post(`${API_URL}/${endPointCheck}`, payload, {
+          //   headers: hasFile ? { "Content-Type": "multipart/form-data" } : {},
+          // });
 
           alert("Success");
           resetForm();
         } catch (error) {
           alert("Smothing went wrong");
         }
-      }
+   
     },
   });
-
+  console.log("endPointCheck",endPointCheck)
   return (
     <div className="py-10 relative h-full">
       {adminNavData
@@ -97,7 +100,7 @@ const HomeTable = () => {
                         <i
                           onClick={() => {
                             inputs && setInputs(inputs);
-                            setEndPointCheck(endPoint);
+                           
                           }}
                           className="material-icons-outlined bg-blue-500 rounded-md text-white px-2 py-1"
                         >
@@ -141,7 +144,8 @@ const HomeTable = () => {
                       name={`${type == "file" ? "image" : value}`}
                       className="w-full bg-admintheme/20 text-admintheme outline-none rounded-xl px-3 py-2"
                       onChange={formik.handleChange}
-                      value={formik.values[value] || ""}
+                      value={label=="Category" ? value : formik.values[value] || ""}
+                      readOnly={label === "Category"}
                     />
                     <span style={{ color: "red" }}>{formik.errors[value]}</span>
                   </div>
