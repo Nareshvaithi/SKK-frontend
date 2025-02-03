@@ -9,6 +9,7 @@ import HomeGallery from "../components/home/homegallery/HomeGallery";
 import Review from "../components/home/review/Review";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import FrontBannerSlider from "../components/home/FrontSlider/FrontBannerSlider";
 
 
 const Home = ()=>{
@@ -24,6 +25,7 @@ const Home = ()=>{
     
     return(
         <div>
+            <FrontBannerSlider/>
             <Hero />
             <AboutComp/>
             <Guruscomp />

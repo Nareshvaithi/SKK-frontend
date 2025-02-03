@@ -16,6 +16,10 @@ const RunningImages = () => {
   const row3 = runningImage.slice(chunkSize * 2);
 
   return (
+    <div className="">
+      <div className="text-center">
+        <h1 className="headingText">Our Visual Journey</h1>
+      </div>
     <div className="bg-gray-100 py-6 space-y-6 overflow-hidden">
       {/* Row 1 - Right to Left */}
       <div className="flex space-x-4 animate-scroll-left w-max">
@@ -39,6 +43,7 @@ const RunningImages = () => {
       </div>
 
       <Aboutdata/>
+    </div>
     </div>
   );
 };

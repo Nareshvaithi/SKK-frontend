@@ -6,7 +6,7 @@ import Logo from "../../assets/Images/header/logo-SKK.png";
 import { NavLink } from "react-router-dom";
 
 const ResponsiveNav = () => {
-    const { navbarData, footersocialmedia, footercontact } = useContext(ContextProvide);
+    const { navbarData, footersocialmedia, footercontact, setGalleryType } = useContext(ContextProvide);
     const { menu, setMenu } = useContext(ContextProvide);
 
     const [expandedItem, setExpandedItem] = useState(null);
@@ -14,6 +14,10 @@ const ResponsiveNav = () => {
     const toggleSublinks = (id) => {
         setExpandedItem(expandedItem === id ? null : id);
     };
+
+    const handleClick = (label)=>{
+        setGalleryType(label)
+    }
 
     return (
         <div className={`w-full h-full z-[99999] bg-white fixed top-0 ${menu ? "transform translate-x-0" : "transform -translate-x-[150%]"} transition-all duration-1000 ease-in-out`}>
@@ -34,7 +38,7 @@ const ResponsiveNav = () => {
                                 <div key={id} className={`${id === 8 ? "hidden" : "block"} flex flex-col gap-2`}>
                                     <div className="flex items-center gap-2">
                                         <NavLink
-                                            onClick={() => { setMenu(false); window.scrollTo(0, 0); }}
+                                            onClick={() => { setMenu(false); window.scrollTo(0, 0); setGalleryType(null)}}
                                             to={to}
                                         >
                                             {title}
@@ -47,8 +51,8 @@ const ResponsiveNav = () => {
                                     </div>
                                     {sublinks && (
                                         <ul className={`overflow-hidden transition-all ease-linear duration-1000 ${expandedItem === id ? 'max-h-screen' : 'max-h-0'}`}>
-                                            {sublinks.map(({ id, label, to }) => (
-                                                <li key={id} className="text-sm">
+                                            {sublinks.map(({ id, label, to, type }) => (
+                                                <li onClick={()=>{handleClick(type);window.scrollTo(0,0);setMenu(false)}} key={id} className="text-sm">
                                                     <NavLink to={to}>{label}</NavLink>
                                                 </li>
                                             ))}

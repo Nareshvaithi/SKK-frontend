@@ -5,6 +5,7 @@ export const ContextProvide = createContext();
 export const Context = ({ children }) => {
     const APIurl = "https://skk-api.konceptsdandd.com";
     const [menu, setMenu] = useState(false);
+    const [frontBanner,setFrontBanner] = useState([]);
     const [navbarData, setNavbarData] = useState([]);
     const [bannerVideo, setBannerVideo] = useState([]);
     const [shorts, setShorts] = useState([]);
@@ -47,6 +48,7 @@ export const Context = ({ children }) => {
     return (
         <ContextProvide.Provider value={{
             APIurl,
+            frontBanner,setFrontBanner,
             navbarData,setNavbarData,
             bannerVideo,setBannerVideo,
             shorts,setShorts,

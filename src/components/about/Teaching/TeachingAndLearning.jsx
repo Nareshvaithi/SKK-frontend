@@ -30,16 +30,16 @@ const TeachingAndLearning = ()=>{
                             return <div key={id} className="grid grid-cols-3 gap-3">
                                     <p className="contentText col-span-2 self-center">{content1}</p>
                                     <img src={teachingImg1} className="col-span-1 rounded-xl h-full object-cover" alt="" />
-                                    <img src={teachingImg2} className="col-span-1 rounded-xl h-full object-cover" alt="" />
-                                    <p className="contentText col-span-2">{content2}</p>
-                                    <p className="contentText col-span-2">{content3}</p>
-                                    <img className="col-span-1 rounded-xl h-full object-cover" src={teachingImg3} alt="" />
-                                    <img className="rounded-xl col-span-1 h-full object-cover" src={teachingImg4} alt="" />
-                                    <p className="rounded-xl col-span-2 contentText">{content4}</p>
-                                    <p className="contentText col-span-2">{content5}</p>
-                                    <img src={teachingImg5} className="rounded-xl col-span-1" alt="" />
-                                    <img className="col-span-2 rounded-xl" src={teachingImg6} alt="" />
-                                    <p className="contentText col-span-1">{content6}</p>
+                                    <img src={teachingImg2} className="col-span-3 lg:col-span-1 rounded-xl h-full object-cover" alt="" />
+                                    <p className="contentText col-span-3 lg:col-span-2">{content2}</p>
+                                    <p className="contentText col-span-3 lg:col-span-2">{content3}</p>
+                                    <img className="col-span-3 lg:col-span-1 rounded-xl h-full object-cover" src={teachingImg3} alt="" />
+                                    <img className="rounded-xl col-span-3 lg:col-span-1 h-full object-cover" src={teachingImg4} alt="" />
+                                    <p className="rounded-xl col-span-3 lg:col-span-2 contentText">{content4}</p>
+                                    <p className="contentText col-span-3 lg:col-span-2">{content5}</p>
+                                    <img src={teachingImg5} className="rounded-xl col-span-3 lg:col-span-1" alt="" />
+                                    <img className="col-span-3 lg:col-span-2 rounded-xl" src={teachingImg6} alt="" />
+                                    <p className="contentText col-span-3 lg:col-span-1">{content6}</p>
                             </div>
                         })
                     }
