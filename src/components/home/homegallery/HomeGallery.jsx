@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { ContextProvide } from "../../../Context_API/contextProvider";
 import { HomegalleryData } from "../../../DataStore/HomeStore";
+import { useNavigate } from "react-router-dom";
 
 const HomeGallery = ()=>{
     const {homegallery} = useContext(ContextProvide);
+    const navigate = useNavigate();
     return(
         <>
         <div className="py-10 w-full bg-white">
@@ -14,7 +16,7 @@ const HomeGallery = ()=>{
                 <div className="h-full w-full grid grid-cols-1 lg:grid-cols-3 gap-5 rounded-xl">
                     {
                         homegallery.map(({id,img})=>(
-                            <div key={id} className={`${id === 2 ? "row-span-2":""} w-full h-full relative group overflow-hidden rounded-xl`}>
+                            <div onClick={()=>{navigate('/gallery');window.scrollTo(0,0)}} key={id} className={`${id === 2 ? "row-span-2":""} w-full h-full relative group overflow-hidden rounded-xl`}>
                                 <img src={img} alt="" className="w-full h-full rounded-xl group-hover:scale-110 transition-all duration-1000" />
                                 <div className="absolute rounded-xl w-full h-full bg-gradient-to-t from-themebrown to-transparent inset-0 overflow-hidden translate-y-full group-hover:translate-y-0 transition-all duration-1000 ease-in-out">
                                     <div className="flex justify-center items-center w-full h-full">

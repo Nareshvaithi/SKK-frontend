@@ -11,6 +11,7 @@ import { Herodata } from "../../../DataStore/HomeStore";
 const Hero = () => {
  
   const {bannerVideo,bannerSlider,shorts} = useContext(ContextProvide);
+  console.log("bannerVideo",bannerVideo)
   return (
     <div className="w-full h-auto pt-28 pb-10 bg-gray-100">
       <div className="container">

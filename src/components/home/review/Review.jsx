@@ -83,10 +83,10 @@ const Review = () => {
                                 ))
                             }
                         </Swiper>
-                        <button className="reviewNext absolute right-1 active:animate-ping text-xl lg:text-4xl rounded-full text-black z-10">
+                        <button className="reviewNext absolute right-1 active:animate-ping text-xl lg:text-4xl rounded-full text-white z-10">
                             <GrFormNext />
                         </button>
-                        <button className="reviewPrev absolute left-1 active:animate-ping text-xl lg:text-4xl rounded-full text-black z-10">
+                        <button className="reviewPrev absolute left-1 active:animate-ping text-xl lg:text-4xl rounded-full text-white z-10">
                             <GrFormPrevious />
                         </button>
                     </div>
