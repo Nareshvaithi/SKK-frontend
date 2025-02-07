@@ -16,6 +16,7 @@ import GuruDetails from "./pages/GuruDetails";
 import Meta from "./components/meta/meta";
 import Admin from "./adminPanel/Adminpages/Admin";
 import AdminWorkSpace from "./adminPanel/Components/AdminWorkSpace";
+import AdminDemo from "./adminPanel/Adminpages/AdminDemo";
 
 
 function App() {
@@ -38,12 +39,15 @@ function App() {
               <Route path="/faq" element={<Faq />} />
               <Route path="/guru/:name" element={<GuruDetails/>}/>
               <Route path="*" element={<Nopage />} />
+              
             </Route>
              {/* Admin Route */}
               <Route path="/admin" element={<Admin/>}>
+              
               <Route index element={<AdminWorkSpace/>}/>
               
               </Route>
+              <Route path="/admin1" element={<AdminDemo/>}></Route>
           </Routes>
         </BrowserRouter>
       </AdminContext>
