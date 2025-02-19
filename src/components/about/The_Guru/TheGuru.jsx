@@ -5,7 +5,7 @@ import Aboutdata from "../../../DataStore/Aboutdata";
 const TheGuru = ()=>{
     const {theGuru} = useContext(ContextProvide);
     return(
-        <div className="py-0 lg:py-5">
+        <div id="theguru" className="py-0 lg:py-5">
             <div className="flex flex-col lg:flex-row items-center lg:items-start container py-5">
                 <div className="w-full lg:w-[30%] py-5">
                     <h2 className="headingText text-wrap text-center lg:text-left">The Guru</h2>

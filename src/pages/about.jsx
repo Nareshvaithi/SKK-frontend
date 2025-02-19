@@ -13,7 +13,6 @@ import ContemporaryWorks from "../components/about/Contemporaryworks/Contemporar
 import AnnaiMozhiye from "../components/about/AnnaiMozhiye/AnnaiMozhiye";
 import Margazh from "../components/about/Margazh/Margazh";
 import RunningImages from "../components/about/RunningImages.jsx/RunningImages";
-import i from "../assets/Images/about/RunningImage/01.jpg"
 const About = ()=>{
     const location = useLocation();
     useEffect(() => {

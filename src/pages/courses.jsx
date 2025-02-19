@@ -5,6 +5,7 @@ import { Programsdata } from "../DataStore/HomeStore";
 
 const Courses = ()=>{
     const {courses} = useContext(ContextProvide);
+  
     return(
         <div className="pt-24 bg-white">
             <div>

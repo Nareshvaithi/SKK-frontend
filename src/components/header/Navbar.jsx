@@ -87,7 +87,7 @@ const Navbar = () => {
                                                 }}
                                             >
                                                 <div className="w-10">
-                                                    <img className="object-cover" src={icon} alt={label} />
+                                                    <img className="object-cover rounded-sm" src={icon} alt={label} />
                                                 </div>
                                                 <div>
                                                     <h1 onClick={()=>handleClick(type)} className="text-sm font-mainFont2 text-nowrap">{label}</h1>

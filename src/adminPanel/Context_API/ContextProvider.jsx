@@ -1,20 +1,38 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo, useEffect } from "react";
 
-export const AdminContextProvide = createContext();
+export const AdminContext = createContext(null);
 
-const AdminContext = ({children})=>{
-    const [adminNavData,setAdminNavData] = useState([]);
-    const [openCMS,setOpenCMS] = useState(false);
-    const [CMS,setCMS] = useState(1)
-    return(
-        <AdminContextProvide.Provider value={{
-            adminNavData,setAdminNavData,
-            openCMS,setOpenCMS,
-            CMS,setCMS
-        }}>
+const AdminProvider = ({ children }) => {
+    const [adminNavData, setAdminNavData] = useState([]);
+    const [openCMS, setOpenCMS] = useState(false);
+    const [CMS, setCMS] = useState(1);
+    const [isAuthenticated, setIsAuthenticated] = useState(
+        () => JSON.parse(localStorage.getItem("isAuthenticated")) || false
+    );
+
+    useEffect(() => {
+        localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+    }, [isAuthenticated]);
+
+    const login = () => setIsAuthenticated(true);
+    const logout = () => {
+        setIsAuthenticated(false);
+        localStorage.removeItem("isAuthenticated");
+    };
+
+    const contextValue = useMemo(() => ({
+        adminNavData, setAdminNavData,
+        openCMS, setOpenCMS,
+        CMS, setCMS,
+        isAuthenticated, setIsAuthenticated,
+        login, logout,
+    }), [adminNavData, openCMS, CMS, isAuthenticated]);
+
+    return (
+        <AdminContext.Provider value={contextValue}>
             {children}
-        </AdminContextProvide.Provider>
-    )
-}
+        </AdminContext.Provider>
+    );
+};
 
-export default AdminContext;
+export default AdminProvider;

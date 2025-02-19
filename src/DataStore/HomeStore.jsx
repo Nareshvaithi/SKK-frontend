@@ -45,11 +45,36 @@ import veenagallery02 from "../assets/Images/gallery/veenaGallery/gallery02.webp
 import veenagallery03 from "../assets/Images/gallery/veenaGallery/gallery03.webp";
 import veenagallery04 from "../assets/Images/gallery/veenaGallery/gallery04.webp";
 import veenagallery05 from "../assets/Images/gallery/veenaGallery/gallery05.webp";
-import whatsappIcon from "../assets/Images/header/whatsapp.webp";
-import locationIcon from "../assets/Images/header/location.webp";
-import gmailIcon from "../assets/Images/header/gmail.webp";
+import whatsappIcon from "../assets/Images/header/whatsapp.png";
+import locationIcon from "../assets/Images/header/location.png";
+import gmailIcon from "../assets/Images/header/gmail.png";
 import windowFrontBanner1 from "../assets/Images/home/WindowFrontBanner1.jpg";
 import windowFrontBanner2 from "../assets/Images/home/WindowFrontBanner2.jpg";
+import windowFrontBanner3 from "../assets/Images/home/WindowFrontBanner3.jpg";
+import windowFrontBanner4 from "../assets/Images/home/WindowFrontBanner4.jpg";
+import windowFrontBanner5 from "../assets/Images/home/WindowFrontBanner5.jpg";
+import youtubeSliderIcon from "../assets/Images/header/youtube-icon.jpg";
+import shortsIcon from "../assets/Images/header/shorts-icon.jpg";
+import teacherIcon from "../assets/Images/header/teacher.jpg";
+import whyLearnIcon from "../assets/Images/header/why-learn-icon.jpg";
+import specialityIcon from "../assets/Images/header/speciality-icon.jpg";
+import courseIcon from "../assets/Images/header/programs-icon.jpg";
+import founderIcon from "../assets/Images/header/founder-icon.jpg";
+import testimonialIcon from "../assets/Images/header/testimonoal-icon.jpg";
+import AboutFounderIcon from "../assets/Images/header/the-founders-icon.jpg";
+import ourVisionIcon from "../assets/Images/header/our-vision-icon.jpg";
+import trainAndEstIcon from "../assets/Images/header/training-and-establishment-icon.jpg";
+import  TheGuruIcon from "../assets/Images/header/the-guru-icon.jpg";
+import teachandLearnIcon from "../assets/Images/header/teaching-and-learning-icon.jpg";
+import honoursAndAwardsIcon from "../assets/Images/header/honours-and-awards-icon.jpg";
+import innovationsIcon from "../assets/Images/header/innovations-icon.jpg";
+import activitiesIcon from "../assets/Images/header/activities-icon.jpg";
+import tvShowIcon from "../assets/Images/header/tv-show-icon.jpg";
+import contemporaryWorksIcon from "../assets/Images/header/contemporary-works-icon.jpg";
+import annaiMozhiyeIcon from "../assets/Images/header/annai-mozhiye-icon.jpg";
+import artIcon from "../assets/Images/header/art-icon.jpg";
+
+
 import axios from 'axios';
 import { CiFacebook } from "react-icons/ci";
 export const Headerdata = () => {
@@ -57,19 +82,28 @@ export const Headerdata = () => {
     useEffect(() => {
         const data = [
             { id: 1, title: "Home", to: "/",sublinks:[
-                { id: 1, icon:Bharatanatyam, label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
-                { id: 2, icon:Bharatanatyam, label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
-                { id: 3, icon:Bharatanatyam, label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
-                { id: 4, icon:Bharatanatyam, label: "Gurus", label2: "Meet the Gurus", to: "/#gurus" },
-                { id: 5, icon:Bharatanatyam, label: "Programs", label2: "Explore the programs", to: "/#programs" },
-                { id: 6, icon:Bharatanatyam, label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
-                { id: 7, icon:Bharatanatyam, label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
-                { id: 8, icon:Bharatanatyam, label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
+                { id: 1, icon:youtubeSliderIcon, label: "YouTube Video", label2: "Video content for all", to: "/#youtubevideo" },
+                { id: 2, icon:shortsIcon, label: "YouTube Shorts", label2: "Quick video clips", to: "/#youtubeshorts" },
+                { id: 3, icon:founderIcon, label: "Meet The Founder", label2: "Founder introduction", to: "/#meetfounder" },
+                { id: 4, icon:teacherIcon, label: "Teachers", label2: "Meet the Gurus", to: "/#gurus" },
+                { id: 5, icon:courseIcon, label: "Courses", label2: "Explore the programs", to: "/#programs" },
+                { id: 6, icon:whyLearnIcon, label: "Why Learn Bharatanatyam", label2: "Explore the programs", to: "/#whylearnbha" },
+                { id: 7, icon:specialityIcon, label: "Speciality of SKK", label2: "Explore the programs", to: "/#specialityofskk" },
+                { id: 8, icon:testimonialIcon, label: "Testimonials", label2: "Explore the programs", to: "/#testimonials" },
             ] },
             { id: 2, title: "About", to: "/aboutskk", sublinks: [
-                { id: 1, label: "The Founder", icon:Bharatanatyam, to: "/aboutskk#founder" },
-                { id: 2, label: "Our Studio", icon:Bharatanatyam, to: "/aboutskk#ourstudio" },
-                { id: 3, label: "Environment", icon:Bharatanatyam, to: "/aboutskk#environment" },
+                { id: 1, label: "The Founder", icon:AboutFounderIcon, to: "/aboutskk#aboutfounders" },
+                { id: 2, label: "Our Vision", icon:ourVisionIcon, to: "/aboutskk#ourvision" },
+                { id: 3, label: "Training and Establishment", icon:trainAndEstIcon, to: "/aboutskk#trainandest" },
+                { id: 4, label: "The Guru", icon:TheGuruIcon, to: "/aboutskk#theguru" },
+                { id: 5, label: "Teaching and Learning", icon:teachandLearnIcon, to: "/aboutskk#teachandlearn" },
+                { id: 6, label: "Honours and Awards", icon:honoursAndAwardsIcon, to: "/aboutskk#honoursandawards" },
+                { id: 7, label: "Innovations", icon:innovationsIcon, to: "/aboutskk#innovations" },  
+                { id: 8, label: "Activities", icon:activitiesIcon, to: "/aboutskk#activities" },  
+                { id: 9, label: "TV Shows", icon:tvShowIcon, to: "/aboutskk#tvshow" },  
+                { id: 10, label: "Contemporary Works", icon:contemporaryWorksIcon, to: "/aboutskk#contemporary" },  
+                { id: 12, label: "Annai Mozhiye", icon:annaiMozhiyeIcon, to: "/aboutskk#annaimoziye" },  
+                { id: 13, label: "Margazhi art festival", icon:artIcon, to: "/aboutskk#margazhiartfestival" },    
         ]},
         { id: 3, title: "Gallery", to: "/gallery", sublinks: [
             { id: 1, label: "Bharatanatyam", icon: Bharatanatyam,type:'Bharatanatyam',to: "/gallery"},
@@ -79,11 +113,11 @@ export const Headerdata = () => {
             { id: 5, label: "Kalari", icon: kalari,type:'Kalari',to: "/gallery"},            
         ]},
         { id: 4, title: "Courses", to: "/courses", sublinks: [
-            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "" },
-            { id: 2, label: "Kalari", icon:kalari, to: "" },
-            { id: 3, label: "Carnatic Music", icon:music, to: "" },
-            { id: 4, label: "Mirdangam", icon:mridangam, to: "" },
-            { id: 5, label: "Veena", icon:veena, to: "" },
+            { id: 1, label: "Bharatanatyam", icon:Bharatanatyam, to: "/courses/#bharatanatyam" },
+            { id: 2, label: "Carnatic Music", icon:music, to: "/courses/#carnatic_music" },
+            { id: 3, label: "Veena", icon:veena, to: "/courses/#veena" },
+            { id: 4, label: "Mridangam", icon:mridangam, to: "/courses/#mridangam" },
+            { id: 5, label: "Kalari", icon:kalari, to: "/courses/#kalari" },
         ]},
         { id: 5, title: "Events", to: "/events"},
         { id: 6, title: "Blogs", to: "/blogs",},
@@ -128,7 +162,7 @@ export const Herodata = ()=>{
             console.log(error)
           }
         }
-    
+        
         fetchbannervideo();
         fetchshortslink();
         fetchsliderlink();
@@ -279,20 +313,9 @@ export const Programsdata = ()=>{
                 gallery:[{id:1,img:Carmusicgallery01},{id:2,img:Carmusicgallery02},{id:3,img:Carmusicgallery03},{id:4,img:Carmusicgallery04},{id:5,img:Carmusicgallery05},]
 
             },
-          
-            { 
-                id: 3, 
-                img: mridangam, 
-                program_name: "Mridangam",
-                program_subname:"The Rhythmic Heartbeat of Tradition",
-                intro:"In this course, students will learn to master rhythm patterns, enhance their timing, and develop skills that make the Mridangam an integral part of their musical journey.",
-                slider:[mridangam,mridangam,mridangam],
-                history_content:"The Mridangam is a prominent percussion instrument in Carnatic music, known for its deep, resonant sound. Made from wood, it features two drumheads of different pitches, producing a variety of tones when played with both hands. The instrument provides essential rhythmic support in classical music, dance performances, and religious ceremonies. Its intricate playing techniques and ability to create complex rhythms make it a vital part of South Indian musical tradition. The Mridangam continues to be a cornerstone of Carnatic concerts, with many renowned artists dedicating their careers to mastering this instrument.",
-                gallery:[{id:1,img:Mirgallery01},{id:2,img:Mirgallery02},{id:3,img:Mirgallery03},{id:4,img:Mirgallery04},{id:5,img:Mirgallery05},]
-            },
             
             { 
-                id: 4, 
+                id: 3, 
                 img: veena, 
                 program_name: "Veena",
                 program_subname:"The Voice of the Divine Strings",
@@ -301,6 +324,16 @@ export const Programsdata = ()=>{
                 history_content:"The Veena, a classical string instrument, holds a revered place in Carnatic music. It has a long neck, large resonating body, and multiple strings, producing a deep, melodic sound. Played with a plectrum, the Veena is ideal for performing intricate ragas and is associated with Goddess Saraswati, symbolizing knowledge and arts. Traditionally, it is used for both solo performances and accompaniment in Carnatic concerts. The Veena’s rich tones and expressive capabilities make it a cornerstone of Indian classical music, celebrated for its ability to convey complex emotions and spiritual depth.",
                 gallery:[{id:1,img:veenagallery01},{id:2,img:veenagallery02},{id:3,img:veenagallery03},{id:4,img:veenagallery04},{id:5,img:veenagallery05},]
             },  
+            { 
+                id: 4, 
+                img: mridangam, 
+                program_name: "Mridangam",
+                program_subname:"The Rhythmic Heartbeat of Tradition",
+                intro:"In this course, students will learn to master rhythm patterns, enhance their timing, and develop skills that make the Mridangam an integral part of their musical journey.",
+                slider:[mridangam,mridangam,mridangam],
+                history_content:"The Mridangam is a prominent percussion instrument in Carnatic music, known for its deep, resonant sound. Made from wood, it features two drumheads of different pitches, producing a variety of tones when played with both hands. The instrument provides essential rhythmic support in classical music, dance performances, and religious ceremonies. Its intricate playing techniques and ability to create complex rhythms make it a vital part of South Indian musical tradition. The Mridangam continues to be a cornerstone of Carnatic concerts, with many renowned artists dedicating their careers to mastering this instrument.",
+                gallery:[{id:1,img:Mirgallery01},{id:2,img:Mirgallery02},{id:3,img:Mirgallery03},{id:4,img:Mirgallery04},{id:5,img:Mirgallery05},]
+            },
             { 
                 id: 5, 
                 img: kalari, 
@@ -323,9 +356,14 @@ export const FrontBannerdata = ()=>{
     useEffect(()=>{
         const data = [
             {id:1,windowBanner:windowFrontBanner1,mobileBanner:""},
-            {id:2,windowBanner:windowFrontBanner2,mobileBanner:""},
+            {id:2,windowBanner:windowFrontBanner2,mobileBanner:"",name:"Carnatic Music",to:"/courses/#carnatic_music"},
+            {id:3,windowBanner:windowFrontBanner3,mobileBanner:"",name:"Veena",to:"/courses/#veena"},
+            {id:4,windowBanner:windowFrontBanner4,mobileBanner:"",name:"Mridangam",to:"/courses/#mridangam"},
+            {id:5,windowBanner:windowFrontBanner5,mobileBanner:"",name:"Kalari",to:"/courses/#kalari"},
         ];
         setFrontBanner(data);
     },[])
     return null;
 }
+
+

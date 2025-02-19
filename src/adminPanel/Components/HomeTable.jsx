@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { AdminContextProvide } from "../Context_API/ContextProvider";
+import { AdminContext } from "../Context_API/ContextProvider";
 import { useFormik } from "formik";
 import axios from "axios";
 import { title } from "framer-motion/client";
 import { use } from "react";
 const HomeTable = () => {
-  const { adminNavData, CMS } = useContext(AdminContextProvide);
+  const { adminNavData, CMS } = useContext(AdminContext);
   const API_URL = import.meta.env.VITE_API_URI;
   const [postValues, setPostValues] = useState(false);
   const [inputs, setInputs] = useState([]);

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -95,13 +94,12 @@ const Guruscomp = () => {
                                 ))
                             }
                         </Swiper>
-                        <button className={`custom-gurus-prev absolute left-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
-                            <RiArrowLeftWideFill size={20} />
+                        <button className="custom-gurus-prev absolute left-2 lg:left-5 top-1/2 transform -translate-y-1/2 transition-opacity flex items-center justify-center z-10 w-fit h-fit p-1 lg:p-2 border border-gray-400 rounded-full bg-white">
+                            <RiArrowLeftWideFill />
                         </button>
-                        <button className={`custom-gurus-next absolute right-5 top-1/2 transform -translate-y-1/2 transition-opacity items-center justify-center z-10 w-fit h-fit p-2 border border-gray-400 rounded-full bg-white hidden lg:flex`}>
-                            <RiArrowRightWideFill size={20} />
+                        <button className="custom-gurus-next absolute right-2 lg:right-5 top-1/2 transform -translate-y-1/2 transition-opacity flex items-center justify-center z-10 w-fit h-fit p-1 lg:p-2 border border-gray-400 rounded-full bg-white">
+                            <RiArrowRightWideFill />
                         </button>
-
                         <div className="custom-pagination flex gap-2 justify-center mt-5"></div>
                     </div>
                 </div>

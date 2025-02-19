@@ -1,11 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import AdminHeaderStore from "../AdminDataStore/AdminHeaderStore";
-import { AdminContextProvide } from "../Context_API/ContextProvider";
+import { AdminContext } from "../Context_API/ContextProvider";
 import AdminLogo from "../../assets/Images/AdminLogo.png";
-import { div, h1 } from "framer-motion/client";
 
 const SideBar = () => {
-    const { openCMS, setOpenCMS, adminNavData, setCMS } = useContext(AdminContextProvide);
+    const { openCMS, setOpenCMS, adminNavData, setCMS } = useContext(AdminContext);
     
     const [activeSublinks, setActiveSublinks] = useState([]);
     const [activeTitle, setActiveTitle] = useState('');

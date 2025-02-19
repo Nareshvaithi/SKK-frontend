@@ -1,11 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../Button/Button";
-
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const CourseItems = ({ id, img, intro, program_name, program_subname, slider, history_content, gallery }) => {
     const navigate = useNavigate();
-
+    const navid = (navid)=>{
+        const id = navid.toLowerCase().replaceAll(" ","_");
+        return id;
+    }
+    const location = useLocation();
+        useEffect(() => {
+            if (location.state?.hash) {
+                const element = document.getElementById(location.state.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        }, [location.state]);
     return (
-        <div className="container py-10">
+        <div id={navid(program_name)} className="container py-10">
             <div className={`flex flex-col lg:flex-row items-stretch ${id % 2 === 0 ? "lg:flex-row-reverse" : ""} w-full h-full group`}>
                
                 <div className="rounded-xl w-full lg:w-5/12 h-[300px] relative overflow-hidden">

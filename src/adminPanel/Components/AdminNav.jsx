@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AdminContextProvide } from "../Context_API/ContextProvider";
+import { AdminContext } from "../Context_API/ContextProvider";
 
 const AdminNav = ()=>{
-    const {openCMS,setOpenCMS} = useContext(AdminContextProvide);
+    const {openCMS,setOpenCMS} = useContext(AdminContext);
     return(
         <div className="fixed w-full h-20 flex items-center border border-gray-200">
             <div onClick={()=>{setOpenCMS(!openCMS)}} className="cursor-pointer">

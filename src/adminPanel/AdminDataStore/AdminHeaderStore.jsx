@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react"
-import { AdminContextProvide } from "../Context_API/ContextProvider"
+import { AdminContext } from "../Context_API/ContextProvider"
 
 const AdminHeaderStore = ()=>{
 
-    const {setAdminNavData} = useContext(AdminContextProvide);
+    const {setAdminNavData} = useContext(AdminContext);
   
     useEffect(()=>{
         const data = [
@@ -24,18 +24,18 @@ const AdminHeaderStore = ()=>{
                 {id:3,label:"Teachers",to:"",endPoint:"homeGurus",inputs:[
                   {id:1,label:"Teacher Name",type:"text",endPoint:"homeGurus",value:"name"},
                   {id:2,label:"Teacher passion",type:"text",endPoint:"homeGurus",value:"prof"},
-                  {id:2,label:"Teacher About",type:"text",endPoint:"homeGurus",value:"about"},
-                  {id:2,label:"Teacher Experience",type:"text",endPoint:"homeGurus",value:"experience"},
-                  {id:2,label:"Teacher Achivements",type:"text",endPoint:"homeGurus",value:"achivements"},
-                  {id:2,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
-                  {id:2,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
-                  {id:3,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"image"}
+                  {id:3,label:"Teacher About",type:"text",endPoint:"homeGurus",value:"about"},
+                  {id:4,label:"Teacher Experience",type:"text",endPoint:"homeGurus",value:"experience"},
+                  {id:5,label:"Teacher Achivements",type:"text",endPoint:"homeGurus",value:"achivements"},
+                  {id:6,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
+                  {id:7,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
+                  {id:8,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"image"}
                 ]},
                 {id:4,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
                   {id:1,label:"Name",type:"text",endPoint:"testimonials",value:"name",endPoint:"testimonials"},
                   {id:2,label:"profession",type:"text",endPoint:"testimonials",value:"profession"},
-                  {id:2,label:"review",type:"text",endPoint:"testimonials",value:"review"},
-                  {id:2,label:"starRating",type:"text",endPoint:"testimonials",label:"starRating"},
+                  {id:3,label:"review",type:"text",endPoint:"testimonials",value:"review"},
+                  {id:4,label:"starRating",type:"text",endPoint:"testimonials",label:"starRating"},
                 ]},
               ],
             },

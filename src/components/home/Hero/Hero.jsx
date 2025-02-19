@@ -73,7 +73,7 @@ const Hero = () => {
                       <iframe
                         key={_id}
                         className="w-full h-[130px] rounded-none lg:rounded-xl"
-                        src={url}
+                        src={`https://www.youtube.com/embed/${url}`}
                         frameBorder="0"
                         title={title}
                         allow="autoplay; encrypted-media"

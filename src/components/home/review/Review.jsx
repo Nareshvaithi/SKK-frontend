@@ -10,7 +10,7 @@ import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { RiDoubleQuotesR } from "react-icons/ri";
 import { FaUser } from "react-icons/fa6";
 import { MdStar } from "react-icons/md";
-import GoogleReview from "./GoogleReview";
+
 const Review = () => {
     const { testimonials } = useContext(ContextProvide);
 
@@ -51,7 +51,7 @@ const Review = () => {
                         >
                             {
                                 testimonials.map(({ _id, review, starRating, name, profession }) => (
-                                    <SwiperSlide key={_id} className="w-full h-full bg-black/85 rounded-xl group relative overflow-hidden">
+                                    <SwiperSlide key={_id} className="w-full h-full bg-black/85 rounded-xl group relative overflow-hidden" title={review}>
                                         <div className="w-full h-[300px] px-10 py-10 flex flex-col justify-between">
                                             <div className="text-white">
                                                 <p className="text-sm font-mainFont2 line-clamp-6">{review}</p>
@@ -95,7 +95,7 @@ const Review = () => {
             </div>
 
             <Testimonialsdata />
-            <GoogleReview/>
+            {/* <GoogleReview/> */}
         </>
     );
 };
