@@ -3,9 +3,14 @@ import { AdminContext } from "../Context_API/ContextProvider"
 
 const AdminHeaderStore = ()=>{
 
+<<<<<<< HEAD
     const {setAdminNavData} = useContext(AdminContext);
+=======
+    const {setAdminNavData,video,setVideo,shorts,setShorts,teachers,setTeachers,testimonials,setTestimonials,items, setItems,} = useContext(AdminContextProvide);
+>>>>>>> refs/remotes/origin/main
   
     useEffect(()=>{
+      const points=["banner",,"bannershorts","bannerimages","homegurus","fandq","testimonials","blogs"]
         const data = [
             {
               id: 1,
@@ -13,14 +18,17 @@ const AdminHeaderStore = ()=>{
               to: "",
               icon:"roofing",
               sublinks:[
-                {id:1,label:"Youtube Banner Video",endPoint:"banner",to:"",inputs:[
+                {id:1,label:"Video",endPoint:"banner",to:"",inputs:[
                   {id:1,label:"Youtube Banner Video Title",type:"text",value:"title",endPoint:"banner"},
                   {id:2,label:"YouTube Video Embeded Id",type:"text",value:"url",endPoint:"banner"},
-                ]},
-                {id:2,label:"Youtube Shorts",endPoint:"bannerShorts",to:"",inputs:[
+                ],
+              innerData:items
+              },
+                {id:2,label:"Shorts",endPoint:"bannerShorts",to:"",inputs:[
                   {id:1,label:"Youtube Shorts Title",type:"text",value:"title",endPoint:"bannerShorts"},
                   {id:2,label:"YouTube Shorts Embeded Id",type:"text",value:"url",endPoint:"bannerShorts"},
-                ]},
+                ],
+              innerData:items},
                 {id:3,label:"Teachers",to:"",endPoint:"homeGurus",inputs:[
                   {id:1,label:"Teacher Name",type:"text",endPoint:"homeGurus",value:"name"},
                   {id:2,label:"Teacher passion",type:"text",endPoint:"homeGurus",value:"prof"},
@@ -30,13 +38,21 @@ const AdminHeaderStore = ()=>{
                   {id:6,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
                   {id:7,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
                   {id:8,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"image"}
+<<<<<<< HEAD
                 ]},
+=======
+                ],innerData:items},
+>>>>>>> refs/remotes/origin/main
                 {id:4,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
-                  {id:1,label:"Name",type:"text",endPoint:"testimonials",value:"name",endPoint:"testimonials"},
+                  {id:1,label:"Name",type:"text",endPoint:"testimonials",value:"name"},
                   {id:2,label:"profession",type:"text",endPoint:"testimonials",value:"profession"},
                   {id:3,label:"review",type:"text",endPoint:"testimonials",value:"review"},
                   {id:4,label:"starRating",type:"text",endPoint:"testimonials",label:"starRating"},
+<<<<<<< HEAD
                 ]},
+=======
+                ],innerData:items},
+>>>>>>> refs/remotes/origin/main
               ],
             },
             {
@@ -132,13 +148,15 @@ const AdminHeaderStore = ()=>{
               to:"",
               icon: "quiz",
               sublinks:[
-                {id:1,label:"FAQ",to:""},
-               
+                {id:1,label:"FandQ",to:"",inputs:[
+                {id:1,label:"Question",type:"text",value:"question",endPoint:"fandq"},
+                {id:2,label:"Answer",type:"text",value:"answer",endPoint:"fandq"},
+                ]}
               ]
             },
           ];
           setAdminNavData(data);
-    },[])
+    },[setAdminNavData,items])
 
     return null
 }

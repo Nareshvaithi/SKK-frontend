@@ -19,30 +19,38 @@ const BlogsDetails = lazy(() => import("./pages/BlogsDetails"));
 const GuruDetails = lazy(() => import("./pages/GuruDetails"));
 const Admin = lazy(() => import("./adminPanel/Adminpages/Admin"));
 const AdminWorkSpace = lazy(() => import("./adminPanel/Components/AdminWorkSpace"));
-const Login = lazy(() => import("./adminPanel/Adminpages/Login"));
+const Login = lazy(() => import("./adminPanel/Adminpages/Login"));import AdminDemo from "./adminPanel/Adminpages/AdminDemo";
+
 
 function App() {
   return (
     <Context>
       <AdminProvider>  
         <BrowserRouter>
-          <Meta />
-          <Suspense fallback={<div className="pt-24">Loading...</div>}>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/aboutskk" element={<About />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/courses" element={<Courses />} />
-                <Route path="/courses/:title" element={<CoursesDetails />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/blogs" element={<Blogs />} />
-                <Route path="/blogs/:title" element={<BlogsDetails />} />
-                <Route path="/faq" element={<Faq />} />
-                <Route path="/guru/:name" element={<GuruDetails />} />
-                
-                <Route path="*" element={<Nopage />} />
+          <Meta/>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/aboutskk" element={<About />} />
+              <Route path="/gallery" element={<Gallery/>} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/courses/:title" element={<CoursesDetails />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blogs/:title" element={<BlogsDetails/>}/>
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/guru/:name" element={<GuruDetails/>}/>
+              <Route path="*" element={<Nopage />} />
+              
+            </Route>
+             {/* Admin Route */}
+              <Route path="/admin" element={<Admin/>}>
+              
+              <Route index element={<AdminWorkSpace/>}/>
+              
               </Route>
+              <Route path="/admin1" element={<AdminDemo/>}></Route>
               <Route path="/login" element={<Login />} />
               <Route path="/admin" element={
                 <ProtectedRoute>

@@ -44,7 +44,7 @@ const HomeTable = () => {
     onSubmit: async (values, { resetForm }) => {
       let formData = new FormData();
       let hasFile = false;
-      inputs.map(( {type,value,endPoint}) => {
+      inputs.map(( {type,value,endPoint}) => {      
         if (type == "file" && values["image"]) {
           formData.append(value, values["image"]);
           hasFile = true;
@@ -57,9 +57,9 @@ const HomeTable = () => {
          
           const payload = hasFile ? formData : values;
           console.log("formData  = >",formData,  "values  => ", values)
-          // await axios.post(`${API_URL}/${endPointCheck}`, payload, {
-          //   headers: hasFile ? { "Content-Type": "multipart/form-data" } : {},
-          // });
+          await axios.post(`${API_URL}/${endPointCheck}`, payload, {
+            headers: hasFile ? { "Content-Type": "multipart/form-data" } : {},
+          });
 
           alert("Success");
           resetForm();
