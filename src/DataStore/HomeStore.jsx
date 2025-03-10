@@ -1,8 +1,5 @@
 import { useEffect, useContext } from "react";
 import { ContextProvide } from "../Context_API/contextProvider";
-import specialityimg_0 from "../assets/Images/home/speciality_0.webp";
-import specialityimg_1 from "../assets/Images/home/speciality_1.webp";
-import specialityimg_2 from "../assets/Images/home/speciality_2.webp";
 import homegallery_1 from "../assets/Images/home/homegallery_1.jpg";
 import homegallery_2 from "../assets/Images/home/homegallery_2.jpg";
 import homegallery_3 from "../assets/Images/home/homegallery_3.jpg";
@@ -13,8 +10,6 @@ import { PiNotePencilThin } from "react-icons/pi";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
-import { MdOutlineStarPurple500 } from "react-icons/md";
-import { FaUser } from "react-icons/fa6";
 import Bharatanatyam from "../assets/Images/home/Bharatanatyam.webp";
 import kalari from "../assets/Images/home/kalari.webp";
 import mridangam from "../assets/Images/home/mridangam.webp";
@@ -48,11 +43,6 @@ import veenagallery05 from "../assets/Images/gallery/veenaGallery/gallery05.webp
 import whatsappIcon from "../assets/Images/header/whatsapp.png";
 import locationIcon from "../assets/Images/header/location.png";
 import gmailIcon from "../assets/Images/header/gmail.png";
-import windowFrontBanner1 from "../assets/Images/home/WindowFrontBanner1.jpg";
-import windowFrontBanner2 from "../assets/Images/home/WindowFrontBanner2.jpg";
-import windowFrontBanner3 from "../assets/Images/home/WindowFrontBanner3.jpg";
-import windowFrontBanner4 from "../assets/Images/home/WindowFrontBanner4.jpg";
-import windowFrontBanner5 from "../assets/Images/home/WindowFrontBanner5.jpg";
 import youtubeSliderIcon from "../assets/Images/header/youtube-icon.jpg";
 import shortsIcon from "../assets/Images/header/shorts-icon.jpg";
 import teacherIcon from "../assets/Images/header/teacher.jpg";
@@ -64,7 +54,7 @@ import testimonialIcon from "../assets/Images/header/testimonoal-icon.jpg";
 import AboutFounderIcon from "../assets/Images/header/the-founders-icon.jpg";
 import ourVisionIcon from "../assets/Images/header/our-vision-icon.jpg";
 import trainAndEstIcon from "../assets/Images/header/training-and-establishment-icon.jpg";
-import  TheGuruIcon from "../assets/Images/header/the-guru-icon.jpg";
+import TheGuruIcon from "../assets/Images/header/the-guru-icon.jpg";
 import teachandLearnIcon from "../assets/Images/header/teaching-and-learning-icon.jpg";
 import honoursAndAwardsIcon from "../assets/Images/header/honours-and-awards-icon.jpg";
 import innovationsIcon from "../assets/Images/header/innovations-icon.jpg";
@@ -73,7 +63,7 @@ import tvShowIcon from "../assets/Images/header/tv-show-icon.jpg";
 import contemporaryWorksIcon from "../assets/Images/header/contemporary-works-icon.jpg";
 import annaiMozhiyeIcon from "../assets/Images/header/annai-mozhiye-icon.jpg";
 import artIcon from "../assets/Images/header/art-icon.jpg";
-
+import IntroVideo from "../assets/Images/home/introVideo.mp4";
 
 import axios from 'axios';
 import { CiFacebook } from "react-icons/ci";
@@ -137,13 +127,9 @@ export const Headerdata = () => {
 export const Herodata = ()=>{
     const {setBannerVideo,setShorts,setBannerSlider} = useContext(ContextProvide);
     useEffect(() => {
-        const fetchbannervideo = async () => {
-          try {
-            const getBannerVideoLink = await axios.get("https://skk-api.konceptsdandd.com/banner");
-            setBannerVideo(getBannerVideoLink.data);
-          } catch (error) {
-            console.error("Error fetching video links:", error);
-          }
+        const fetchbannervideo = () => {
+          const data = IntroVideo;
+          setBannerVideo(data);
         };
         const fetchshortslink = async () => {
           try {
@@ -231,9 +217,7 @@ export const Footerdata = ()=>{
             {id:7,title:"Faq",to:"/faq"},
             {id:8,title:"Contact",to:"/contact"},
         ]
-
         setFooterlinks(data)
-        
     },[])
     useEffect(()=>{
         const data = [
@@ -259,14 +243,15 @@ export const Footerdata = ()=>{
 export const Homefaqdata = ()=>{
     const {setHomefaq} = useContext(ContextProvide);
     useEffect(()=>{
-        const data = [
-            {id:1,question:"What courses are offered at Saraswathy Kala Kendra?",answer:"We offer specialized training in Bharatanatyam, Kalari, Carnatic Music, Veena, and Mridangam. Our programs are designed to provide in-depth knowledge and hands-on practice in each of these traditional art forms."},
-            {id:2,question:"How can I enroll in a course at Saraswathy Kala Kendra?",answer:"To enroll, you can visit our website and check the Courses section. For registration and further assistance, you can contact us directly through our Contact page or reach out via phone or email."},
-            {id:3,question:"Are the classes conducted online or in-person?",answer:"Currently, our classes are conducted in person to ensure students receive proper guidance, personalized attention, and a hands-on learning experience."},
-            {id:4,question:"Do I need any prior experience to join the courses?",answer:"No prior experience is required to join. Our courses are open to beginners, as well as those looking to enhance their existing skills in Bharatanatyam, Kalari, Karnatic Music, Veena, and Mridangam."},
-            {id:5,question:"How can I get more information about class schedules and timings?",answer:"For details on class schedules, timings, and availability, please visit the Contact page on our website or reach out to us directly. We’ll be happy to provide you with all the necessary information."}
-        ]
-        setHomefaq(data);
+        const fetchFaq = async ()=>{
+            try{
+                const response = await axios.get("https://skk-api.konceptsdandd.com/fandq");
+                setHomefaq(response.data);
+            }catch(error){
+                console.error(error);
+            }
+        }
+        fetchFaq();
     },[])
     return null;
 }
@@ -354,14 +339,16 @@ export const Programsdata = ()=>{
 export const FrontBannerdata = ()=>{
     const {setFrontBanner} = useContext(ContextProvide);
     useEffect(()=>{
-        const data = [
-            {id:1,windowBanner:windowFrontBanner1,mobileBanner:""},
-            {id:2,windowBanner:windowFrontBanner2,mobileBanner:"",name:"Carnatic Music",to:"/courses/#carnatic_music"},
-            {id:3,windowBanner:windowFrontBanner3,mobileBanner:"",name:"Veena",to:"/courses/#veena"},
-            {id:4,windowBanner:windowFrontBanner4,mobileBanner:"",name:"Mridangam",to:"/courses/#mridangam"},
-            {id:5,windowBanner:windowFrontBanner5,mobileBanner:"",name:"Kalari",to:"/courses/#kalari"},
-        ];
-        setFrontBanner(data);
+       const fetchFrontBanner = async ()=>{
+            try{
+                const response = await axios.get("https://skk-api.konceptsdandd.com/heroBanner");
+                setFrontBanner(response.data);
+                console.log(response.data)
+            }catch(error){
+                console.error(error);
+            }
+       }
+       fetchFrontBanner();
     },[])
     return null;
 }

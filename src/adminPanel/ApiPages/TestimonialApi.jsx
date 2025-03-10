@@ -1,8 +1,6 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import { AdminContextProvide } from "../Context_API/ContextProvider";
-import AdminHeaderStore from "../AdminDataStore/AdminHeaderStore";
-import axios from "axios";
+import { AdminContext } from "../Context_API/ContextProvider";
 import { PiUploadLight } from "react-icons/pi";
 
 function TestimonialApi() {
@@ -19,7 +17,7 @@ function TestimonialApi() {
     setDisplay,
     items,
     setItems,
-  } = useContext(AdminContextProvide);
+  } = useContext(AdminContext);
 
   return <>
   <div className="flex gap-10 flex-wrap">

@@ -3,11 +3,7 @@ import { AdminContext } from "../Context_API/ContextProvider"
 
 const AdminHeaderStore = ()=>{
 
-<<<<<<< HEAD
-    const {setAdminNavData} = useContext(AdminContext);
-=======
-    const {setAdminNavData,video,setVideo,shorts,setShorts,teachers,setTeachers,testimonials,setTestimonials,items, setItems,} = useContext(AdminContextProvide);
->>>>>>> refs/remotes/origin/main
+    const {setAdminNavData,video,setVideo,shorts,setShorts,teachers,setTeachers,testimonials,setTestimonials,items, setItems,} = useContext(AdminContext);
   
     useEffect(()=>{
       const points=["banner",,"bannershorts","bannerimages","homegurus","fandq","testimonials","blogs"]
@@ -38,21 +34,13 @@ const AdminHeaderStore = ()=>{
                   {id:6,label:"Facebook",type:"text",endPoint:"homeGurus",value:"facebook"},
                   {id:7,label:"Instagram",type:"text",endPoint:"homeGurus",value:"instagram"},
                   {id:8,label:"Teacher Image",type:"file",endPoint:"homeGurus",value:"image"}
-<<<<<<< HEAD
-                ]},
-=======
                 ],innerData:items},
->>>>>>> refs/remotes/origin/main
                 {id:4,label:"Testimonials",to:"",endPoint:"testimonials",inputs:[
                   {id:1,label:"Name",type:"text",endPoint:"testimonials",value:"name"},
                   {id:2,label:"profession",type:"text",endPoint:"testimonials",value:"profession"},
                   {id:3,label:"review",type:"text",endPoint:"testimonials",value:"review"},
                   {id:4,label:"starRating",type:"text",endPoint:"testimonials",label:"starRating"},
-<<<<<<< HEAD
-                ]},
-=======
                 ],innerData:items},
->>>>>>> refs/remotes/origin/main
               ],
             },
             {

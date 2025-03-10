@@ -25,10 +25,10 @@ const HomeFaq = () => {
                 </div>
                 <div className="container flex flex-col justify-center items-center">
                     {
-                        homefaq.map(({ id, answer, question }, index) => (
+                        homefaq.map(({ _id, answer, question }, index) => (
                             <FaqItems 
-                                key={id} 
-                                id={id} 
+                                key={_id} 
+                                id={_id} 
                                 answer={answer} 
                                 question={question} 
                                 index={index} 

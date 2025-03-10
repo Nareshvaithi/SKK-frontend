@@ -46,22 +46,22 @@ const FrontBannerSlider = ()=>{
                     bulletActiveClass:"frontBannerPaginationActive"
                 }}
                 >
-                    { frontBanner.map(({id,windowBanner,mobileBanner,name,to})=>{
-                        return <SwiperSlide key={id} className="w-full h-full">
+                    { frontBanner.map(({_id,url,to},index)=>{
+                        return <SwiperSlide key={_id} className="w-full h-full">
                             <div className="w-full h-full relative overflow-hidden">
-                                <img className="w-full h-full object-cover" src={windowBanner} alt="" />
-                                <div className={` text-themebrown absolute inset-0 z-20 flex items-center ${id === 2 ? "justify-end pr-20" : "justify-around"} w-full h-full`}>
+                                <img className="w-full h-full object-cover" src={url} alt="" />
+                                <div className={` text-themebrown absolute inset-0 z-20 flex items-center ${index === 1 ? "justify-end pr-2 lg:pr-20" : "justify-around"} w-full h-full`}>
                                     <div>{" "}</div>
-                                    <div className={`${!name ? "hidden" : "block"} w-fit h-fit`}>
-                                        <h1 className="headingText">Saraswathy Kala Kendra</h1>
-                                        <p className="font-mainFont1 text-2xl">School of Fine Arts</p>
+                                    <div className={`${index === 0 ? "hidden" : "block"} w-fit h-fit`}>
+                                        <h1 className="text-sm lg:text-4xl font-mainFont1">Saraswathy Kala Kendra</h1>
+                                        <p className="font-mainFont1 text-sm lg:text-4xl">School of Fine Arts</p>
                                         <div onClick={()=>{
                                             const [path, hash] = to.split("#");
                                             navigate(path, {
                                                 replace: false,
                                                 state: { hash },
                                             }); 
-                                        }} className="mt-5">
+                                        }} className="mt-5 hidden">
                                             <Button
                                                 text={name}
                                                 bg={"bg-themebrown"}
@@ -69,7 +69,7 @@ const FrontBannerSlider = ()=>{
                                                 textcolor={"text-white"}
                                                 hovertextcolor={"group-hover:text-themebrown"}
                                                 px={"px-5"}
-                                                py={"py-3"}
+                                                py={"py-2"}
                                             />
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@ const FrontBannerSlider = ()=>{
                     <div className="cursor-pointer frontbanner-left z-20 text-4xl text-gray-700 opacity-0 group-hover:opacity-100"><RiArrowLeftWideFill/></div>
                     <div className="cursor-pointer frontbanner-right z-20 text-4xl text-gray-700 opacity-0 group-hover:opacity-100"><RiArrowRightWideFill/></div>
                 </div>
-                <div className="frontBannerPagination w-fit h-fit inset-0 absolute z-20 bottom-20 flex justify-center"></div>
+                <div className="frontBannerPagination w-fit h-fit inset-0 absolute z-20 bottom-20 flex gap-3 justify-center"></div>
             </div>
             <FrontBannerdata/>
         </div>

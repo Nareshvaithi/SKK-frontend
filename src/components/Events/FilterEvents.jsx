@@ -178,11 +178,11 @@ function FilterEvents() {
                                 }
                               >
                                 <div className="w-full">
-                                  <div className="h-44 w-full">
+                                  <div className="h-40 w-full">
                                     <img
                                       src={item.images[0]}
                                       alt=""
-                                      className="w-full h-full transition-transform duration-300 hover:scale-105"
+                                      className="w-full h-full transition-transform duration-300 hover:scale-105 object-cover"
                                     />
                                   </div>
                                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/Images/header/logo-SKK.png";
 import { RiPagesFill } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
-import { AdminContextProvide } from "../Context_API/ContextProvider";
+import { AdminContext } from "../Context_API/ContextProvider";
 import AdminHeaderStore from "../AdminDataStore/AdminHeaderStore";
 import axios from "axios";
 import { PiUploadLight } from "react-icons/pi";
@@ -10,8 +10,8 @@ import GuruApi from "../ApiPages/GuruApi";
 import TestimonialApi from "../ApiPages/TestimonialApi";
 
 function AdminDemo() {
-  const { adminNavData, CMS,endPoint,setEndPoint ,active, setActive,imageDisplay,setImageDisplay,display,setDisplay,        items, setItems,
-  } = useContext(AdminContextProvide);
+  const { adminNavData, CMS,endPoint,setEndPoint ,active, setActive,imageDisplay,setImageDisplay,display,setDisplay,items, setItems,
+  } = useContext(AdminContext);
   const API_URL = import.meta.env.VITE_API_URI;
 
   const [subPages, setSubPages] = useState([]);

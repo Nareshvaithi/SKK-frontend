@@ -27,6 +27,7 @@ function App() {
     <Context>
       <AdminProvider>  
         <BrowserRouter>
+        <Suspense>
           <Meta/>
           <Routes>
             {/* Public Routes */}
@@ -42,7 +43,6 @@ function App() {
               <Route path="/faq" element={<Faq />} />
               <Route path="/guru/:name" element={<GuruDetails/>}/>
               <Route path="*" element={<Nopage />} />
-              
             </Route>
              {/* Admin Route */}
               <Route path="/admin" element={<Admin/>}>
